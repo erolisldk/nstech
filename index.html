@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NSTech Yazılım ve Danışmanlık</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        nstech: {
+                            blue: '#0056b3', /* Corporate Blue similar to Testinium/Enterprise tech */
+                            dark: '#1a1a1a',
+                            light: '#f4f7f6',
+                            accent: '#00d2d3'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .hero-bg {
+            background: linear-gradient(135deg, #0056b3 0%, #002b5e 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 30px 30px;
+            opacity: 0.5;
+        }
+        .service-card {
+            transition: all 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body class="text-gray-800 bg-white">
+
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#" class="text-2xl font-bold text-nstech-blue">
+                        <i class="fa-solid fa-code-branch mr-2"></i>NSTech
+                    </a>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#home" class="text-gray-600 hover:text-nstech-blue font-medium transition" data-key="nav_home">Ana Sayfa</a>
+                    <a href="#services" class="text-gray-600 hover:text-nstech-blue font-medium transition" data-key="nav_services">Hizmetler</a>
+                    <a href="#about" class="text-gray-600 hover:text-nstech-blue font-medium transition" data-key="nav_about">Hakkımızda</a>
+                    <a href="#contact" class="px-5 py-2 bg-nstech-blue text-white rounded-full hover:bg-blue-700 transition font-medium shadow-md" data-key="nav_contact">İletişim</a>
+                    
+                    <!-- Language Selector -->
+                    <div class="relative ml-4">
+                        <button onclick="toggleLangMenu()" class="flex items-center text-gray-600 hover:text-nstech-blue focus:outline-none">
+                            <i class="fa-solid fa-globe mr-1"></i> <span id="current-lang">TR</span>
+                        </button>
+                        <div id="lang-dropdown" class="absolute right-0 mt-2 w-24 bg-white border border-gray-200 rounded-md shadow-lg hidden">
+                            <button onclick="setLanguage('tr')" class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Türkçe</button>
+                            <button onclick="setLanguage('en')" class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">English</button>
+                            <button onclick="setLanguage('de')" class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Deutsch</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button onclick="toggleMobileMenu()" class="text-gray-600 hover:text-nstech-blue focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-nstech-blue hover:bg-gray-50" data-key="nav_home">Ana Sayfa</a>
+                <a href="#services" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-nstech-blue hover:bg-gray-50" data-key="nav_services">Hizmetler</a>
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-nstech-blue hover:bg-gray-50" data-key="nav_about">Hakkımızda</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-nstech-blue hover:bg-gray-50" data-key="nav_contact">İletişim</a>
+                <div class="flex space-x-4 px-3 py-2 border-t mt-2">
+                    <button onclick="setLanguage('tr')" class="text-sm font-bold text-gray-600">TR</button>
+                    <button onclick="setLanguage('en')" class="text-sm font-bold text-gray-600">EN</button>
+                    <button onclick="setLanguage('de')" class="text-sm font-bold text-gray-600">DE</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg pt-32 pb-24 text-white">
+        <div class="hero-pattern"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 text-center md:text-left mb-12 md:mb-0">
+                <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6" data-key="hero_title">
+                    Geleceğin Teknolojisini Bugünden Test Edin
+                </h1>
+                <p class="text-lg md:text-xl text-blue-100 mb-8 max-w-2xl" data-key="hero_subtitle">
+                    NSTech olarak, manuel ve otomasyon test çözümleri ile yazılım kalitenizi artırıyor, ISO belgelendirme danışmanlığı ile süreçlerinizi dünya standartlarına taşıyoruz.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                    <a href="#services" class="px-8 py-3 bg-white text-nstech-blue rounded-full font-bold hover:bg-gray-100 transition shadow-lg" data-key="cta_services">
+                        Hizmetlerimizi Keşfedin
+                    </a>
+                    <a href="#contact" class="px-8 py-3 border-2 border-white text-white rounded-full font-bold hover:bg-white hover:text-nstech-blue transition" data-key="cta_contact">
+                        Bize Ulaşın
+                    </a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <!-- Abstract Tech Illustration Placeholder using FontAwesome -->
+                <div class="text-9xl text-white opacity-20 animate-pulse">
+                    <i class="fa-solid fa-network-wired"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats / Trusted By (Inspired by Testinium style) -->
+    <section class="py-10 bg-gray-50 border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center text-gray-500">
+                <div>
+                    <i class="fa-solid fa-check-circle text-3xl mb-2 text-nstech-blue"></i>
+                    <p class="font-bold text-xl text-gray-800">100%</p>
+                    <p class="text-sm" data-key="stat_quality">Kalite Güvencesi</p>
+                </div>
+                <div>
+                    <i class="fa-solid fa-robot text-3xl mb-2 text-nstech-blue"></i>
+                    <p class="font-bold text-xl text-gray-800">7/24</p>
+                    <p class="text-sm" data-key="stat_auto">Otomasyon Testleri</p>
+                </div>
+                <div>
+                    <i class="fa-solid fa-certificate text-3xl mb-2 text-nstech-blue"></i>
+                    <p class="font-bold text-xl text-gray-800">ISO</p>
+                    <p class="text-sm" data-key="stat_iso">Standartlara Uyum</p>
+                </div>
+                <div>
+                    <i class="fa-solid fa-users text-3xl mb-2 text-nstech-blue"></i>
+                    <p class="font-bold text-xl text-gray-800">Global</p>
+                    <p class="text-sm" data-key="stat_support">Çok Dilli Destek</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-nstech-dark mb-4" data-key="services_title">Hizmetlerimiz</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto" data-key="services_desc">
+                    Yazılım yaşam döngünüzün her aşamasında kalite ve standartlara uyum sağlıyoruz.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Service 1: Software Testing -->
+                <div class="service-card p-8 rounded-2xl border border-gray-100 bg-white shadow-sm">
+                    <div class="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center text-nstech-blue text-3xl mb-6">
+                        <i class="fa-solid fa-bug-slash"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-900" data-key="srv_test_title">Yazılım Test Hizmetleri</h3>
+                    <p class="text-gray-600 mb-6" data-key="srv_test_desc">
+                        Yazılımlarınızın hatasız ve yüksek performansla çalışmasını sağlıyoruz. Manuel testlerle kullanıcı deneyimini, otomasyon testleriyle hızı ve güvenilirliği garanti altına alın.
+                    </p>
+                    <ul class="space-y-3 text-gray-600 mb-6">
+                        <li class="flex items-center"><i class="fa-solid fa-check text-green-500 mr-3"></i> <span data-key="srv_test_item1">Manuel Fonksiyonel Testler</span></li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-green-500 mr-3"></i> <span data-key="srv_test_item2">Test Otomasyon Altyapısı</span></li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-green-500 mr-3"></i> <span data-key="srv_test_item3">Performans ve Yük Testleri</span></li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-green-500 mr-3"></i> <span data-key="srv_test_item4">Mobil Uygulama Testleri</span></li>
+                    </ul>
+                </div>
+
+                <!-- Service 2: ISO Certification -->
+                <div class="service-card p-8 rounded-2xl border border-gray-100 bg-white shadow-sm">
+                    <div class="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center text-nstech-blue text-3xl mb-6">
+                        <i class="fa-solid fa-file-contract"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-gray-900" data-key="srv_iso_title">ISO Belgelendirme Danışmanlığı</h3>
+                    <p class="text-gray-600 mb-6" data-key="srv_iso_desc">
+                        Şirketinizin süreçlerini uluslararası standartlara uygun hale getiriyoruz. ISO 9001, ISO 27001 ve diğer yönetim sistemleri için profesyonel danışmanlık hizmeti sunuyoruz.
+                    </p>
+                    <ul class="space-y-3 text-gray-600 mb-6">
+                        <li class="flex items-center"><i class="fa-solid fa-check text-green-500 mr-3"></i> <span data-key="srv_iso_item1">ISO 9001 Kalite Yönetim Sistemi</span></li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-green-500 mr-3"></i> <span data-key="srv_iso_item2">ISO 27001 Bilgi Güvenliği</span></li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-green-500 mr-3"></i> <span data-key="srv_iso_item3">Süreç Analizi ve İyileştirme</span></li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-green-500 mr-3"></i> <span data-key="srv_iso_item4">İç Denetim Hizmetleri</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-nstech-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center gap-12">
+            <div class="md:w-1/2">
+                <h2 class="text-3xl font-bold text-nstech-dark mb-6" data-key="about_title">NSTech Hakkında</h2>
+                <p class="text-gray-600 text-lg mb-6 leading-relaxed" data-key="about_desc1">
+                    NSTech, yazılım kalitesini en üst düzeye çıkarmak ve kurumsal süreçleri mükemmelleştirmek amacıyla kurulmuş bir teknoloji ve danışmanlık şirketidir. Testinium gibi sektör liderlerinden edindiğimiz vizyon ile projelerinize değer katıyoruz.
+                </p>
+                <p class="text-gray-600 text-lg mb-6 leading-relaxed" data-key="about_desc2">
+                    Uzman ekibimiz, en son test otomasyon araçlarını kullanarak ürünlerinizin pazara çıkış süresini kısaltırken, ISO danışmanlarımız operasyonel mükemmelliğinizi belgelendirir.
+                </p>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <div class="bg-white p-6 rounded-2xl shadow-xl rotate-3 hover:rotate-0 transition duration-500">
+                    <i class="fa-solid fa-laptop-code text-9xl text-nstech-blue opacity-90"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-nstech-dark mb-4" data-key="contact_title">İletişime Geçin</h2>
+                <p class="text-gray-600" data-key="contact_desc">Projeleriniz için en uygun çözümü birlikte bulalım.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="bg-nstech-light p-8 rounded-2xl">
+                    <form onsubmit="event.preventDefault(); alert('Mesajınız alındı / Message Received');">
+                        <div class="mb-4">
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="name" data-key="form_name">Ad Soyad</label>
+                            <input class="w-full px-3 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-nstech-blue" id="name" type="text" placeholder="...">
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="email" data-key="form_email">E-posta</label>
+                            <input class="w-full px-3 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-nstech-blue" id="email" type="email" placeholder="ei@fruveg.de">
+                        </div>
+                        <div class="mb-6">
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="message" data-key="form_message">Mesajınız</label>
+                            <textarea class="w-full px-3 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-nstech-blue h-32" id="message" placeholder="..."></textarea>
+                        </div>
+                        <button class="w-full bg-nstech-blue text-white font-bold py-3 px-4 rounded-lg hover:bg-blue-700 transition" data-key="form_submit">
+                            Gönder
+                        </button>
+                    </form>
+                </div>
+                
+                <div class="flex flex-col justify-center space-y-8">
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 bg-blue-100 p-4 rounded-full text-nstech-blue">
+                            <i class="fa-solid fa-location-dot text-xl"></i>
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="text-xl font-bold text-gray-800" data-key="info_address_title">Adres</h4>
+                            <p class="text-gray-600">Teknopark İstanbul, Türkiye</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 bg-blue-100 p-4 rounded-full text-nstech-blue">
+                            <i class="fa-solid fa-envelope text-xl"></i>
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="text-xl font-bold text-gray-800" data-key="info_email_title">E-posta</h4>
+                            <p class="text-gray-600">ei@fruveg.de</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 bg-blue-100 p-4 rounded-full text-nstech-blue">
+                            <i class="fa-solid fa-phone text-xl"></i>
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="text-xl font-bold text-gray-800" data-key="info_phone_title">Telefon</h4>
+                            <p class="text-gray-600">+90 212 000 00 00</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <span class="text-2xl font-bold"><i class="fa-solid fa-code-branch mr-2"></i>NSTech</span>
+                    <p class="text-gray-400 mt-2 text-sm" data-key="footer_rights">© 2024 NSTech Yazılım ve Danışmanlık. Tüm hakları saklıdır.</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition"><i class="fa-brands fa-linkedin text-2xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition"><i class="fa-brands fa-twitter text-2xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition"><i class="fa-brands fa-github text-2xl"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Translations and Mobile Menu -->
+    <script>
+        // Translations Object
+        const translations = {
+            tr: {
+                nav_home: "Ana Sayfa",
+                nav_services: "Hizmetler",
+                nav_about: "Hakkımızda",
+                nav_contact: "İletişim",
+                hero_title: "Geleceğin Teknolojisini Bugünden Test Edin",
+                hero_subtitle: "NSTech olarak, manuel ve otomasyon test çözümleri ile yazılım kalitenizi artırıyor, ISO belgelendirme danışmanlığı ile süreçlerinizi dünya standartlarına taşıyoruz.",
+                cta_services: "Hizmetlerimizi Keşfedin",
+                cta_contact: "Bize Ulaşın",
+                stat_quality: "Kalite Güvencesi",
+                stat_auto: "Otomasyon Testleri",
+                stat_iso: "Standartlara Uyum",
+                stat_support: "Çok Dilli Destek",
+                services_title: "Hizmetlerimiz",
+                services_desc: "Yazılım yaşam döngünüzün her aşamasında kalite ve standartlara uyum sağlıyoruz.",
+                srv_test_title: "Yazılım Test Hizmetleri",
+                srv_test_desc: "Yazılımlarınızın hatasız ve yüksek performansla çalışmasını sağlıyoruz. Manuel testlerle kullanıcı deneyimini, otomasyon testleriyle hızı ve güvenilirliği garanti altına alın.",
+                srv_test_item1: "Manuel Fonksiyonel Testler",
+                srv_test_item2: "Test Otomasyon Altyapısı",
+                srv_test_item3: "Performans ve Yük Testleri",
+                srv_test_item4: "Mobil Uygulama Testleri",
+                srv_iso_title: "ISO Belgelendirme Danışmanlığı",
+                srv_iso_desc: "Şirketinizin süreçlerini uluslararası standartlara uygun hale getiriyoruz. ISO 9001, ISO 27001 ve diğer yönetim sistemleri için profesyonel danışmanlık hizmeti sunuyoruz.",
+                srv_iso_item1: "ISO 9001 Kalite Yönetim Sistemi",
+                srv_iso_item2: "ISO 27001 Bilgi Güvenliği",
+                srv_iso_item3: "Süreç Analizi ve İyileştirme",
+                srv_iso_item4: "İç Denetim Hizmetleri",
+                about_title: "NSTech Hakkında",
+                about_desc1: "NSTech, yazılım kalitesini en üst düzeye çıkarmak ve kurumsal süreçleri mükemmelleştirmek amacıyla kurulmuş bir teknoloji ve danışmanlık şirketidir. Testinium gibi sektör liderlerinden edindiğimiz vizyon ile projelerinize değer katıyoruz.",
+                about_desc2: "Uzman ekibimiz, en son test otomasyon araçlarını kullanarak ürünlerinizin pazara çıkış süresini kısaltırken, ISO danışmanlarımız operasyonel mükemmelliğinizi belgelendirir.",
+                contact_title: "İletişime Geçin",
+                contact_desc: "Projeleriniz için en uygun çözümü birlikte bulalım.",
+                form_name: "Ad Soyad",
+                form_email: "E-posta",
+                form_message: "Mesajınız",
+                form_submit: "Gönder",
+                info_address_title: "Adres",
+                info_email_title: "E-posta",
+                info_phone_title: "Telefon",
+                footer_rights: "© 2024 NSTech Yazılım ve Danışmanlık. Tüm hakları saklıdır."
+            },
+            en: {
+                nav_home: "Home",
+                nav_services: "Services",
+                nav_about: "About Us",
+                nav_contact: "Contact",
+                hero_title: "Test Future Technology Today",
+                hero_subtitle: "At NSTech, we enhance your software quality with manual and automation test solutions and elevate your processes to global standards with ISO certification consultancy.",
+                cta_services: "Explore Services",
+                cta_contact: "Contact Us",
+                stat_quality: "Quality Assurance",
+                stat_auto: "Test Automation",
+                stat_iso: "Standards Compliance",
+                stat_support: "Multi-language Support",
+                services_title: "Our Services",
+                services_desc: "We ensure quality and compliance at every stage of your software life cycle.",
+                srv_test_title: "Software Testing Services",
+                srv_test_desc: "We ensure your software runs error-free with high performance. Guarantee user experience with manual tests and speed/reliability with automation tests.",
+                srv_test_item1: "Manual Functional Testing",
+                srv_test_item2: "Test Automation Infrastructure",
+                srv_test_item3: "Performance & Load Testing",
+                srv_test_item4: "Mobile App Testing",
+                srv_iso_title: "ISO Certification Consultancy",
+                srv_iso_desc: "We align your company processes with international standards. We offer professional consultancy for ISO 9001, ISO 27001, and other management systems.",
+                srv_iso_item1: "ISO 9001 Quality Management",
+                srv_iso_item2: "ISO 27001 Information Security",
+                srv_iso_item3: "Process Analysis & Improvement",
+                srv_iso_item4: "Internal Audit Services",
+                about_title: "About NSTech",
+                about_desc1: "NSTech is a technology and consultancy company established to maximize software quality and perfect corporate processes. We add value to your projects with the vision acquired from industry leaders like Testinium.",
+                about_desc2: "Our expert team shortens your time-to-market using the latest test automation tools, while our ISO consultants certify your operational excellence.",
+                contact_title: "Contact Us",
+                contact_desc: "Let's find the best solution for your projects together.",
+                form_name: "Full Name",
+                form_email: "Email",
+                form_message: "Your Message",
+                form_submit: "Send",
+                info_address_title: "Address",
+                info_email_title: "Email",
+                info_phone_title: "Phone",
+                footer_rights: "© 2024 NSTech Software & Consultancy. All rights reserved."
+            },
+            de: {
+                nav_home: "Startseite",
+                nav_services: "Dienstleistungen",
+                nav_about: "Über Uns",
+                nav_contact: "Kontakt",
+                hero_title: "Testen Sie die Technologie der Zukunft Heute",
+                hero_subtitle: "Bei NSTech verbessern wir Ihre Softwarequalität mit manuellen und automatisierten Testlösungen und heben Ihre Prozesse durch ISO-Zertifizierungsberatung auf globale Standards.",
+                cta_services: "Dienste Entdecken",
+                cta_contact: "Kontaktieren Sie uns",
+                stat_quality: "Qualitätssicherung",
+                stat_auto: "Testautomatisierung",
+                stat_iso: "Standardkonformität",
+                stat_support: "Mehrsprachiger Support",
+                services_title: "Unsere Dienstleistungen",
+                services_desc: "Wir gewährleisten Qualität und Konformität in jeder Phase Ihres Software-Lebenszyklus.",
+                srv_test_title: "Softwaretest-Dienste",
+                srv_test_desc: "Wir sorgen dafür, dass Ihre Software fehlerfrei und leistungsstark läuft. Sichern Sie Benutzererfahrung mit manuellen Tests und Geschwindigkeit/Zuverlässigkeit mit Automatisierungstests.",
+                srv_test_item1: "Manuelle Funktionstests",
+                srv_test_item2: "Testautomatisierungsinfrastruktur",
+                srv_test_item3: "Leistungs- und Lasttests",
+                srv_test_item4: "Mobile App-Tests",
+                srv_iso_title: "ISO-Zertifizierungsberatung",
+                srv_iso_desc: "Wir passen Ihre Unternehmensprozesse an internationale Standards an. Wir bieten professionelle Beratung für ISO 9001, ISO 27001 und andere Managementsysteme.",
+                srv_iso_item1: "ISO 9001 Qualitätsmanagement",
+                srv_iso_item2: "ISO 27001 Informationssicherheit",
+                srv_iso_item3: "Prozessanalyse & Verbesserung",
+                srv_iso_item4: "Interne Auditdienste",
+                about_title: "Über NSTech",
+                about_desc1: "NSTech ist ein Technologie- und Beratungsunternehmen, das gegründet wurde, um Softwarequalität zu maximieren und Unternehmensprozesse zu perfektionieren. Wir schaffen Mehrwert für Ihre Projekte mit der Vision von Branchenführern wie Testinium.",
+                about_desc2: "Unser Expertenteam verkürzt Ihre Markteinführungszeit mit den neuesten Testautomatisierungstools, während unsere ISO-Berater Ihre operative Exzellenz zertifizieren.",
+                contact_title: "Kontaktieren Sie uns",
+                contact_desc: "Lassen Sie uns gemeinsam die beste Lösung für Ihre Projekte finden.",
+                form_name: "Vollständiger Name",
+                form_email: "E-Mail",
+                form_message: "Ihre Nachricht",
+                form_submit: "Senden",
+                info_address_title: "Adresse",
+                info_email_title: "E-Mail",
+                info_phone_title: "Telefon",
+                footer_rights: "© 2024 NSTech Software & Beratung. Alle Rechte vorbehalten."
+            }
+        };
+
+        // Function to set language
+        function setLanguage(lang) {
+            const elements = document.querySelectorAll('[data-key]');
+            elements.forEach(element => {
+                const key = element.getAttribute('data-key');
+                if (translations[lang][key]) {
+                    element.innerText = translations[lang][key];
+                }
+            });
+            
+            // Update current lang indicator
+            document.getElementById('current-lang').innerText = lang.toUpperCase();
+            
+            // Close menus
+            document.getElementById('mobile-menu').classList.add('hidden');
+            document.getElementById('lang-dropdown').classList.add('hidden');
+        }
+
+        // Toggle Language Menu
+        function toggleLangMenu() {
+            document.getElementById('lang-dropdown').classList.toggle('hidden');
+        }
+
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Set default language on load
+        document.addEventListener('DOMContentLoaded', () => {
+            setLanguage('tr');
+        });
+    </script>
+</body>
+</html>
