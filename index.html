@@ -1,23 +1,23 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NSTech Yazılım ve Danışmanlık</title>
-    <!-- Tailwind CSS -->
+    <title>NSTech Software & Consultancy</title>
+    
+    <!-- External Resources -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     
+    <!-- Tailwind Configuration -->
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
                         nstech: {
-                            blue: '#0056b3', /* Corporate Blue similar to Testinium/Enterprise tech */
+                            blue: '#0056b3',
                             dark: '#1a1a1a',
                             light: '#f4f7f6',
                             accent: '#00d2d3'
@@ -30,16 +30,20 @@
             }
         }
     </script>
+    
+    <!-- Custom Styles -->
     <style>
         body {
             font-family: 'Inter', sans-serif;
             scroll-behavior: smooth;
         }
+        
         .hero-bg {
             background: linear-gradient(135deg, #0056b3 0%, #002b5e 100%);
             position: relative;
             overflow: hidden;
         }
+        
         .hero-pattern {
             position: absolute;
             top: 0;
@@ -50,25 +54,30 @@
             background-size: 30px 30px;
             opacity: 0.5;
         }
+        
         .service-card {
             transition: all 0.3s ease;
         }
+        
         .service-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
     </style>
 </head>
+
 <body class="text-gray-800 bg-white">
 
-    <!-- Navbar -->
+    <!-- ========================================
+         NAVIGATION
+    ======================================== -->
     <nav class="bg-white shadow-md fixed w-full z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-20 items-center">
+            <div class="flex justify-between h-16 sm:h-20 items-center">
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center">
-                    <a href="#" class="text-2xl font-bold text-nstech-blue">
-                        <i class="fa-solid fa-code-branch mr-2"></i>NSTech
+                    <a href="#home" class="flex items-center">
+                        <img src="assets/black.png" alt="NSTech Logo" class="h-8 sm:h-12">
                     </a>
                 </div>
 
@@ -93,210 +102,315 @@
                 </div>
 
                 <!-- Mobile Menu Button -->
-                <div class="md:hidden flex items-center">
+                <div class="md:hidden flex items-center space-x-3">
+                    <button onclick="toggleLangMenu()" class="text-gray-600 hover:text-nstech-blue focus:outline-none">
+                        <i class="fa-solid fa-globe text-xl"></i>
+                    </button>
                     <button onclick="toggleMobileMenu()" class="text-gray-600 hover:text-nstech-blue focus:outline-none">
-                        <i class="fa-solid fa-bars text-2xl"></i>
+                        <i class="fa-solid fa-bars text-xl"></i>
                     </button>
                 </div>
             </div>
         </div>
 
         <!-- Mobile Menu Panel -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-nstech-blue hover:bg-gray-50" data-key="nav_home">Ana Sayfa</a>
-                <a href="#services" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-nstech-blue hover:bg-gray-50" data-key="nav_services">Hizmetler</a>
-                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-nstech-blue hover:bg-gray-50" data-key="nav_about">Hakkımızda</a>
-                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-nstech-blue hover:bg-gray-50" data-key="nav_contact">İletişim</a>
-                <div class="flex space-x-4 px-3 py-2 border-t mt-2">
-                    <button onclick="setLanguage('tr')" class="text-sm font-bold text-gray-600">TR</button>
-                    <button onclick="setLanguage('en')" class="text-sm font-bold text-gray-600">EN</button>
-                    <button onclick="setLanguage('de')" class="text-sm font-bold text-gray-600">DE</button>
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 shadow-lg">
+            <div class="px-4 pt-2 pb-4 space-y-1">
+                <a href="#home" onclick="toggleMobileMenu()" class="block px-4 py-3 rounded-md text-base font-medium text-gray-700 hover:text-nstech-blue hover:bg-gray-50" data-key="nav_home">Ana Sayfa</a>
+                <a href="#services" onclick="toggleMobileMenu()" class="block px-4 py-3 rounded-md text-base font-medium text-gray-700 hover:text-nstech-blue hover:bg-gray-50" data-key="nav_services">Hizmetler</a>
+                <a href="#about" onclick="toggleMobileMenu()" class="block px-4 py-3 rounded-md text-base font-medium text-gray-700 hover:text-nstech-blue hover:bg-gray-50" data-key="nav_about">Hakkımızda</a>
+                <a href="#contact" onclick="toggleMobileMenu()" class="block px-4 py-3 rounded-md text-base font-medium text-nstech-blue hover:bg-gray-50" data-key="nav_contact">İletişim</a>
+                <div class="flex justify-center space-x-6 px-4 py-3 border-t border-gray-200 mt-2">
+                    <button onclick="setLanguage('tr')" class="text-sm font-bold text-gray-600 hover:text-nstech-blue">TR</button>
+                    <button onclick="setLanguage('en')" class="text-sm font-bold text-gray-600 hover:text-nstech-blue">EN</button>
+                    <button onclick="setLanguage('de')" class="text-sm font-bold text-gray-600 hover:text-nstech-blue">DE</button>
                 </div>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero-bg pt-32 pb-24 text-white">
+    <!-- ========================================
+         HERO SECTION
+    ======================================== -->
+    <section id="home" class="hero-bg pt-20 sm:pt-28 pb-16 sm:pb-24 text-white">
         <div class="hero-pattern"></div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col md:flex-row items-center">
-            <div class="md:w-1/2 text-center md:text-left mb-12 md:mb-0">
-                <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6" data-key="hero_title">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col md:flex-row items-center gap-8">
+            <div class="md:w-1/2 text-center md:text-left">
+                <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 sm:mb-6" data-key="hero_title">
                     Geleceğin Teknolojisini Bugünden Test Edin
                 </h1>
-                <p class="text-lg md:text-xl text-blue-100 mb-8 max-w-2xl" data-key="hero_subtitle">
+                <p class="text-base sm:text-lg md:text-xl text-blue-100 mb-6 sm:mb-8 mx-auto md:mx-0 max-w-xl" data-key="hero_subtitle">
                     NSTech olarak, manuel ve otomasyon test çözümleri ile yazılım kalitenizi artırıyor, ISO belgelendirme danışmanlığı ile süreçlerinizi dünya standartlarına taşıyoruz.
                 </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                    <a href="#services" class="px-8 py-3 bg-white text-nstech-blue rounded-full font-bold hover:bg-gray-100 transition shadow-lg" data-key="cta_services">
+                <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center md:justify-start">
+                    <a href="#services" class="px-6 sm:px-8 py-3 bg-white text-nstech-blue rounded-full font-bold hover:bg-gray-100 transition shadow-lg text-center" data-key="cta_services">
                         Hizmetlerimizi Keşfedin
                     </a>
-                    <a href="#contact" class="px-8 py-3 border-2 border-white text-white rounded-full font-bold hover:bg-white hover:text-nstech-blue transition" data-key="cta_contact">
+                    <a href="#contact" class="px-6 sm:px-8 py-3 border-2 border-white text-white rounded-full font-bold hover:bg-white hover:text-nstech-blue transition text-center" data-key="cta_contact">
                         Bize Ulaşın
                     </a>
                 </div>
             </div>
-            <div class="md:w-1/2 flex justify-center">
-                <!-- Abstract Tech Illustration Placeholder using FontAwesome -->
-                <div class="text-9xl text-white opacity-20 animate-pulse">
+            <div class="md:w-1/2 flex justify-center hidden md:flex">
+                <div class="text-7xl md:text-9xl text-white opacity-20 animate-pulse">
                     <i class="fa-solid fa-network-wired"></i>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Stats / Trusted By (Inspired by Testinium style) -->
-    <section class="py-10 bg-gray-50 border-b border-gray-200">
+    <!-- ========================================
+         STATISTICS
+    ======================================== -->
+    <section class="py-8 sm:py-10 bg-gray-50 border-b border-gray-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center text-gray-500">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 text-center">
                 <div>
-                    <i class="fa-solid fa-check-circle text-3xl mb-2 text-nstech-blue"></i>
-                    <p class="font-bold text-xl text-gray-800">100%</p>
-                    <p class="text-sm" data-key="stat_quality">Kalite Güvencesi</p>
+                    <i class="fa-solid fa-check-circle text-2xl sm:text-3xl mb-2 text-nstech-blue"></i>
+                    <p class="font-bold text-lg sm:text-xl text-gray-800">100%</p>
+                    <p class="text-xs sm:text-sm text-gray-600" data-key="stat_quality">Kalite Güvencesi</p>
                 </div>
                 <div>
-                    <i class="fa-solid fa-robot text-3xl mb-2 text-nstech-blue"></i>
-                    <p class="font-bold text-xl text-gray-800">7/24</p>
-                    <p class="text-sm" data-key="stat_auto">Otomasyon Testleri</p>
+                    <i class="fa-solid fa-robot text-2xl sm:text-3xl mb-2 text-nstech-blue"></i>
+                    <p class="font-bold text-lg sm:text-xl text-gray-800">7/24</p>
+                    <p class="text-xs sm:text-sm text-gray-600" data-key="stat_auto">Otomasyon Testleri</p>
                 </div>
                 <div>
-                    <i class="fa-solid fa-certificate text-3xl mb-2 text-nstech-blue"></i>
-                    <p class="font-bold text-xl text-gray-800">ISO</p>
-                    <p class="text-sm" data-key="stat_iso">Standartlara Uyum</p>
+                    <i class="fa-solid fa-certificate text-2xl sm:text-3xl mb-2 text-nstech-blue"></i>
+                    <p class="font-bold text-lg sm:text-xl text-gray-800">ISO</p>
+                    <p class="text-xs sm:text-sm text-gray-600" data-key="stat_iso">Standartlara Uyum</p>
                 </div>
                 <div>
-                    <i class="fa-solid fa-users text-3xl mb-2 text-nstech-blue"></i>
-                    <p class="font-bold text-xl text-gray-800">Global</p>
-                    <p class="text-sm" data-key="stat_support">Çok Dilli Destek</p>
+                    <i class="fa-solid fa-users text-2xl sm:text-3xl mb-2 text-nstech-blue"></i>
+                    <p class="font-bold text-lg sm:text-xl text-gray-800">Global</p>
+                    <p class="text-xs sm:text-sm text-gray-600" data-key="stat_support">Çok Dilli Destek</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="py-24 bg-white">
+    <!-- ========================================
+         SERVICES
+    ======================================== -->
+    <section id="services" class="py-12 sm:py-16 md:py-24 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-nstech-dark mb-4" data-key="services_title">Hizmetlerimiz</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto" data-key="services_desc">
+            <div class="text-center mb-10 sm:mb-16">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-nstech-dark mb-3 sm:mb-4" data-key="services_title">Hizmetlerimiz</h2>
+                <p class="text-sm sm:text-base text-gray-600 max-w-2xl mx-auto px-4" data-key="services_desc">
                     Yazılım yaşam döngünüzün her aşamasında kalite ve standartlara uyum sağlıyoruz.
                 </p>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-12">
+            <div class="grid md:grid-cols-2 gap-6 sm:gap-8 md:gap-12">
                 <!-- Service 1: Software Testing -->
-                <div class="service-card p-8 rounded-2xl border border-gray-100 bg-white shadow-sm">
-                    <div class="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center text-nstech-blue text-3xl mb-6">
+                <div class="service-card p-6 sm:p-8 rounded-xl sm:rounded-2xl border border-gray-100 bg-white shadow-sm">
+                    <div class="w-14 h-14 sm:w-16 sm:h-16 bg-blue-100 rounded-lg flex items-center justify-center text-nstech-blue text-2xl sm:text-3xl mb-4 sm:mb-6">
                         <i class="fa-solid fa-bug-slash"></i>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4 text-gray-900" data-key="srv_test_title">Yazılım Test Hizmetleri</h3>
-                    <p class="text-gray-600 mb-6" data-key="srv_test_desc">
+                    <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-gray-900" data-key="srv_test_title">Yazılım Test Hizmetleri</h3>
+                    <p class="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6" data-key="srv_test_desc">
                         Yazılımlarınızın hatasız ve yüksek performansla çalışmasını sağlıyoruz. Manuel testlerle kullanıcı deneyimini, otomasyon testleriyle hızı ve güvenilirliği garanti altına alın.
                     </p>
-                    <ul class="space-y-3 text-gray-600 mb-6">
-                        <li class="flex items-center"><i class="fa-solid fa-check text-green-500 mr-3"></i> <span data-key="srv_test_item1">Manuel Fonksiyonel Testler</span></li>
-                        <li class="flex items-center"><i class="fa-solid fa-check text-green-500 mr-3"></i> <span data-key="srv_test_item2">Test Otomasyon Altyapısı</span></li>
-                        <li class="flex items-center"><i class="fa-solid fa-check text-green-500 mr-3"></i> <span data-key="srv_test_item3">Performans ve Yük Testleri</span></li>
-                        <li class="flex items-center"><i class="fa-solid fa-check text-green-500 mr-3"></i> <span data-key="srv_test_item4">Mobil Uygulama Testleri</span></li>
+                    <ul class="space-y-2 sm:space-y-3 text-sm sm:text-base text-gray-600">
+                        <li class="flex items-start"><i class="fa-solid fa-check text-green-500 mr-2 sm:mr-3 mt-1 flex-shrink-0"></i> <span data-key="srv_test_item1">Manuel Fonksiyonel Testler</span></li>
+                        <li class="flex items-start"><i class="fa-solid fa-check text-green-500 mr-2 sm:mr-3 mt-1 flex-shrink-0"></i> <span data-key="srv_test_item2">Test Otomasyon Altyapısı</span></li>
+                        <li class="flex items-start"><i class="fa-solid fa-check text-green-500 mr-2 sm:mr-3 mt-1 flex-shrink-0"></i> <span data-key="srv_test_item3">Performans ve Yük Testleri</span></li>
+                        <li class="flex items-start"><i class="fa-solid fa-check text-green-500 mr-2 sm:mr-3 mt-1 flex-shrink-0"></i> <span data-key="srv_test_item4">Mobil Uygulama Testleri</span></li>
                     </ul>
                 </div>
 
                 <!-- Service 2: ISO Certification -->
-                <div class="service-card p-8 rounded-2xl border border-gray-100 bg-white shadow-sm">
-                    <div class="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center text-nstech-blue text-3xl mb-6">
+                <div class="service-card p-6 sm:p-8 rounded-xl sm:rounded-2xl border border-gray-100 bg-white shadow-sm">
+                    <div class="w-14 h-14 sm:w-16 sm:h-16 bg-blue-100 rounded-lg flex items-center justify-center text-nstech-blue text-2xl sm:text-3xl mb-4 sm:mb-6">
                         <i class="fa-solid fa-file-contract"></i>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4 text-gray-900" data-key="srv_iso_title">ISO Belgelendirme Danışmanlığı</h3>
-                    <p class="text-gray-600 mb-6" data-key="srv_iso_desc">
+                    <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-gray-900" data-key="srv_iso_title">ISO Belgelendirme Danışmanlığı</h3>
+                    <p class="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6" data-key="srv_iso_desc">
                         Şirketinizin süreçlerini uluslararası standartlara uygun hale getiriyoruz. ISO 9001, ISO 27001 ve diğer yönetim sistemleri için profesyonel danışmanlık hizmeti sunuyoruz.
                     </p>
-                    <ul class="space-y-3 text-gray-600 mb-6">
-                        <li class="flex items-center"><i class="fa-solid fa-check text-green-500 mr-3"></i> <span data-key="srv_iso_item1">ISO 9001 Kalite Yönetim Sistemi</span></li>
-                        <li class="flex items-center"><i class="fa-solid fa-check text-green-500 mr-3"></i> <span data-key="srv_iso_item2">ISO 27001 Bilgi Güvenliği</span></li>
-                        <li class="flex items-center"><i class="fa-solid fa-check text-green-500 mr-3"></i> <span data-key="srv_iso_item3">Süreç Analizi ve İyileştirme</span></li>
-                        <li class="flex items-center"><i class="fa-solid fa-check text-green-500 mr-3"></i> <span data-key="srv_iso_item4">İç Denetim Hizmetleri</span></li>
+                    <ul class="space-y-2 sm:space-y-3 text-sm sm:text-base text-gray-600">
+                        <li class="flex items-start"><i class="fa-solid fa-check text-green-500 mr-2 sm:mr-3 mt-1 flex-shrink-0"></i> <span data-key="srv_iso_item1">ISO 9001 Kalite Yönetim Sistemi</span></li>
+                        <li class="flex items-start"><i class="fa-solid fa-check text-green-500 mr-2 sm:mr-3 mt-1 flex-shrink-0"></i> <span data-key="srv_iso_item2">ISO 27001 Bilgi Güvenliği</span></li>
+                        <li class="flex items-start"><i class="fa-solid fa-check text-green-500 mr-2 sm:mr-3 mt-1 flex-shrink-0"></i> <span data-key="srv_iso_item3">Süreç Analizi ve İyileştirme</span></li>
+                        <li class="flex items-start"><i class="fa-solid fa-check text-green-500 mr-2 sm:mr-3 mt-1 flex-shrink-0"></i> <span data-key="srv_iso_item4">İç Denetim Hizmetleri</span></li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="py-24 bg-nstech-light">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center gap-12">
-            <div class="md:w-1/2">
-                <h2 class="text-3xl font-bold text-nstech-dark mb-6" data-key="about_title">NSTech Hakkında</h2>
-                <p class="text-gray-600 text-lg mb-6 leading-relaxed" data-key="about_desc1">
-                    NSTech, yazılım kalitesini en üst düzeye çıkarmak ve kurumsal süreçleri mükemmelleştirmek amacıyla kurulmuş bir teknoloji ve danışmanlık şirketidir. Testinium gibi sektör liderlerinden edindiğimiz vizyon ile projelerinize değer katıyoruz.
-                </p>
-                <p class="text-gray-600 text-lg mb-6 leading-relaxed" data-key="about_desc2">
-                    Uzman ekibimiz, en son test otomasyon araçlarını kullanarak ürünlerinizin pazara çıkış süresini kısaltırken, ISO danışmanlarımız operasyonel mükemmelliğinizi belgelendirir.
+    <!-- ========================================
+         FOUNDER SECTION
+    ======================================== -->
+    <section class="py-12 sm:py-16 md:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10 sm:mb-16">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-nstech-dark mb-3 sm:mb-4" data-key="founder_title">Kurucumuz</h2>
+                <p class="text-sm sm:text-base text-gray-600 max-w-2xl mx-auto" data-key="founder_subtitle">
+                    Deneyim ve uzmanlıkla yönlendirilen liderlik
                 </p>
             </div>
-            <div class="md:w-1/2 flex justify-center">
-                <div class="bg-white p-6 rounded-2xl shadow-xl rotate-3 hover:rotate-0 transition duration-500">
-                    <i class="fa-solid fa-laptop-code text-9xl text-nstech-blue opacity-90"></i>
+
+            <div class="bg-gradient-to-br from-nstech-light to-white rounded-2xl shadow-xl p-6 sm:p-8 md:p-12 border border-gray-100">
+                <div class="flex flex-col lg:flex-row gap-8 items-center lg:items-start">
+                    <!-- Profile Image -->
+                    <div class="flex-shrink-0">
+                        <div class="w-40 h-40 sm:w-48 sm:h-48 lg:w-56 lg:h-56 rounded-2xl bg-gradient-to-br from-nstech-blue to-blue-700 p-1 shadow-lg">
+                            <div class="w-full h-full rounded-2xl bg-white flex items-center justify-center">
+                                <i class="fa-solid fa-user-tie text-6xl sm:text-7xl text-nstech-blue"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Content -->
+                    <div class="flex-1 text-center lg:text-left">
+                        <h3 class="text-2xl sm:text-3xl font-bold text-nstech-dark mb-2" data-key="founder_name">Erol Işıldak</h3>
+                        <p class="text-lg sm:text-xl text-nstech-blue font-semibold mb-4" data-key="founder_role">Lead QA Consultant & Founder</p>
+                        
+                        <p class="text-sm sm:text-base text-gray-600 mb-6 leading-relaxed" data-key="founder_bio">
+                            Senior QA Engineer ve teknik liderlik rollerini hedefleyen deneyimli bir profesyonel. NSTech ile pratik yönetim, strateji tanımlama ve ekip liderliği becerilerini kanıtlıyor. Nuh Naci Yazgan Üniversitesi Bilgisayar Programcılığı mezunu ve aynı bölümde misafir öğretim üyesi olarak görev yapmıştır.
+                        </p>
+
+                        <!-- Key Achievements -->
+                        <div class="grid sm:grid-cols-2 gap-4 mb-6">
+                            <div class="bg-white rounded-xl p-4 shadow-sm border border-gray-100">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                        <i class="fa-solid fa-award text-nstech-blue text-xl"></i>
+                                    </div>
+                                    <div class="text-left">
+                                        <p class="text-xs text-gray-500 font-semibold" data-key="founder_cert_title">Sertifikalar</p>
+                                        <p class="text-sm font-bold text-gray-800" data-key="founder_cert">ISTQB, ISO 9001/27001</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-white rounded-xl p-4 shadow-sm border border-gray-100">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                        <i class="fa-solid fa-code text-nstech-blue text-xl"></i>
+                                    </div>
+                                    <div class="text-left">
+                                        <p class="text-xs text-gray-500 font-semibold" data-key="founder_opensource">Açık Kaynak</p>
+                                        <p class="text-sm font-bold text-gray-800" data-key="founder_repos">30+ GitHub Repositories</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Expertise -->
+                        <div class="mb-6">
+                            <h4 class="text-sm font-bold text-gray-700 mb-3 uppercase tracking-wide" data-key="founder_expertise">Uzmanlık Alanları</h4>
+                            <div class="flex flex-wrap gap-2 justify-center lg:justify-start">
+                                <span class="px-3 py-1 bg-nstech-blue text-white text-xs font-semibold rounded-full" data-key="exp_qa_leadership">QA Leadership</span>
+                                <span class="px-3 py-1 bg-nstech-blue text-white text-xs font-semibold rounded-full" data-key="exp_test_automation">Test Automation</span>
+                                <span class="px-3 py-1 bg-nstech-blue text-white text-xs font-semibold rounded-full" data-key="exp_iso_cert">ISO Certification</span>
+                                <span class="px-3 py-1 bg-nstech-blue text-white text-xs font-semibold rounded-full" data-key="exp_mobile_testing">Mobile Testing</span>
+                                <span class="px-3 py-1 bg-nstech-blue text-white text-xs font-semibold rounded-full">Appium</span>
+                                <span class="px-3 py-1 bg-nstech-blue text-white text-xs font-semibold rounded-full">Playwright</span>
+                                <span class="px-3 py-1 bg-nstech-blue text-white text-xs font-semibold rounded-full">Cypress</span>
+                            </div>
+                        </div>
+
+                        <!-- Social Links -->
+                        <div class="flex gap-4 justify-center lg:justify-start">
+                            <a href="https://www.linkedin.com/in/erol-isildak-softwaretester/" target="_blank" class="w-10 h-10 bg-nstech-blue hover:bg-blue-700 text-white rounded-lg flex items-center justify-center transition shadow-md">
+                                <i class="fa-brands fa-linkedin text-lg"></i>
+                            </a>
+                            <a href="https://github.com/eisildak" target="_blank" class="w-10 h-10 bg-gray-800 hover:bg-gray-900 text-white rounded-lg flex items-center justify-center transition shadow-md">
+                                <i class="fa-brands fa-github text-lg"></i>
+                            </a>
+                            <a href="mailto:erol.isildak@pointr.tech" class="w-10 h-10 bg-red-500 hover:bg-red-600 text-white rounded-lg flex items-center justify-center transition shadow-md">
+                                <i class="fa-solid fa-envelope text-lg"></i>
+                            </a>
+                            <a href="https://eisildak.github.io/erol_isildak_webSite/" target="_blank" class="w-10 h-10 bg-green-500 hover:bg-green-600 text-white rounded-lg flex items-center justify-center transition shadow-md">
+                                <i class="fa-solid fa-globe text-lg"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-24 bg-white">
+    <!-- ========================================
+         ABOUT SECTION
+    ======================================== -->
+    <section id="about" class="py-12 sm:py-16 md:py-24 bg-nstech-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center gap-8 sm:gap-12">
+            <div class="md:w-1/2">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-nstech-dark mb-4 sm:mb-6" data-key="about_title">NSTech Hakkında</h2>
+                <p class="text-sm sm:text-base md:text-lg text-gray-600 mb-4 sm:mb-6 leading-relaxed" data-key="about_desc1">
+                    NSTech, yazılım kalitesini en üst düzeye çıkarmak ve kurumsal süreçleri mükemmelleştirmek amacıyla kurulmuş bir teknoloji ve danışmanlık şirketidir. Testinium gibi sektör liderlerinden edindiğimiz vizyon ile projelerinize değer katıyoruz.
+                </p>
+                <p class="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed" data-key="about_desc2">
+                    Uzman ekibimiz, en son test otomasyon araçlarını kullanarak ürünlerinizin pazara çıkış süresini kısaltırken, ISO danışmanlarımız operasyonel mükemmelliğinizi belgelendirir.
+                </p>
+            </div>
+            <div class="md:w-1/2 flex justify-center hidden md:flex">
+                <div class="bg-white p-6 rounded-2xl shadow-xl rotate-3 hover:rotate-0 transition duration-500">
+                    <i class="fa-solid fa-laptop-code text-7xl md:text-9xl text-nstech-blue opacity-90"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         CONTACT SECTION
+    ======================================== -->
+    <section id="contact" class="py-12 sm:py-16 md:py-24 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-nstech-dark mb-4" data-key="contact_title">İletişime Geçin</h2>
-                <p class="text-gray-600" data-key="contact_desc">Projeleriniz için en uygun çözümü birlikte bulalım.</p>
+            <div class="text-center mb-10 sm:mb-16">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-nstech-dark mb-3 sm:mb-4" data-key="contact_title">İletişime Geçin</h2>
+                <p class="text-sm sm:text-base text-gray-600" data-key="contact_desc">Projeleriniz için en uygun çözümü birlikte bulalım.</p>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-12">
-                <div class="bg-nstech-light p-8 rounded-2xl">
+            <div class="grid md:grid-cols-2 gap-8 sm:gap-12">
+                <div class="bg-nstech-light p-6 sm:p-8 rounded-xl sm:rounded-2xl">
                     <form onsubmit="event.preventDefault(); alert('Mesajınız alındı / Message Received');">
                         <div class="mb-4">
                             <label class="block text-gray-700 text-sm font-bold mb-2" for="name" data-key="form_name">Ad Soyad</label>
-                            <input class="w-full px-3 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-nstech-blue" id="name" type="text" placeholder="...">
+                            <input class="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-nstech-blue text-sm sm:text-base" id="name" type="text" placeholder="..." required>
                         </div>
                         <div class="mb-4">
                             <label class="block text-gray-700 text-sm font-bold mb-2" for="email" data-key="form_email">E-posta</label>
-                            <input class="w-full px-3 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-nstech-blue" id="email" type="email" placeholder="info@nstech.com">
+                            <input class="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-nstech-blue text-sm sm:text-base" id="email" type="email" placeholder="info@nstech.com" required>
                         </div>
                         <div class="mb-6">
                             <label class="block text-gray-700 text-sm font-bold mb-2" for="message" data-key="form_message">Mesajınız</label>
-                            <textarea class="w-full px-3 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-nstech-blue h-32" id="message" placeholder="..."></textarea>
+                            <textarea class="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-nstech-blue h-32 text-sm sm:text-base" id="message" placeholder="..." required></textarea>
                         </div>
-                        <button class="w-full bg-nstech-blue text-white font-bold py-3 px-4 rounded-lg hover:bg-blue-700 transition" data-key="form_submit">
+                        <button type="submit" class="w-full bg-nstech-blue text-white font-bold py-3 px-4 rounded-lg hover:bg-blue-700 transition text-sm sm:text-base" data-key="form_submit">
                             Gönder
                         </button>
                     </form>
                 </div>
                 
-                <div class="flex flex-col justify-center space-y-8">
+                <div class="flex flex-col justify-center space-y-6 sm:space-y-8">
                     <div class="flex items-start">
-                        <div class="flex-shrink-0 bg-blue-100 p-4 rounded-full text-nstech-blue">
-                            <i class="fa-solid fa-location-dot text-xl"></i>
+                        <div class="flex-shrink-0 bg-blue-100 p-3 sm:p-4 rounded-full text-nstech-blue">
+                            <i class="fa-solid fa-location-dot text-lg sm:text-xl"></i>
                         </div>
-                        <div class="ml-4">
-                            <h4 class="text-xl font-bold text-gray-800" data-key="info_address_title">Adres</h4>
-                            <p class="text-gray-600">Organize San. Böl. 30. Cad. No:1, 38070 Melikgazi/Kayseri, Türkiye</p>
+                        <div class="ml-3 sm:ml-4">
+                            <h4 class="text-lg sm:text-xl font-bold text-gray-800 mb-1" data-key="info_address_title">Adres</h4>
+                            <p class="text-sm sm:text-base text-gray-600">Organize San. Böl. 30. Cad. No:1, 38070 Melikgazi/Kayseri, Türkiye</p>
                         </div>
                     </div>
                     <div class="flex items-start">
-                        <div class="flex-shrink-0 bg-blue-100 p-4 rounded-full text-nstech-blue">
-                            <i class="fa-solid fa-envelope text-xl"></i>
+                        <div class="flex-shrink-0 bg-blue-100 p-3 sm:p-4 rounded-full text-nstech-blue">
+                            <i class="fa-solid fa-envelope text-lg sm:text-xl"></i>
                         </div>
-                        <div class="ml-4">
-                            <h4 class="text-xl font-bold text-gray-800" data-key="info_email_title">E-posta</h4>
-                            <p class="text-gray-600">info@nstech.com</p>
+                        <div class="ml-3 sm:ml-4">
+                            <h4 class="text-lg sm:text-xl font-bold text-gray-800 mb-1" data-key="info_email_title">E-posta</h4>
+                            <p class="text-sm sm:text-base text-gray-600">info@nstech.com</p>
                         </div>
                     </div>
                     <div class="flex items-start">
-                        <div class="flex-shrink-0 bg-blue-100 p-4 rounded-full text-nstech-blue">
-                            <i class="fa-solid fa-phone text-xl"></i>
+                        <div class="flex-shrink-0 bg-blue-100 p-3 sm:p-4 rounded-full text-nstech-blue">
+                            <i class="fa-solid fa-phone text-lg sm:text-xl"></i>
                         </div>
-                        <div class="ml-4">
-                            <h4 class="text-xl font-bold text-gray-800" data-key="info_phone_title">Telefon</h4>
-                            <p class="text-gray-600">+9(0352) 333 11 00</p>
+                        <div class="ml-3 sm:ml-4">
+                            <h4 class="text-lg sm:text-xl font-bold text-gray-800 mb-1" data-key="info_phone_title">Telefon</h4>
+                            <p class="text-sm sm:text-base text-gray-600">+9(0352) 333 11 00</p>
                         </div>
                     </div>
                 </div>
@@ -304,26 +418,36 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
+    <!-- ========================================
+         FOOTER
+    ======================================== -->
+    <footer class="bg-gray-900 text-white py-8 sm:py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="mb-4 md:mb-0">
-                    <span class="text-2xl font-bold"><i class="fa-solid fa-code-branch mr-2"></i>NSTech</span>
-                    <p class="text-gray-400 mt-2 text-sm" data-key="footer_rights">© 2024 NSTech Yazılım ve Danışmanlık. Tüm hakları saklıdır.</p>
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                <div class="text-center md:text-left">
+                    <img src="assets/white.png" alt="NSTech Logo" class="h-8 sm:h-10 mb-2 mx-auto md:mx-0">
+                    <p class="text-gray-400 text-xs sm:text-sm" data-key="footer_rights">© 2024 NSTech Yazılım ve Danışmanlık. Tüm hakları saklıdır.</p>
                 </div>
-                <div class="flex space-x-6">
-                    <a href="#" class="text-gray-400 hover:text-white transition"><i class="fa-brands fa-linkedin text-2xl"></i></a>
-                    <a href="#" class="text-gray-400 hover:text-white transition"><i class="fa-brands fa-twitter text-2xl"></i></a>
-                    <a href="#" class="text-gray-400 hover:text-white transition"><i class="fa-brands fa-github text-2xl"></i></a>
+                <div class="flex space-x-5 sm:space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition" aria-label="LinkedIn">
+                        <i class="fa-brands fa-linkedin text-xl sm:text-2xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition" aria-label="Twitter">
+                        <i class="fa-brands fa-twitter text-xl sm:text-2xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition" aria-label="GitHub">
+                        <i class="fa-brands fa-github text-xl sm:text-2xl"></i>
+                    </a>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript for Translations and Mobile Menu -->
+    <!-- ========================================
+         JAVASCRIPT
+    ======================================== -->
     <script>
-        // Translations Object
+        // ===== TRANSLATIONS =====
         const translations = {
             tr: {
                 nav_home: "Ana Sayfa",
@@ -352,6 +476,20 @@
                 srv_iso_item2: "ISO 27001 Bilgi Güvenliği",
                 srv_iso_item3: "Süreç Analizi ve İyileştirme",
                 srv_iso_item4: "İç Denetim Hizmetleri",
+                founder_title: "Kurucumuz",
+                founder_subtitle: "Deneyim ve uzmanlıkla yönlendirilen liderlik",
+                founder_name: "Erol Işıldak",
+                founder_role: "Lead QA Consultant & Founder",
+                founder_bio: "Senior QA Engineer ve teknik liderlik rollerini hedefleyen deneyimli bir profesyonel. NSTech ile pratik yönetim, strateji tanımlama ve ekip liderliği becerilerini kanıtlıyor. Nuh Naci Yazgan Üniversitesi Bilgisayar Programcılığı mezunu ve aynı bölümde misafir öğretim üyesi olarak görev yapmıştır.",
+                founder_cert_title: "Sertifikalar",
+                founder_cert: "ISTQB, ISO 9001/27001",
+                founder_opensource: "Açık Kaynak",
+                founder_repos: "30+ GitHub Deposu",
+                founder_expertise: "Uzmanlık Alanları",
+                exp_qa_leadership: "QA Liderliği",
+                exp_test_automation: "Test Otomasyonu",
+                exp_iso_cert: "ISO Belgelendirme",
+                exp_mobile_testing: "Mobil Test",
                 about_title: "NSTech Hakkında",
                 about_desc1: "NSTech, yazılım kalitesini en üst düzeye çıkarmak ve kurumsal süreçleri mükemmelleştirmek amacıyla kurulmuş bir teknoloji ve danışmanlık şirketidir. Testinium gibi sektör liderlerinden edindiğimiz vizyon ile projelerinize değer katıyoruz.",
                 about_desc2: "Uzman ekibimiz, en son test otomasyon araçlarını kullanarak ürünlerinizin pazara çıkış süresini kısaltırken, ISO danışmanlarımız operasyonel mükemmelliğinizi belgelendirir.",
@@ -393,6 +531,20 @@
                 srv_iso_item2: "ISO 27001 Information Security",
                 srv_iso_item3: "Process Analysis & Improvement",
                 srv_iso_item4: "Internal Audit Services",
+                founder_title: "Our Founder",
+                founder_subtitle: "Leadership driven by experience and expertise",
+                founder_name: "Erol Işıldak",
+                founder_role: "Lead QA Consultant & Founder",
+                founder_bio: "An experienced professional targeting Senior QA Engineer and Technical Leadership roles. Demonstrates practical management, strategy definition, and team leadership skills through NSTech. Graduate of Computer Programming from Nuh Naci Yazgan University, where he also served as a visiting faculty member.",
+                founder_cert_title: "Certifications",
+                founder_cert: "ISTQB, ISO 9001/27001",
+                founder_opensource: "Open Source",
+                founder_repos: "30+ GitHub Repositories",
+                founder_expertise: "Expertise Areas",
+                exp_qa_leadership: "QA Leadership",
+                exp_test_automation: "Test Automation",
+                exp_iso_cert: "ISO Certification",
+                exp_mobile_testing: "Mobile Testing",
                 about_title: "About NSTech",
                 about_desc1: "NSTech is a technology and consultancy company established to maximize software quality and perfect corporate processes. We add value to your projects with the vision acquired from industry leaders like Testinium.",
                 about_desc2: "Our expert team shortens your time-to-market using the latest test automation tools, while our ISO consultants certify your operational excellence.",
@@ -434,6 +586,20 @@
                 srv_iso_item2: "ISO 27001 Informationssicherheit",
                 srv_iso_item3: "Prozessanalyse & Verbesserung",
                 srv_iso_item4: "Interne Auditdienste",
+                founder_title: "Unser Gründer",
+                founder_subtitle: "Führung getrieben von Erfahrung und Expertise",
+                founder_name: "Erol Işıldak",
+                founder_role: "Lead QA Consultant & Gründer",
+                founder_bio: "Ein erfahrener Fachmann mit Fokus auf Senior QA Engineer und Technical Leadership Rollen. Demonstriert praktische Management-, Strategie- und Teamführungsfähigkeiten durch NSTech. Absolvent der Computerprogrammierung an der Nuh Naci Yazgan Universität, wo er auch als Gastdozent tätig war.",
+                founder_cert_title: "Zertifizierungen",
+                founder_cert: "ISTQB, ISO 9001/27001",
+                founder_opensource: "Open Source",
+                founder_repos: "30+ GitHub Repositories",
+                founder_expertise: "Fachgebiete",
+                exp_qa_leadership: "QA-Führung",
+                exp_test_automation: "Testautomatisierung",
+                exp_iso_cert: "ISO-Zertifizierung",
+                exp_mobile_testing: "Mobile Tests",
                 about_title: "Über NSTech",
                 about_desc1: "NSTech ist ein Technologie- und Beratungsunternehmen, das gegründet wurde, um Softwarequalität zu maximieren und Unternehmensprozesse zu perfektionieren. Wir schaffen Mehrwert für Ihre Projekte mit der Vision von Branchenführern wie Testinium.",
                 about_desc2: "Unser Expertenteam verkürzt Ihre Markteinführungszeit mit den neuesten Testautomatisierungstools, während unsere ISO-Berater Ihre operative Exzellenz zertifizieren.",
@@ -450,7 +616,7 @@
             }
         };
 
-        // Function to set language
+        // ===== LANGUAGE FUNCTIONS =====
         function setLanguage(lang) {
             const elements = document.querySelectorAll('[data-key]');
             elements.forEach(element => {
@@ -460,28 +626,35 @@
                 }
             });
             
-            // Update current lang indicator
             document.getElementById('current-lang').innerText = lang.toUpperCase();
-            
-            // Close menus
             document.getElementById('mobile-menu').classList.add('hidden');
             document.getElementById('lang-dropdown').classList.add('hidden');
         }
 
-        // Toggle Language Menu
         function toggleLangMenu() {
-            document.getElementById('lang-dropdown').classList.toggle('hidden');
+            const dropdown = document.getElementById('lang-dropdown');
+            dropdown.classList.toggle('hidden');
+            document.getElementById('mobile-menu').classList.add('hidden');
         }
 
-        // Mobile Menu Toggle
+        // ===== MOBILE MENU =====
         function toggleMobileMenu() {
             const menu = document.getElementById('mobile-menu');
             menu.classList.toggle('hidden');
+            document.getElementById('lang-dropdown').classList.add('hidden');
         }
 
-        // Set default language on load
+        // ===== INITIALIZATION =====
         document.addEventListener('DOMContentLoaded', () => {
-            setLanguage('tr');
+            setLanguage('en');
+        });
+
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('nav')) {
+                document.getElementById('mobile-menu').classList.add('hidden');
+                document.getElementById('lang-dropdown').classList.add('hidden');
+            }
         });
     </script>
 </body>
