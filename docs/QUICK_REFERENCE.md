@@ -17,7 +17,12 @@
 □ Mobile 375px: OK?
 □ Desktop 1280px: OK?
 
-# 3. Commit
+# 3. Security (15 Sekunden) 🔐 NEU!
+□ Keine API Keys im Code?
+□ Keine Secrets in README/Docs?
+□ .env in .gitignore?
+
+# 4. Commit
 git add .
 git commit -m "..."
 git push

@@ -1,7 +1,7 @@
 # NSTech Website - Qualitätssicherungsregeln
 
-Version: 1.0  
-Datum: 17. Januar 2025  
+Version: 2.0  
+Datum: 17. Januar 2026  
 Verantwortlich: NSTech Development Team
 
 ---
@@ -9,6 +9,8 @@ Verantwortlich: NSTech Development Team
 ## 📋 Übersicht
 
 Dieses Dokument definiert die verbindlichen Qualitätsregeln für die NSTech Website. Jede Änderung MUSS diese Regeln erfüllen, bevor sie deployed wird.
+
+**KRITISCH**: Nach dem API Key Security Incident vom 17.01.2026 wurde REGEL 3 hinzugefügt.
 
 ---
 
@@ -389,25 +391,249 @@ pa11y https://nstech.de
 
 ---
 
+## ✅ REGEL 3: API Key & Security Kontrolle
+
+### Beschreibung
+**API Keys, Secrets, Passwörter und andere sensitive Daten DÜRFEN NIEMALS in Git committed werden.**
+
+### Geltungsbereich
+Diese Regel gilt für:
+- ✅ Alle API Keys (Gemini, Resend, Stripe, etc.)
+- ✅ Database Credentials
+- ✅ OAuth Secrets & Tokens
+- ✅ Private Keys (.pem, .key Dateien)
+- ✅ Passwörter und Hashes
+- ✅ Environment-spezifische Konfigurationen
+
+### Verbotene Praktiken
+
+#### ❌ NIEMALS:
+```javascript
+// FALSCH - API Key direkt im Code
+const GEMINI_API_KEY = 'AIzaSyA64_I1K4dJR3Qpxo82knmOVFsUvs6Ng7A';
+
+// FALSCH - In Konfigurationsdatei
+export const config = {
+  apiKey: 're_MZMBTTVt_AaFmTRdsCk5HVYHQaxsrsRwH'
+};
+
+// FALSCH - In README/Dokumentation
+RESEND_API_KEY=re_MZMBTTVt_AaFmTRdsCk5HVYHQaxsrsRwH
+```
+
+#### ✅ KORREKT:
+```javascript
+// RICHTIG - Environment Variable
+const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
+
+// RICHTIG - Placeholder in Dokumentation
+// .env.example
+GEMINI_API_KEY=your_gemini_api_key_here
+RESEND_API_KEY=your_resend_api_key_here
+
+// RICHTIG - Config mit ENV
+export const config = {
+  apiKey: process.env.RESEND_API_KEY
+};
+```
+
+### Checkliste: Security
+
+#### Vor jedem Commit:
+- [ ] Keine API Keys in Code-Dateien (`.js`, `.html`, `.ts`, `.py`)
+- [ ] Keine Secrets in Konfigurationsdateien
+- [ ] Keine Credentials in README/Dokumentation
+- [ ] `.env` Datei ist in `.gitignore` enthalten
+- [ ] `.env.example` existiert (mit Placeholders)
+- [ ] Sensitive Dateien in `.gitignore` gelistet
+
+#### .gitignore Mindestanforderungen:
+```gitignore
+# Environment variables - NEVER COMMIT!
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+
+# API Keys and Secrets
+config.js
+secrets.js
+*.key
+*.pem
+credentials.json
+
+# Logs (können Secrets enthalten)
+logs/
+*.log
+npm-debug.log*
+```
+
+#### Bei API Key Exposure:
+1. **SOFORT Key invalidieren/löschen** (Google AI Studio, Resend, etc.)
+2. Neuen Key generieren
+3. Key in `.env` speichern (NICHT committen!)
+4. Git History cleanen:
+   ```bash
+   # Mit git-filter-repo
+   pip install git-filter-repo
+   git filter-repo --replace-text <(echo "EXPOSED_KEY==>REMOVED_KEY")
+   git push origin --force --all
+   ```
+5. Team informieren
+6. Security-Incident dokumentieren
+
+### Verifizierungs-Methode
+
+#### Pre-Commit Check:
+```bash
+# Suche nach API Key Patterns
+git diff --cached | grep -E "(api[_-]?key|API[_-]?KEY|secret|SECRET|password|PASSWORD|token|TOKEN)" && echo "⚠️  WARNUNG: Möglicherweise API Key gefunden!"
+
+# Suche nach Email-Adressen in neuen Dateien
+git diff --cached | grep -E "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" && echo "⚠️  WARNUNG: Email-Adresse gefunden!"
+
+# Suche nach Key-Patterns (Base64, Hex, etc.)
+git diff --cached | grep -E "(AIza[0-9A-Za-z_-]{35}|sk_live_[0-9A-Za-z]{24,}|pk_live_[0-9A-Za-z]{24,})" && echo "⚠️  WARNUNG: API Key Pattern gefunden!"
+```
+
+#### Automated Pre-Commit Hook:
+```bash
+# .git/hooks/pre-commit
+#!/bin/bash
+if git diff --cached | grep -qE "(AIza[0-9A-Za-z_-]{35}|sk_live_|pk_live_|re_[0-9A-Za-z]{20,})"; then
+    echo "❌ COMMIT ABGELEHNT: API Key gefunden!"
+    echo "Entfernen Sie den API Key und verwenden Sie .env"
+    exit 1
+fi
+```
+
+### .env Datei Best Practices
+
+#### Struktur:
+```env
+# ============================================
+# NSTech API Configuration
+# ============================================
+# WICHTIG: Diese Datei NIEMALS committen!
+# Kopiere .env.example und fülle deine Keys ein
+# ============================================
+
+# Gemini AI API Key
+# Hole von: https://aistudio.google.com/app/apikey
+GEMINI_API_KEY=
+
+# Resend Email API Key
+# Hole von: https://resend.com/api-keys
+RESEND_API_KEY=
+
+# Server Configuration
+PORT=3000
+NODE_ENV=development
+```
+
+#### .env.example (für Git):
+```env
+# API Keys Template - Copy to .env and fill in
+
+GEMINI_API_KEY=your_gemini_api_key_here
+RESEND_API_KEY=your_resend_api_key_here
+PORT=3000
+NODE_ENV=development
+```
+
+### Production Deployment
+
+#### Vercel/Netlify:
+- ✅ Environment Variables in Dashboard setzen
+- ✅ Niemals `.env` hochladen
+- ✅ Separate Keys für Production/Staging
+
+#### GitHub Actions:
+- ✅ Secrets in Repository Settings speichern
+- ✅ Nicht in Logs ausgeben
+
+### Beispiele häufiger Fehler
+
+#### ❌ Fehler 1: API Key in HTML
+```html
+<script>
+const API_KEY = 'AIzaSyA64_I1K4dJR3Qpxo82knmOVFsUvs6Ng7A';
+</script>
+```
+
+#### ❌ Fehler 2: Credential in README
+```markdown
+## Setup
+Run: RESEND_API_KEY=re_MZMBTTVt npm start
+```
+
+#### ❌ Fehler 3: .env in Repository
+```bash
+# Dateistruktur:
+├── .env          # ❌ DARF NICHT COMMITTED SEIN!
+├── .gitignore
+└── server.js
+```
+
+#### ✅ Korrekt:
+```bash
+# Dateistruktur:
+├── .env          # In .gitignore (nicht in Git)
+├── .env.example  # ✅ In Git (nur Template)
+├── .gitignore    # ✅ Enthält .env
+└── server.js     # ✅ Nutzt process.env
+```
+
+### Notfall-Prozedur
+
+Falls API Key versehentlich committed wurde:
+
+1. **SOFORT** Key invalidieren (höchste Priorität!)
+2. Neuen Key generieren und in `.env` speichern
+3. Commit mit Key aus History entfernen:
+   ```bash
+   # Option 1: git-filter-repo (empfohlen)
+   git filter-repo --replace-text replacements.txt
+   
+   # Option 2: BFG Repo-Cleaner
+   java -jar bfg.jar --replace-text replacements.txt
+   
+   # Option 3: Letzter Commit (nur wenn noch nicht gepusht)
+   git reset --soft HEAD~1
+   git restore --staged .
+   ```
+4. Force-Push (Team informieren!):
+   ```bash
+   git push origin --force --all
+   ```
+5. Security-Incident dokumentieren
+6. Post-Mortem: Warum passiert? Wie verhindern?
+
+---
+
 ## 📞 Verantwortlichkeiten
 
 - **Content (DE/EN)**: Erol Işıldak
 - **Development**: NSTech Dev Team
 - **QA Testing**: NSTech QA Team
+- **Security**: Erol Işıldak + Dev Team
 - **Deployment**: DevOps Team
 
 ---
 
 ## 🎯 Zusammenfassung
 
-### Die 2 Goldenen Regeln:
+### Die 3 Goldenen Regeln:
 
 1. **🌐 REGEL 1**: Jede Änderung = Deutsch UND Englisch
 2. **📱 REGEL 2**: Jede Änderung = Mobile, Tablet UND Desktop
+3. **🔐 REGEL 3**: NIEMALS API Keys, Secrets oder Credentials in Git committen
 
 **Keine Ausnahmen ohne explizite Genehmigung!**
 
 ---
 
 **Dokument-Status**: ✅ Aktiv und verbindlich  
-**Nächste Review**: 17. Februar 2025
+**Version**: 2.0 (17. Januar 2026 - Security Regel hinzugefügt)  
+**Nächste Review**: 17. Februar 2026
