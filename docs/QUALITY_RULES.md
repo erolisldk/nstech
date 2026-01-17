@@ -612,6 +612,56 @@ Falls API Key versehentlich committed wurde:
 
 ---
 
+## 🧭 REGEL 4: Navigation & UI Stabilität
+
+### Beschreibung
+**Bei der Navigation zwischen Seiten darf sich das Layout des Headers (Logo, Menü-Reihenfolge, Abstände) NICHT verändern.**
+
+### Geltungsbereich
+Diese Regel gilt für:
+- ✅ Header & Navigation Bar
+- ✅ Footer
+- ✅ Position des Firmenlogos
+- ✅ Reihenfolge der Menüpunkte
+- ✅ Sprachumschalter-Position
+
+### Anforderungen
+1. **Layout Stability**: Beim Klick auf einen Link darf der Header nicht "springen" oder seine Höhe verändern.
+2. **Konsistente Reihenfolge**: Die Menüpunkte müssen auf allen Seiten exakt in der gleichen Reihenfolge stehen.
+3. **Visuelles Feedback**: Die aktive Seite muss markiert sein, aber dies darf das Layout nicht verschieben (kein extra Padding/Margin, das die Höhe ändert).
+
+### Checkliste: Navigation Stabilität
+
+#### Vor jedem Commit prüfen:
+- [ ] Header-Code (HTML-Struktur) ist auf allen Seiten identisch (außer Active-Classes)
+- [ ] Menüpunkte sind in der gleichen Reihenfolge:
+  - **DE**: Startseite, QA Testing, ISO-Zertifizierung, Über Uns, Karriere, Kontakt
+  - **EN**: Home, QA Testing, ISO Certification, About Us, Career, Contact
+- [ ] Active-State verändert NICHT die Box-Model Größe:
+  - **Lösung**: Inaktive Links erhalten `border-transparent` und gleiches Padding wie aktive Links
+  - Aktiv: `border-b-2 border-nstech-blue pb-1`
+  - Inaktiv: `border-b-2 border-transparent pb-1`
+- [ ] Logo-Größe und Position sind auf allen Seiten Pixel-perfekt identisch
+
+### Verifizierungs-Methode
+
+#### Code-Vergleich (Diff):
+```bash
+# Vergleiche Header in zwei Dateien
+diff <(sed -n '/<nav/,/<\/nav>/p' index.html) <(sed -n '/<nav/,/<\/nav>/p' uber-uns.html)
+# Unterschiede sollten NUR in 'active' classes liegen
+```
+
+#### Visueller Test:
+1. Öffne Browser
+2. Klicke nacheinander auf alle Menüpunkte
+3. Achte auf:
+   - Springt das Logo?
+   - Verschiebt sich das Menü nach links/rechts?
+   - Ändert sich die Höhe der Leiste?
+
+---
+
 ## 📞 Verantwortlichkeiten
 
 - **Content (DE/EN)**: Erol Işıldak
@@ -624,16 +674,17 @@ Falls API Key versehentlich committed wurde:
 
 ## 🎯 Zusammenfassung
 
-### Die 3 Goldenen Regeln:
+### Die 4 Goldenen Regeln:
 
 1. **🌐 REGEL 1**: Jede Änderung = Deutsch UND Englisch
 2. **📱 REGEL 2**: Jede Änderung = Mobile, Tablet UND Desktop
 3. **🔐 REGEL 3**: NIEMALS API Keys, Secrets oder Credentials in Git committen
+4. **🧭 REGEL 4**: Navigation & Header Layout müssen 100% stabil und konsistent sein
 
 **Keine Ausnahmen ohne explizite Genehmigung!**
 
 ---
 
 **Dokument-Status**: ✅ Aktiv und verbindlich  
-**Version**: 2.0 (17. Januar 2026 - Security Regel hinzugefügt)  
+**Version**: 2.1 (17. Januar 2026 - Navigation Stabilität hinzugefügt)  
 **Nächste Review**: 17. Februar 2026
