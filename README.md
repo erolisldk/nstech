@@ -260,9 +260,11 @@ Content-Type: application/json
 Create a `.env` file:
 
 ```env
-RESEND_API_KEY=re_MZMBTTVt_AaFmTRdsCk5HVYHQaxsrsRwH
+RESEND_API_KEY=your_resend_api_key_here
 PORT=3000
 ```
+
+> ⚠️ **Important**: Get your API key from [Resend Dashboard](https://resend.com/api-keys)
 
 ---
 

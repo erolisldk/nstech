@@ -351,8 +351,10 @@ const response = await fetch('/api/chat', {
 
 3. **.env'e taşı**:
 ```env
-GEMINI_API_KEY=AIzaSyA64_I1K4dJR3Qpxo82knmOVFsUvs6Ng7A
+GEMINI_API_KEY=your_gemini_api_key_here
 ```
+
+> ⚠️ **Uyarı**: Kendi API key'inizi [Google AI Studio](https://aistudio.google.com/app/apikey)'dan alın
 
 ### DSGVO Uyumu
 
