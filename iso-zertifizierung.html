@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISO-Zertifizierung - NSTech Audit-Ready Software</title>
+    <meta name="description" content="ISO 9001, ISO 27001, ISO 14001, ISO 22000 Zertifizierungsberatung für deutsche Unternehmen. DSGVO-konform und Audit-Ready.">
+    
+    <!-- External Resources -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        nstech: {
+                            blue: '#0056b3',
+                            dark: '#1a1a1a',
+                            light: '#f4f7f6',
+                            accent: '#00d2d3',
+                            green: '#22c55e'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body class="text-gray-800 bg-white">
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 sm:h-20 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="flex items-center">
+                        <img src="assets/black.png" alt="NSTech Logo" class="h-12 sm:h-16 md:h-20 rounded-xl">
+                    </a>
+                </div>
+
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html" class="text-gray-600 hover:text-nstech-blue font-medium transition">Startseite</a>
+                    <a href="leistungen.html" class="text-gray-600 hover:text-nstech-blue font-medium transition">QA Testing</a>
+                    <a href="iso-zertifizierung.html" class="text-nstech-blue font-semibold border-b-2 border-nstech-blue pb-1">ISO-Zertifizierung</a>
+                    <a href="uber-uns.html" class="text-gray-600 hover:text-nstech-blue font-medium transition">Über Uns</a>
+                    <a href="kontakt.html" class="text-gray-600 hover:text-nstech-blue font-medium transition">Kontakt</a>
+                    <div class="flex items-center space-x-2 ml-4 border-l border-gray-300 pl-4">
+                        <a href="iso-zertifizierung.html" class="px-3 py-1.5 bg-nstech-blue text-white rounded-md font-semibold text-sm">DE</a>
+                        <a href="iso-certification.html" class="px-3 py-1.5 text-gray-600 hover:bg-gray-100 rounded-md font-semibold text-sm transition">EN</a>
+                    </div>
+                </div>
+
+                <div class="md:hidden flex items-center">
+                    <button onclick="toggleMobileMenu()" class="text-gray-600 hover:text-nstech-blue focus:outline-none">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 shadow-lg">
+            <div class="px-4 pt-2 pb-4 space-y-1">
+                <a href="index.html" onclick="toggleMobileMenu()" class="block px-4 py-3 rounded-md text-base font-medium text-gray-700 hover:text-nstech-blue hover:bg-gray-50">Startseite</a>
+                <a href="leistungen.html" onclick="toggleMobileMenu()" class="block px-4 py-3 rounded-md text-base font-medium text-gray-700 hover:text-nstech-blue hover:bg-gray-50">QA Testing</a>
+                <a href="iso-zertifizierung.html" onclick="toggleMobileMenu()" class="block px-4 py-3 rounded-md text-base font-medium text-nstech-blue bg-blue-50">ISO-Zertifizierung</a>
+                <a href="uber-uns.html" onclick="toggleMobileMenu()" class="block px-4 py-3 rounded-md text-base font-medium text-gray-700 hover:text-nstech-blue hover:bg-gray-50">Über Uns</a>
+                <a href="kontakt.html" onclick="toggleMobileMenu()" class="block px-4 py-3 rounded-md text-base font-medium text-gray-700 hover:text-nstech-blue hover:bg-gray-50">Kontakt</a>
+                <div class="border-t border-gray-200 mt-2 pt-2">
+                    <div class="flex space-x-2 px-4 py-2">
+                        <a href="iso-zertifizierung.html" class="flex-1 text-center px-3 py-2 bg-nstech-blue text-white rounded-md font-semibold text-sm">Deutsch</a>
+                        <a href="iso-certification.html" class="flex-1 text-center px-3 py-2 bg-gray-100 text-gray-600 rounded-md font-semibold text-sm">English</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-16 bg-gradient-to-br from-purple-600 to-purple-800 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="inline-block px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm font-semibold mb-6">
+                <i class="fa-solid fa-certificate mr-2"></i>ISO-ZERTIFIZIERUNG
+            </div>
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 px-4">Audit-Ready Software: ISO-Zertifizierungsberatung</h1>
+            <p class="text-base sm:text-lg md:text-xl text-purple-100 max-w-3xl mx-auto px-4">
+                Der entscheidende Unterschied: Wir testen nicht nur Ihre Software – wir machen sie fit für ISO-Audits.
+            </p>
+        </div>
+    </section>
+
+    <!-- ISO Certifications -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-8 mb-16">
+                <div class="bg-gradient-to-br from-purple-50 to-white p-10 rounded-2xl border border-purple-100 shadow-lg">
+                    <i class="fa-solid fa-certificate text-6xl text-purple-600 mb-6"></i>
+                    <h3 class="text-3xl font-bold mb-4 text-gray-900">ISO 9001:2015</h3>
+                    <h4 class="text-xl font-semibold text-purple-600 mb-4">Qualitätsmanagement-System</h4>
+                    <p class="text-gray-600 mb-6">
+                        Wir helfen Ihnen, ein QMS zu implementieren, das die Softwarequalität systematisch verbessert und für Audits bereit ist.
+                    </p>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check text-nstech-green mr-3 mt-1"></i>
+                            <span>Prozessdokumentation & Standardisierung</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check text-nstech-green mr-3 mt-1"></i>
+                            <span>Gap-Analyse & Implementierung</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check text-nstech-green mr-3 mt-1"></i>
+                            <span>Interne Audits & Vorbereitung</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check text-nstech-green mr-3 mt-1"></i>
+                            <span>Kontinuierliche Verbesserung (PDCA)</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-gradient-to-br from-blue-50 to-white p-10 rounded-2xl border border-blue-100 shadow-lg">
+                    <i class="fa-solid fa-lock text-6xl text-nstech-blue mb-6"></i>
+                    <h3 class="text-3xl font-bold mb-4 text-gray-900">ISO 27001</h3>
+                    <h4 class="text-xl font-semibold text-nstech-blue mb-4">Informationssicherheits-Management</h4>
+                    <p class="text-gray-600 mb-6">
+                        DSGVO-konforme Informationssicherheit mit ISO 27001 – unverzichtbar für deutsche Unternehmen.
+                    </p>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check text-nstech-green mr-3 mt-1"></i>
+                            <span>Risikoanalyse & -bewertung</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check text-nstech-green mr-3 mt-1"></i>
+                            <span>ISMS-Implementierung</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check text-nstech-green mr-3 mt-1"></i>
+                            <span>DSGVO-Mapping & Compliance</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check text-nstech-green mr-3 mt-1"></i>
+                            <span>Security Testing Integration</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-gradient-to-br from-green-50 to-white p-10 rounded-2xl border border-green-100 shadow-lg">
+                    <i class="fa-solid fa-leaf text-6xl text-green-600 mb-6"></i>
+                    <h3 class="text-3xl font-bold mb-4 text-gray-900">ISO 14001</h3>
+                    <h4 class="text-xl font-semibold text-green-600 mb-4">Umweltmanagement-System</h4>
+                    <p class="text-gray-600 mb-6">
+                        Nachhaltige Softwareentwicklung mit umweltbewussten Prozessen – für zukunftsorientierte Unternehmen.
+                    </p>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check text-nstech-green mr-3 mt-1"></i>
+                            <span>Umweltaspekte-Identifikation</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check text-nstech-green mr-3 mt-1"></i>
+                            <span>Green IT & Ressourceneffizienz</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check text-nstech-green mr-3 mt-1"></i>
+                            <span>Compliance-Überwachung</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check text-nstech-green mr-3 mt-1"></i>
+                            <span>Nachhaltigkeitsberichterstattung</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-gradient-to-br from-orange-50 to-white p-10 rounded-2xl border border-orange-100 shadow-lg">
+                    <i class="fa-solid fa-utensils text-6xl text-orange-600 mb-6"></i>
+                    <h3 class="text-3xl font-bold mb-4 text-gray-900">ISO 22000</h3>
+                    <h4 class="text-xl font-semibold text-orange-600 mb-4">Lebensmittelsicherheits-Management</h4>
+                    <p class="text-gray-600 mb-6">
+                        Spezialisierte QA für Food-Tech und Agrar-Software mit höchsten Sicherheitsstandards.
+                    </p>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check text-nstech-green mr-3 mt-1"></i>
+                            <span>HACCP-Prinzipien Integration</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check text-nstech-green mr-3 mt-1"></i>
+                            <span>Rückverfolgbarkeits-Testing</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check text-nstech-green mr-3 mt-1"></i>
+                            <span>Supply Chain Validierung</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check text-nstech-green mr-3 mt-1"></i>
+                            <span>Food Safety Compliance</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ISO Process -->
+            <div class="bg-gradient-to-r from-nstech-blue to-blue-700 text-white p-6 sm:p-8 md:p-10 rounded-2xl shadow-xl">
+                <h3 class="text-2xl sm:text-3xl font-bold mb-8 text-center">Unser ISO-Beratungsprozess</h3>
+                <div class="grid md:grid-cols-4 gap-6">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-white text-nstech-blue rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">1</div>
+                        <h4 class="font-bold mb-2">Gap-Analyse</h4>
+                        <p class="text-sm text-blue-100">Bewertung der aktuellen Prozesse</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-white text-nstech-blue rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">2</div>
+                        <h4 class="font-bold mb-2">Implementierung</h4>
+                        <p class="text-sm text-blue-100">Prozessdokumentation & Training</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-white text-nstech-blue rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">3</div>
+                        <h4 class="font-bold mb-2">Interne Audits</h4>
+                        <p class="text-sm text-blue-100">Vorbereitung auf Zertifizierung</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-white text-nstech-blue rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">4</div>
+                        <h4 class="font-bold mb-2">Zertifizierung</h4>
+                        <p class="text-sm text-blue-100">Begleitung zum erfolgreichen Audit</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-nstech-dark mb-6">Warum ISO-Zertifizierung mit NSTech?</h2>
+                <p class="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+                    Einzigartige Kombination aus Software-Testing und ISO-Expertise
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="w-16 h-16 bg-purple-100 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-bolt text-3xl text-purple-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-gray-900">Schneller Zertifizierungsprozess</h3>
+                    <p class="text-gray-600">
+                        Durch unsere Expertise verkürzen wir die Zeit bis zur Zertifizierung um durchschnittlich 40%.
+                    </p>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-hands-helping text-3xl text-nstech-blue"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-gray-900">End-to-End Begleitung</h3>
+                    <p class="text-gray-600">
+                        Von der ersten Gap-Analyse bis zum erfolgreichen Audit – wir sind an Ihrer Seite.
+                    </p>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="w-16 h-16 bg-green-100 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-shield-halved text-3xl text-nstech-green"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-gray-900">DSGVO-konform</h3>
+                    <p class="text-gray-600">
+                        Alle Prozesse und Dokumentationen entsprechen deutschen Datenschutzanforderungen.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-nstech-blue to-blue-700 text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-6">Bereit für Ihre ISO-Zertifizierung?</h2>
+            <p class="text-base sm:text-lg md:text-xl mb-8 text-blue-100">
+                Vereinbaren Sie ein kostenloses Beratungsgespräch und erfahren Sie, wie wir Ihre Software Audit-Ready machen.
+            </p>
+            <a href="kontakt.html" class="inline-block px-10 py-4 bg-white text-nstech-blue rounded-full font-bold hover:bg-gray-100 transition shadow-xl text-lg">
+                Jetzt Beratung anfragen
+            </a>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-16 bg-gradient-to-r from-purple-600 to-purple-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-8">
+                <h3 class="text-2xl sm:text-3xl font-bold text-white mb-3">ISO-Updates & Compliance-News</h3>
+                <p class="text-base sm:text-lg text-purple-100">Erhalten Sie regelmäßig Informationen zu ISO-Standards und Zertifizierungsprozessen</p>
+            </div>
+            <form class="flex flex-col sm:flex-row gap-4 justify-center" onsubmit="event.preventDefault(); alert('Danke für Ihr Interesse! Wir melden uns bald.');">
+                <input 
+                    type="email" 
+                    placeholder="Ihre E-Mail-Adresse" 
+                    required
+                    class="flex-1 max-w-md px-6 py-4 rounded-full text-gray-800 focus:outline-none focus:ring-4 focus:ring-purple-300 text-base sm:text-lg"
+                >
+                <button 
+                    type="submit" 
+                    class="px-8 py-4 bg-white text-purple-600 rounded-full font-bold hover:bg-gray-100 transition shadow-xl text-base sm:text-lg whitespace-nowrap"
+                >
+                    <i class="fa-solid fa-bell mr-2"></i>Anmelden
+                </button>
+            </form>
+            <p class="text-sm text-purple-100 text-center mt-4">Ihre Daten sind sicher. Datenschutz gemäß DSGVO.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <img src="assets/white.png" alt="NSTech Logo" class="h-14 mb-4">
+                    <p class="text-gray-400 text-sm">Ihr Partner für Software-Qualität und ISO-Compliance in Deutschland.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Leistungen</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="leistungen.html" class="hover:text-white transition">QA Testing</a></li>
+                        <li><a href="iso-zertifizierung.html" class="hover:text-white transition">ISO-Zertifizierung</a></li>
+                        <li><a href="leistungen.html#automation" class="hover:text-white transition">Test-Automatisierung</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Unternehmen</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="uber-uns.html" class="hover:text-white transition">Über Uns</a></li>
+                        <li><a href="kontakt.html" class="hover:text-white transition">Kontakt</a></li>
+                        <li><a href="#" class="hover:text-white transition">Karriere</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Kontakt</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><i class="fa-solid fa-envelope mr-2"></i>info@nstech.de</li>
+                        <li><i class="fa-solid fa-phone mr-2"></i>+49 (0) XXX XXXX</li>
+                        <li><i class="fa-solid fa-location-dot mr-2"></i>Deutschland</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center">
+                <p class="text-gray-400 text-sm">© 2025 NSTech Software & Consultancy. Alle Rechte vorbehalten.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+    </script>
+
+</body>
+</html>
