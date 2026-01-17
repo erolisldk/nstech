@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt - NSTech QA & ISO-Zertifizierung</title>
+    <meta name="description" content="Kontaktieren Sie NSTech für Software-Testing und ISO-Zertifizierung in Deutschland.">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        nstech: {
+                            blue: '#0056b3',
+                            dark: '#1a1a1a',
+                            light: '#f4f7f6',
+                            accent: '#00d2d3',
+                            green: '#22c55e'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body class="text-gray-800 bg-white">
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 sm:h-20 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="flex items-center">
+                        <img src="assets/black.png" alt="NSTech Logo" class="h-12 sm:h-16 md:h-20">
+                    </a>
+                </div>
+
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html" class="text-gray-600 hover:text-nstech-blue font-medium transition">Startseite</a>
+                    <a href="leistungen.html" class="text-gray-600 hover:text-nstech-blue font-medium transition">Leistungen</a>
+                    <a href="uber-uns.html" class="text-gray-600 hover:text-nstech-blue font-medium transition">Über Uns</a>
+                    <a href="kontakt.html" class="px-6 py-2.5 bg-nstech-blue text-white rounded-full hover:bg-blue-700 transition font-semibold shadow-md">Kontakt</a>
+                </div>
+
+                <div class="md:hidden flex items-center">
+                    <button onclick="toggleMobileMenu()" class="text-gray-600 hover:text-nstech-blue focus:outline-none">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 shadow-lg">
+            <div class="px-4 pt-2 pb-4 space-y-1">
+                <a href="index.html" onclick="toggleMobileMenu()" class="block px-4 py-3 rounded-md text-base font-medium text-gray-700 hover:text-nstech-blue hover:bg-gray-50">Startseite</a>
+                <a href="leistungen.html" onclick="toggleMobileMenu()" class="block px-4 py-3 rounded-md text-base font-medium text-gray-700 hover:text-nstech-blue hover:bg-gray-50">Leistungen</a>
+                <a href="uber-uns.html" onclick="toggleMobileMenu()" class="block px-4 py-3 rounded-md text-base font-medium text-gray-700 hover:text-nstech-blue hover:bg-gray-50">Über Uns</a>
+                <a href="kontakt.html" onclick="toggleMobileMenu()" class="block px-4 py-3 rounded-md text-base font-medium text-nstech-blue bg-blue-50">Kontakt</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-16 bg-gradient-to-br from-nstech-blue to-blue-800 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-5xl font-bold mb-6">Kontaktieren Sie uns</h1>
+            <p class="text-xl text-blue-100 max-w-3xl mx-auto">
+                Lassen Sie uns über Ihre Software-Qualität und ISO-Compliance-Anforderungen sprechen
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Contact Form -->
+                <div>
+                    <h2 class="text-3xl font-bold text-nstech-dark mb-6">Senden Sie uns eine Nachricht</h2>
+                    <p class="text-gray-600 mb-8">
+                        Füllen Sie das Formular aus und wir melden uns innerhalb von 24 Stunden bei Ihnen.
+                    </p>
+
+                    <form class="space-y-6" onsubmit="event.preventDefault(); alert('Vielen Dank! Wir melden uns bald bei Ihnen.');">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-gray-700 font-semibold mb-2" for="vorname">
+                                    Vorname *
+                                </label>
+                                <input 
+                                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-nstech-blue focus:ring-2 focus:ring-blue-100 transition" 
+                                    id="vorname" 
+                                    type="text" 
+                                    placeholder="Max"
+                                    required>
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 font-semibold mb-2" for="nachname">
+                                    Nachname *
+                                </label>
+                                <input 
+                                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-nstech-blue focus:ring-2 focus:ring-blue-100 transition" 
+                                    id="nachname" 
+                                    type="text" 
+                                    placeholder="Mustermann"
+                                    required>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2" for="email">
+                                E-Mail-Adresse *
+                            </label>
+                            <input 
+                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-nstech-blue focus:ring-2 focus:ring-blue-100 transition" 
+                                id="email" 
+                                type="email" 
+                                placeholder="max.mustermann@unternehmen.de"
+                                required>
+                        </div>
+
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2" for="unternehmen">
+                                Unternehmen
+                            </label>
+                            <input 
+                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-nstech-blue focus:ring-2 focus:ring-blue-100 transition" 
+                                id="unternehmen" 
+                                type="text" 
+                                placeholder="Ihr Unternehmensname">
+                        </div>
+
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2" for="telefon">
+                                Telefonnummer
+                            </label>
+                            <input 
+                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-nstech-blue focus:ring-2 focus:ring-blue-100 transition" 
+                                id="telefon" 
+                                type="tel" 
+                                placeholder="+49 XXX XXXXXXX">
+                        </div>
+
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2" for="interest">
+                                Interessiert an *
+                            </label>
+                            <select 
+                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-nstech-blue focus:ring-2 focus:ring-blue-100 transition" 
+                                id="interest"
+                                required>
+                                <option value="">Bitte wählen...</option>
+                                <option value="qa-beratung">QA-Beratung</option>
+                                <option value="managed-testing">Managed Testing Services</option>
+                                <option value="iso-9001">ISO 9001 Zertifizierung</option>
+                                <option value="iso-27001">ISO 27001 Zertifizierung</option>
+                                <option value="test-automation">Test-Automatisierung</option>
+                                <option value="security-testing">Security Testing</option>
+                                <option value="sonstiges">Sonstiges</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2" for="nachricht">
+                                Ihre Nachricht *
+                            </label>
+                            <textarea 
+                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-nstech-blue focus:ring-2 focus:ring-blue-100 h-40 transition" 
+                                id="nachricht" 
+                                placeholder="Beschreiben Sie Ihr Projekt oder Ihre Anforderungen..."
+                                required></textarea>
+                        </div>
+
+                        <div class="flex items-start">
+                            <input 
+                                type="checkbox" 
+                                id="datenschutz" 
+                                class="mt-1 mr-3 h-5 w-5 text-nstech-blue focus:ring-nstech-blue border-gray-300 rounded"
+                                required>
+                            <label for="datenschutz" class="text-sm text-gray-600">
+                                Ich habe die <a href="#" class="text-nstech-blue hover:underline">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten zu. *
+                            </label>
+                        </div>
+
+                        <button 
+                            type="submit" 
+                            class="w-full bg-nstech-blue text-white font-bold py-4 px-6 rounded-lg hover:bg-blue-700 transition shadow-lg text-lg">
+                            Nachricht senden <i class="fa-solid fa-paper-plane ml-2"></i>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h2 class="text-3xl font-bold text-nstech-dark mb-6">Kontaktinformationen</h2>
+                    
+                    <div class="space-y-6 mb-10">
+                        <div class="flex items-start bg-blue-50 p-6 rounded-xl border border-blue-100">
+                            <div class="flex-shrink-0 bg-nstech-blue p-4 rounded-lg text-white mr-6">
+                                <i class="fa-solid fa-envelope text-2xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-gray-800 mb-2">E-Mail</h4>
+                                <p class="text-gray-600 mb-1">info@nstech.de</p>
+                                <p class="text-sm text-gray-500">Antwort innerhalb von 24 Stunden</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start bg-green-50 p-6 rounded-xl border border-green-100">
+                            <div class="flex-shrink-0 bg-nstech-green p-4 rounded-lg text-white mr-6">
+                                <i class="fa-solid fa-phone text-2xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-gray-800 mb-2">Telefon</h4>
+                                <p class="text-gray-600 mb-1">+49 (0) XXX XXXX XXX</p>
+                                <p class="text-sm text-gray-500">Mo-Fr: 9:00 - 18:00 Uhr</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start bg-purple-50 p-6 rounded-xl border border-purple-100">
+                            <div class="flex-shrink-0 bg-purple-600 p-4 rounded-lg text-white mr-6">
+                                <i class="fa-solid fa-location-dot text-2xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-gray-800 mb-2">Standort</h4>
+                                <p class="text-gray-600 mb-1">Deutschland</p>
+                                <p class="text-sm text-gray-500">DSGVO-konforme Serverinfrastruktur</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social Links -->
+                    <div class="bg-gray-50 p-8 rounded-xl">
+                        <h3 class="text-xl font-bold text-gray-900 mb-6">Folgen Sie uns</h3>
+                        <div class="flex space-x-4">
+                            <a href="https://www.linkedin.com/in/erol-isildak-softwaretester/" target="_blank" class="w-14 h-14 bg-nstech-blue hover:bg-blue-700 text-white rounded-lg flex items-center justify-center transition shadow-md">
+                                <i class="fa-brands fa-linkedin text-2xl"></i>
+                            </a>
+                            <a href="https://github.com/eisildak" target="_blank" class="w-14 h-14 bg-gray-800 hover:bg-gray-900 text-white rounded-lg flex items-center justify-center transition shadow-md">
+                                <i class="fa-brands fa-github text-2xl"></i>
+                            </a>
+                            <a href="mailto:info@nstech.de" class="w-14 h-14 bg-red-500 hover:bg-red-600 text-white rounded-lg flex items-center justify-center transition shadow-md">
+                                <i class="fa-solid fa-envelope text-2xl"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- CTA Box -->
+                    <div class="mt-10 bg-gradient-to-r from-nstech-blue to-blue-700 p-8 rounded-xl text-white">
+                        <h3 class="text-2xl font-bold mb-4">Kostenloses Erstgespräch</h3>
+                        <p class="mb-6">
+                            Vereinbaren Sie ein 30-minütiges Beratungsgespräch, um Ihre Anforderungen zu besprechen.
+                        </p>
+                        <ul class="space-y-2 text-sm text-blue-100 mb-6">
+                            <li>✓ Keine Verpflichtungen</li>
+                            <li>✓ Experten-Beratung</li>
+                            <li>✓ Maßgeschneiderte Lösungen</li>
+                        </ul>
+                        <a href="#" class="inline-block px-6 py-3 bg-white text-nstech-blue rounded-lg font-bold hover:bg-gray-100 transition">
+                            Termin vereinbaren
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-24 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-nstech-dark mb-4">Häufig gestellte Fragen</h2>
+                <p class="text-xl text-gray-600">Schnelle Antworten auf Ihre Fragen</p>
+            </div>
+
+            <div class="space-y-4">
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                    <h3 class="text-lg font-bold text-gray-900 mb-3">
+                        <i class="fa-solid fa-question-circle text-nstech-blue mr-2"></i>
+                        Wie schnell können Sie mit einem Projekt beginnen?
+                    </h3>
+                    <p class="text-gray-600">
+                        In der Regel können wir innerhalb von 1-2 Wochen nach dem Kickoff-Meeting starten, abhängig von der Projektkomplexität.
+                    </p>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                    <h3 class="text-lg font-bold text-gray-900 mb-3">
+                        <i class="fa-solid fa-question-circle text-nstech-blue mr-2"></i>
+                        Sind Ihre Dienste DSGVO-konform?
+                    </h3>
+                    <p class="text-gray-600">
+                        Ja, zu 100%. Alle Testdaten verbleiben auf deutschen Servern und wir halten uns strikt an DSGVO-Richtlinien.
+                    </p>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                    <h3 class="text-lg font-bold text-gray-900 mb-3">
+                        <i class="fa-solid fa-question-circle text-nstech-blue mr-2"></i>
+                        Bieten Sie auch Remote-Dienste an?
+                    </h3>
+                    <p class="text-gray-600">
+                        Ja, wir arbeiten vollständig remote oder hybrid, je nach Ihren Anforderungen. Unsere Teams sind in derselben Zeitzone.
+                    </p>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                    <h3 class="text-lg font-bold text-gray-900 mb-3">
+                        <i class="fa-solid fa-question-circle text-nstech-blue mr-2"></i>
+                        Wie lange dauert eine ISO-Zertifizierung?
+                    </h3>
+                    <p class="text-gray-600">
+                        Die Dauer hängt vom aktuellen Reifegrad Ihrer Prozesse ab. Typischerweise 3-6 Monate für ISO 9001 und 6-12 Monate für ISO 27001.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <img src="assets/white.png" alt="NSTech Logo" class="h-14 mb-4">
+                    <p class="text-gray-400 text-sm">Ihr Partner für Software-Qualität und ISO-Compliance in Deutschland.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Leistungen</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="leistungen.html#beratung" class="hover:text-white transition">QA-Beratung</a></li>
+                        <li><a href="leistungen.html#services" class="hover:text-white transition">Managed Testing</a></li>
+                        <li><a href="leistungen.html#iso" class="hover:text-white transition">ISO-Zertifizierung</a></li>
+                        <li><a href="leistungen.html#automation" class="hover:text-white transition">Test-Automatisierung</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Unternehmen</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="uber-uns.html" class="hover:text-white transition">Über Uns</a></li>
+                        <li><a href="kontakt.html" class="hover:text-white transition">Kontakt</a></li>
+                        <li><a href="#" class="hover:text-white transition">Karriere</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Kontakt</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><i class="fa-solid fa-envelope mr-2"></i>info@nstech.de</li>
+                        <li><i class="fa-solid fa-phone mr-2"></i>+49 (0) XXX XXXX</li>
+                        <li><i class="fa-solid fa-location-dot mr-2"></i>Deutschland</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center">
+                <p class="text-gray-400 text-sm">© 2025 NSTech Software & Consultancy. Alle Rechte vorbehalten.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+    </script>
+
+</body>
+</html>
