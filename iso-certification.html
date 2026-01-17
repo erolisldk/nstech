@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISO Certification - NSTech Audit-Ready Software</title>
+    <meta name="description" content="ISO 9001, ISO 27001, ISO 14001, ISO 22000 Certification Consulting for German Companies. GDPR-Compliant and Audit-Ready.">
+    
+    <!-- External Resources -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        nstech: {
+                            blue: '#0056b3',
+                            dark: '#1a1a1a',
+                            light: '#f4f7f6',
+                            accent: '#00d2d3',
+                            green: '#22c55e'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body class="text-gray-800 bg-white">
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 sm:h-20 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index-en.html" class="flex items-center">
+                        <img src="assets/black.png" alt="NSTech Logo" class="h-12 sm:h-16 md:h-20 rounded-xl">
+                    </a>
+                </div>
+
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="index-en.html" class="text-gray-600 hover:text-nstech-blue font-medium transition">Home</a>
+                    <a href="services-en.html" class="text-gray-600 hover:text-nstech-blue font-medium transition">QA Testing</a>
+                    <a href="iso-certification.html" class="text-nstech-blue font-semibold border-b-2 border-nstech-blue pb-1">ISO Certification</a>
+                    <a href="about-us.html" class="text-gray-600 hover:text-nstech-blue font-medium transition">About Us</a>
+                    <a href="contact.html" class="text-gray-600 hover:text-nstech-blue font-medium transition">Contact</a>
+                    <div class="flex items-center space-x-2 ml-4 border-l border-gray-300 pl-4">
+                        <a href="iso-zertifizierung.html" class="px-3 py-1.5 text-gray-600 hover:bg-gray-100 rounded-md font-semibold text-sm transition">DE</a>
+                        <a href="iso-certification.html" class="px-3 py-1.5 bg-nstech-blue text-white rounded-md font-semibold text-sm">EN</a>
+                    </div>
+                </div>
+
+                <div class="md:hidden flex items-center">
+                    <button onclick="toggleMobileMenu()" class="text-gray-600 hover:text-nstech-blue focus:outline-none">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 shadow-lg">
+            <div class="px-4 pt-2 pb-4 space-y-1">
+                <a href="index-en.html" onclick="toggleMobileMenu()" class="block px-4 py-3 rounded-md text-base font-medium text-gray-700 hover:text-nstech-blue hover:bg-gray-50">Home</a>
+                <a href="services-en.html" onclick="toggleMobileMenu()" class="block px-4 py-3 rounded-md text-base font-medium text-gray-700 hover:text-nstech-blue hover:bg-gray-50">QA Testing</a>
+                <a href="iso-certification.html" onclick="toggleMobileMenu()" class="block px-4 py-3 rounded-md text-base font-medium text-nstech-blue bg-blue-50">ISO Certification</a>
+                <a href="about-us.html" onclick="toggleMobileMenu()" class="block px-4 py-3 rounded-md text-base font-medium text-gray-700 hover:text-nstech-blue hover:bg-gray-50">About Us</a>
+                <a href="contact.html" onclick="toggleMobileMenu()" class="block px-4 py-3 rounded-md text-base font-medium text-gray-700 hover:text-nstech-blue hover:bg-gray-50">Contact</a>
+                <div class="border-t border-gray-200 mt-2 pt-2">
+                    <div class="flex space-x-2 px-4 py-2">
+                        <a href="iso-zertifizierung.html" class="flex-1 text-center px-3 py-2 bg-gray-100 text-gray-600 rounded-md font-semibold text-sm">Deutsch</a>
+                        <a href="iso-certification.html" class="flex-1 text-center px-3 py-2 bg-nstech-blue text-white rounded-md font-semibold text-sm">English</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-16 bg-gradient-to-br from-purple-600 to-purple-800 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <div class="inline-block px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm font-semibold mb-6">
+                    <i class="fa-solid fa-certificate mr-2"></i>ISO CERTIFICATION
+                </div>
+                <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 px-4">The QM Solution for Your Software</h1>
+                <p class="text-base sm:text-lg md:text-xl text-purple-100 max-w-4xl mx-auto px-4 mb-8">
+                    Manage documents, processes, risks, audits, and measures reliably and tailored to your software development.
+                </p>
+            </div>
+
+            <!-- Trust Badges -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+                <div class="bg-white/10 backdrop-blur-sm p-6 rounded-xl text-center">
+                    <i class="fa-solid fa-building text-4xl mb-3"></i>
+                    <p class="text-sm font-semibold">Over 100 Companies</p>
+                    <p class="text-xs text-purple-200">trust us</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-sm p-6 rounded-xl text-center">
+                    <i class="fa-solid fa-certificate text-4xl mb-3"></i>
+                    <p class="text-sm font-semibold">ISO 9001, 27001, 14001</p>
+                    <p class="text-xs text-purple-200">all standards</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-sm p-6 rounded-xl text-center">
+                    <i class="fa-solid fa-globe text-4xl mb-3"></i>
+                    <p class="text-sm font-semibold">Web-Based Access</p>
+                    <p class="text-xs text-purple-200">from anywhere</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-sm p-6 rounded-xl text-center">
+                    <i class="fa-solid fa-shield-halved text-4xl mb-3"></i>
+                    <p class="text-sm font-semibold">GDPR-Compliant</p>
+                    <p class="text-xs text-purple-200">German servers</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-nstech-dark mb-6">Benefits of Our ISO Certification Consulting</h2>
+                <p class="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+                    More than just compliance – we optimize your entire software quality
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                <div class="bg-gradient-to-br from-purple-50 to-white p-8 rounded-2xl border border-purple-100 shadow-lg hover:shadow-xl transition">
+                    <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-rocket text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-gray-900">More Time for Your Core Business</h3>
+                    <p class="text-gray-600">
+                        We handle the complete ISO certification and give your team time to develop outstanding software.
+                    </p>
+                </div>
+
+                <div class="bg-gradient-to-br from-blue-50 to-white p-8 rounded-2xl border border-blue-100 shadow-lg hover:shadow-xl transition">
+                    <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-clipboard-check text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-gray-900">Audit Preparation Made Easy</h3>
+                    <p class="text-gray-600">
+                        Prepare for audits stress-free – with structured documentation, comprehensive evidence, and audit support.
+                    </p>
+                </div>
+
+                <div class="bg-gradient-to-br from-green-50 to-white p-8 rounded-2xl border border-green-100 shadow-lg hover:shadow-xl transition">
+                    <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-globe text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-gray-900">Access Anywhere, Anytime</h3>
+                    <p class="text-gray-600">
+                        Stay on top – access all data, measures, and progress, whether in the office, remote, or on the go.
+                    </p>
+                </div>
+
+                <div class="bg-gradient-to-br from-orange-50 to-white p-8 rounded-2xl border border-orange-100 shadow-lg hover:shadow-xl transition">
+                    <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-cogs text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-gray-900">Flexible Configuration</h3>
+                    <p class="text-gray-600">
+                        Adaptation to your specific requirements – from retention periods to individual workflows.
+                    </p>
+                </div>
+
+                <div class="bg-gradient-to-br from-red-50 to-white p-8 rounded-2xl border border-red-100 shadow-lg hover:shadow-xl transition">
+                    <div class="w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-bolt text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-gray-900">Fast Implementation</h3>
+                    <p class="text-gray-600">
+                        On average 40% faster certification through our proven processes and templates.
+                    </p>
+                </div>
+
+                <div class="bg-gradient-to-br from-indigo-50 to-white p-8 rounded-2xl border border-indigo-100 shadow-lg hover:shadow-xl transition">
+                    <div class="w-16 h-16 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-shield-halved text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-gray-900">GDPR & Security</h3>
+                    <p class="text-gray-600">
+                        All data on German servers, highest security standards, and full GDPR compliance.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Stats Banner -->
+            <div class="bg-gradient-to-r from-purple-600 to-purple-800 text-white p-10 rounded-2xl shadow-xl">
+                <div class="grid md:grid-cols-3 gap-8 text-center">
+                    <div>
+                        <div class="text-5xl font-bold mb-2">22+</div>
+                        <div class="text-purple-200">Years Experience in QM & ISO</div>
+                    </div>
+                    <div>
+                        <div class="text-5xl font-bold mb-2">100+</div>
+                        <div class="text-purple-200">Successful Certifications</div>
+                    </div>
+                    <div>
+                        <div class="text-5xl font-bold mb-2">98%</div>
+                        <div class="text-purple-200">Success Rate on First Audit</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ISO Modules/Standards Section -->
+    <section class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-nstech-dark mb-6">Our ISO Management Modules</h2>
+                <p class="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+                    Flexibly adaptable to your requirements – modular structure for maximum efficiency
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Document Management -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition group">
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="w-14 h-14 bg-purple-100 rounded-xl flex items-center justify-center group-hover:bg-purple-600 transition">
+                            <i class="fa-solid fa-file-alt text-2xl text-purple-600 group-hover:text-white transition"></i>
+                        </div>
+                        <span class="text-sm font-semibold text-purple-600 bg-purple-50 px-3 py-1 rounded-full">Module 1</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-900">Document Control</h3>
+                    <p class="text-gray-600 mb-4">
+                        Central management of all QM documents with version control, approval workflows, and change history.
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check text-green-500 mr-2 mt-1"></i>
+                            <span>Automatic versioning</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check text-green-500 mr-2 mt-1"></i>
+                            <span>Electronic approval</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check text-green-500 mr-2 mt-1"></i>
+                            <span>Complete audit trails</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Process Management -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition group">
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center group-hover:bg-blue-600 transition">
+                            <i class="fa-solid fa-project-diagram text-2xl text-blue-600 group-hover:text-white transition"></i>
+                        </div>
+                        <span class="text-sm font-semibold text-blue-600 bg-blue-50 px-3 py-1 rounded-full">Module 2</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-900">Process Management</h3>
+                    <p class="text-gray-600 mb-4">
+                        Visualization and optimization of your software development processes according to ISO standards.
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check text-green-500 mr-2 mt-1"></i>
+                            <span>Process maps</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check text-green-500 mr-2 mt-1"></i>
+                            <span>KPI monitoring</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check text-green-500 mr-2 mt-1"></i>
+                            <span>Continuous improvement</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Risk Management -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition group">
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="w-14 h-14 bg-red-100 rounded-xl flex items-center justify-center group-hover:bg-red-600 transition">
+                            <i class="fa-solid fa-exclamation-triangle text-2xl text-red-600 group-hover:text-white transition"></i>
+                        </div>
+                        <span class="text-sm font-semibold text-red-600 bg-red-50 px-3 py-1 rounded-full">Module 3</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-900">Risk Management</h3>
+                    <p class="text-gray-600 mb-4">
+                        Systematic identification, assessment, and treatment of risks in your software.
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check text-green-500 mr-2 mt-1"></i>
+                            <span>Risk assessment matrix</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check text-green-500 mr-2 mt-1"></i>
+                            <span>Action tracking</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check text-green-500 mr-2 mt-1"></i>
+                            <span>Compliance dashboards</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Audit Management -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition group">
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center group-hover:bg-green-600 transition">
+                            <i class="fa-solid fa-clipboard-list text-2xl text-green-600 group-hover:text-white transition"></i>
+                        </div>
+                        <span class="text-sm font-semibold text-green-600 bg-green-50 px-3 py-1 rounded-full">Module 4</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-900">Audit Management</h3>
+                    <p class="text-gray-600 mb-4">
+                        Planning, conducting, and follow-up of internal and external audits.
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check text-green-500 mr-2 mt-1"></i>
+                            <span>Audit planning & checklists</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check text-green-500 mr-2 mt-1"></i>
+                            <span>Non-conformance management</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check text-green-500 mr-2 mt-1"></i>
+                            <span>Audit reports & statistics</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- CAPA Management -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition group">
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="w-14 h-14 bg-orange-100 rounded-xl flex items-center justify-center group-hover:bg-orange-600 transition">
+                            <i class="fa-solid fa-tasks text-2xl text-orange-600 group-hover:text-white transition"></i>
+                        </div>
+                        <span class="text-sm font-semibold text-orange-600 bg-orange-50 px-3 py-1 rounded-full">Module 5</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-900">CAPA Management</h3>
+                    <p class="text-gray-600 mb-4">
+                        Structured tracking of corrective and preventive actions (CAPA).
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check text-green-500 mr-2 mt-1"></i>
+                            <span>Action workflows</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check text-green-500 mr-2 mt-1"></i>
+                            <span>Responsibilities & deadlines</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check text-green-500 mr-2 mt-1"></i>
+                            <span>Effectiveness verification</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Contract Management -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition group">
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="w-14 h-14 bg-indigo-100 rounded-xl flex items-center justify-center group-hover:bg-indigo-600 transition">
+                            <i class="fa-solid fa-file-contract text-2xl text-indigo-600 group-hover:text-white transition"></i>
+                        </div>
+                        <span class="text-sm font-semibold text-indigo-600 bg-indigo-50 px-3 py-1 rounded-full">Module 6</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-900">Contract Management</h3>
+                    <p class="text-gray-600 mb-4">
+                        Management of suppliers, service providers, and contracts with compliance verification.
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check text-green-500 mr-2 mt-1"></i>
+                            <span>Supplier evaluation</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check text-green-500 mr-2 mt-1"></i>
+                            <span>Contract documents</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check text-green-500 mr-2 mt-1"></i>
+                            <span>Compliance monitoring</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- CTA Box -->
+            <div class="mt-16 bg-gradient-to-r from-purple-600 to-purple-800 text-white p-10 rounded-2xl shadow-xl text-center">
+                <h3 class="text-2xl sm:text-3xl font-bold mb-4">Ready for ISO Certification?</h3>
+                <p class="text-lg text-purple-100 mb-6 max-w-2xl mx-auto">
+                    Start with the module of your choice and expand as needed. Flexible, scalable, audit-ready.
+                </p>
+                <a href="contact.html" class="inline-block px-10 py-4 bg-white text-purple-600 rounded-full font-bold hover:bg-gray-100 transition shadow-xl text-lg">
+                    Request Demo Now
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ISO Certifications -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-8 mb-16">
+                <div class="bg-gradient-to-br from-purple-50 to-white p-10 rounded-2xl border border-purple-100 shadow-lg">
+                    <i class="fa-solid fa-certificate text-6xl text-purple-600 mb-6"></i>
+                    <h3 class="text-3xl font-bold mb-4 text-gray-900">ISO 9001:2015</h3>
+                    <h4 class="text-xl font-semibold text-purple-600 mb-4">Quality Management System</h4>
+                    <p class="text-gray-600 mb-6">
+                        We help you implement a QMS that systematically improves software quality and is ready for audits.
+                    </p>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check text-nstech-green mr-3 mt-1"></i>
+                            <span>Process documentation & standardization</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check text-nstech-green mr-3 mt-1"></i>
+                            <span>Gap analysis & implementation</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check text-nstech-green mr-3 mt-1"></i>
+                            <span>Internal audits & preparation</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check text-nstech-green mr-3 mt-1"></i>
+                            <span>Continuous improvement (PDCA)</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-gradient-to-br from-blue-50 to-white p-10 rounded-2xl border border-blue-100 shadow-lg">
+                    <i class="fa-solid fa-lock text-6xl text-nstech-blue mb-6"></i>
+                    <h3 class="text-3xl font-bold mb-4 text-gray-900">ISO 27001</h3>
+                    <h4 class="text-xl font-semibold text-nstech-blue mb-4">Information Security Management</h4>
+                    <p class="text-gray-600 mb-6">
+                        GDPR-compliant information security with ISO 27001 – essential for German companies.
+                    </p>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check text-nstech-green mr-3 mt-1"></i>
+                            <span>Risk analysis & assessment</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check text-nstech-green mr-3 mt-1"></i>
+                            <span>ISMS implementation</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check text-nstech-green mr-3 mt-1"></i>
+                            <span>GDPR mapping & compliance</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check text-nstech-green mr-3 mt-1"></i>
+                            <span>Security testing integration</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-gradient-to-br from-green-50 to-white p-10 rounded-2xl border border-green-100 shadow-lg">
+                    <i class="fa-solid fa-leaf text-6xl text-green-600 mb-6"></i>
+                    <h3 class="text-3xl font-bold mb-4 text-gray-900">ISO 14001</h3>
+                    <h4 class="text-xl font-semibold text-green-600 mb-4">Environmental Management System</h4>
+                    <p class="text-gray-600 mb-6">
+                        Sustainable software development with environmentally conscious processes – for future-oriented companies.
+                    </p>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check text-nstech-green mr-3 mt-1"></i>
+                            <span>Environmental aspect identification</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check text-nstech-green mr-3 mt-1"></i>
+                            <span>Green IT & resource efficiency</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check text-nstech-green mr-3 mt-1"></i>
+                            <span>Compliance monitoring</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check text-nstech-green mr-3 mt-1"></i>
+                            <span>Sustainability reporting</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-gradient-to-br from-orange-50 to-white p-10 rounded-2xl border border-orange-100 shadow-lg">
+                    <i class="fa-solid fa-utensils text-6xl text-orange-600 mb-6"></i>
+                    <h3 class="text-3xl font-bold mb-4 text-gray-900">ISO 22000</h3>
+                    <h4 class="text-xl font-semibold text-orange-600 mb-4">Food Safety Management</h4>
+                    <p class="text-gray-600 mb-6">
+                        Specialized QA for food-tech and agricultural software with the highest safety standards.
+                    </p>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check text-nstech-green mr-3 mt-1"></i>
+                            <span>HACCP principles integration</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check text-nstech-green mr-3 mt-1"></i>
+                            <span>Traceability testing</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check text-nstech-green mr-3 mt-1"></i>
+                            <span>Supply chain validation</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check text-nstech-green mr-3 mt-1"></i>
+                            <span>Food safety compliance</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ISO Process -->
+            <div class="bg-gradient-to-r from-nstech-blue to-blue-700 text-white p-6 sm:p-8 md:p-10 rounded-2xl shadow-xl">
+                <h3 class="text-2xl sm:text-3xl font-bold mb-8 text-center">Our ISO Consulting Process</h3>
+                <div class="grid md:grid-cols-4 gap-6">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-white text-nstech-blue rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">1</div>
+                        <h4 class="font-bold mb-2">Gap Analysis</h4>
+                        <p class="text-sm text-blue-100">Assessment of current processes</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-white text-nstech-blue rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">2</div>
+                        <h4 class="font-bold mb-2">Implementation</h4>
+                        <p class="text-sm text-blue-100">Process documentation & training</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-white text-nstech-blue rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">3</div>
+                        <h4 class="font-bold mb-2">Internal Audits</h4>
+                        <p class="text-sm text-blue-100">Preparation for certification</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-white text-nstech-blue rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">4</div>
+                        <h4 class="font-bold mb-2">Certification</h4>
+                        <p class="text-sm text-blue-100">Support to successful audit</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-nstech-dark mb-6">Why ISO Certification with NSTech?</h2>
+                <p class="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+                    Unique combination of software testing and ISO expertise
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="w-16 h-16 bg-purple-100 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-bolt text-3xl text-purple-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-gray-900">Faster Certification Process</h3>
+                    <p class="text-gray-600">
+                        Through our expertise, we reduce the time to certification by an average of 40%.
+                    </p>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-hands-helping text-3xl text-nstech-blue"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-gray-900">End-to-End Support</h3>
+                    <p class="text-gray-600">
+                        From the first gap analysis to the successful audit – we are by your side.
+                    </p>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="w-16 h-16 bg-green-100 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-shield-halved text-3xl text-nstech-green"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-gray-900">GDPR-Compliant</h3>
+                    <p class="text-gray-600">
+                        All processes and documentation comply with German data protection requirements.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-nstech-blue to-blue-700 text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-6">Ready for Your ISO Certification?</h2>
+            <p class="text-base sm:text-lg md:text-xl mb-8 text-blue-100">
+                Schedule a free consultation and discover how we make your software audit-ready.
+            </p>
+            <a href="contact.html" class="inline-block px-10 py-4 bg-white text-nstech-blue rounded-full font-bold hover:bg-gray-100 transition shadow-xl text-lg">
+                Request Consultation Now
+            </a>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-16 bg-gradient-to-r from-purple-600 to-purple-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-8">
+                <h3 class="text-2xl sm:text-3xl font-bold text-white mb-3">ISO Updates & Compliance News</h3>
+                <p class="text-base sm:text-lg text-purple-100">Receive regular information on ISO standards and certification processes</p>
+            </div>
+            <form class="flex flex-col sm:flex-row gap-4 justify-center" onsubmit="event.preventDefault(); alert('Thank you for your interest! We will be in touch soon.');">
+                <input 
+                    type="email" 
+                    placeholder="Your email address" 
+                    required
+                    class="flex-1 max-w-md px-6 py-4 rounded-full text-gray-800 focus:outline-none focus:ring-4 focus:ring-purple-300 text-base sm:text-lg"
+                >
+                <button 
+                    type="submit" 
+                    class="px-8 py-4 bg-white text-purple-600 rounded-full font-bold hover:bg-gray-100 transition shadow-xl text-base sm:text-lg whitespace-nowrap"
+                >
+                    <i class="fa-solid fa-bell mr-2"></i>Subscribe
+                </button>
+            </form>
+            <p class="text-sm text-purple-100 text-center mt-4">Your data is secure. Privacy according to GDPR.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <img src="assets/white.png" alt="NSTech Logo" class="h-14 mb-4 rounded-xl">
+                    <p class="text-gray-400 text-sm">Your partner for software quality and ISO compliance in Germany.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Services</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="services-en.html" class="hover:text-white transition">QA Testing</a></li>
+                        <li><a href="iso-certification.html" class="hover:text-white transition">ISO Certification</a></li>
+                        <li><a href="services-en.html#automation" class="hover:text-white transition">Test Automation</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Company</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="about-us.html" class="hover:text-white transition">About Us</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition">Contact</a></li>
+                        <li><a href="#" class="hover:text-white transition">Career</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><i class="fa-solid fa-envelope mr-2"></i>info@nstech.de</li>
+                        <li><i class="fa-solid fa-phone mr-2"></i>+49 (0) XXX XXXX</li>
+                        <li><i class="fa-solid fa-location-dot mr-2"></i>Germany</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center">
+                <p class="text-gray-400 text-sm">
+                    Copyright © 2025 NSTech GmbH | 
+                    <a href="datenschutz.html" class="hover:text-white transition">Privacy</a> | 
+                    <a href="impressum.html" class="hover:text-white transition">Legal Notice</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+    </script>
+
+    <style>#nstech-chat-btn{position:fixed;bottom:20px;right:20px;width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,#0056b3,#003d82);border:none;color:#fff;font-size:24px;cursor:pointer;box-shadow:0 4px 12px rgba(0,86,179,.4);z-index:9999;transition:all .3s}#nstech-chat-btn:hover{transform:scale(1.1);box-shadow:0 6px 16px rgba(0,86,179,.6)}#nstech-chat-modal{display:none;position:fixed;bottom:90px;right:20px;width:400px;height:600px;border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.3);z-index:9998;overflow:hidden}#nstech-chat-modal iframe{width:100%;height:100%;border:none;border-radius:12px}@media (max-width:500px){#nstech-chat-modal{width:100%;height:100%;bottom:0;right:0;border-radius:0}}</style><button id="nstech-chat-btn" onclick="toggleNSTechChat()" aria-label="Open chat">💬</button><div id="nstech-chat-modal"><iframe src="chatbot.html"></iframe></div><script>function toggleNSTechChat(){const modal=document.getElementById('nstech-chat-modal');const btn=document.getElementById('nstech-chat-btn');if(modal.style.display==='none'||modal.style.display===''){modal.style.display='block';btn.textContent='✕'}else{modal.style.display='none';btn.textContent='💬'}}document.addEventListener('keydown',e=>{if(e.key==='Escape'){const modal=document.getElementById('nstech-chat-modal');if(modal.style.display==='block'){toggleNSTechChat()}}})</script>
+
+</body>
+</html>
