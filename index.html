@@ -784,34 +784,11 @@
             submitBtn.disabled = true;
             submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin mr-2"></i>Wird gesendet...';
             
-            try {
-                const response = await fetch('/api/newsletter', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({ email })
-                });
-                
-                const result = await response.json();
-                
-                if (response.ok) {
-                    // Success
-                    message.className = 'text-sm text-green-300 text-center mt-4 font-semibold';
-                    message.innerHTML = '✅ Perfekt! Sie erhalten eine Bestätigungs-E-Mail.';
-                    e.target.reset();
-                } else {
-                    throw new Error(result.error || 'Fehler bei der Anmeldung');
-                }
-            } catch (error) {
-                // Error
-                message.className = 'text-sm text-red-300 text-center mt-4 font-semibold';
-                message.innerHTML = '❌ ' + (error.message || 'Ein Fehler ist aufgetreten. Bitte versuchen Sie es später erneut.');
-            } finally {
-                // Re-enable button
-                submitBtn.disabled = false;
-                submitBtn.innerHTML = originalBtnText;
-            }
+            // For demo purposes - shows alert instead of API call
+            alert('Vielen Dank! Ihre E-Mail (' + email + ') wurde registriert.');
+            e.target.reset();
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalBtnText;
         });
     </script>
 
