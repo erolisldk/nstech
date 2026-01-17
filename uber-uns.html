@@ -358,7 +358,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-4 gap-8 mb-8">
                 <div>
-                    <img src="assets/white.png" alt="NSTech Logo" class="h-14 mb-4">
+                    <img src="assets/white.png" alt="NSTech Logo" class="h-14 mb-4 rounded-xl">
                     <p class="text-gray-400 text-sm">Ihr Partner für Software-Qualität und ISO-Compliance in Deutschland.</p>
                 </div>
                 <div>
@@ -388,7 +388,11 @@
                 </div>
             </div>
             <div class="border-t border-gray-800 pt-8 text-center">
-                <p class="text-gray-400 text-sm">© 2025 NSTech Software & Consultancy. Alle Rechte vorbehalten.</p>
+                <p class="text-gray-400 text-sm">
+                    Copyright © 2025 NSTech GmbH | 
+                    <a href="datenschutz.html" class="hover:text-white transition">Datenschutz</a> | 
+                    <a href="impressum.html" class="hover:text-white transition">Impressum</a>
+                </p>
             </div>
         </div>
     </footer>
@@ -399,6 +403,8 @@
             menu.classList.toggle('hidden');
         }
     </script>
+
+    <style>#nstech-chat-btn{position:fixed;bottom:20px;right:20px;width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,#0056b3,#003d82);border:none;color:#fff;font-size:24px;cursor:pointer;box-shadow:0 4px 12px rgba(0,86,179,.4);z-index:9999;transition:all .3s}#nstech-chat-btn:hover{transform:scale(1.1);box-shadow:0 6px 16px rgba(0,86,179,.6)}#nstech-chat-modal{display:none;position:fixed;bottom:90px;right:20px;width:400px;height:600px;border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.3);z-index:9998;overflow:hidden}#nstech-chat-modal iframe{width:100%;height:100%;border:none;border-radius:12px}@media (max-width:500px){#nstech-chat-modal{width:100%;height:100%;bottom:0;right:0;border-radius:0}}</style><button id="nstech-chat-btn" onclick="toggleNSTechChat()" aria-label="Chat öffnen">💬</button><div id="nstech-chat-modal"><iframe src="chatbot.html"></iframe></div><script>function toggleNSTechChat(){const modal=document.getElementById('nstech-chat-modal');const btn=document.getElementById('nstech-chat-btn');if(modal.style.display==='none'||modal.style.display===''){modal.style.display='block';btn.textContent='✕'}else{modal.style.display='none';btn.textContent='💬'}}document.addEventListener('keydown',e=>{if(e.key==='Escape'){const modal=document.getElementById('nstech-chat-modal');if(modal.style.display==='block'){toggleNSTechChat()}}})</script>
 
 </body>
 </html>

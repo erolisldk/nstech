@@ -97,6 +97,7 @@
                     <a href="leistungen.html" class="text-gray-600 hover:text-nstech-blue font-medium transition">QA Testing</a>
                     <a href="iso-zertifizierung.html" class="text-gray-600 hover:text-nstech-blue font-medium transition">ISO-Zertifizierung</a>
                     <a href="uber-uns.html" class="text-gray-600 hover:text-nstech-blue font-medium transition">Über Uns</a>
+                    <a href="karriere.html" class="text-gray-600 hover:text-nstech-blue font-medium transition">Karriere</a>
                     <a href="kontakt.html" class="text-gray-600 hover:text-nstech-blue font-medium transition">Kontakt</a>
                     <div class="flex items-center space-x-2 ml-4 border-l border-gray-300 pl-4">
                         <a href="index.html" class="px-3 py-1.5 bg-nstech-blue text-white rounded-md font-semibold text-sm">DE</a>
@@ -120,6 +121,7 @@
                 <a href="leistungen.html" onclick="toggleMobileMenu()" class="block px-4 py-3 rounded-md text-base font-medium text-gray-700 hover:text-nstech-blue hover:bg-gray-50">QA Testing</a>
                 <a href="iso-zertifizierung.html" onclick="toggleMobileMenu()" class="block px-4 py-3 rounded-md text-base font-medium text-gray-700 hover:text-nstech-blue hover:bg-gray-50">ISO-Zertifizierung</a>
                 <a href="uber-uns.html" onclick="toggleMobileMenu()" class="block px-4 py-3 rounded-md text-base font-medium text-gray-700 hover:text-nstech-blue hover:bg-gray-50">Über Uns</a>
+                <a href="karriere.html" onclick="toggleMobileMenu()" class="block px-4 py-3 rounded-md text-base font-medium text-gray-700 hover:text-nstech-blue hover:bg-gray-50">Karriere</a>
                 <a href="kontakt.html" onclick="toggleMobileMenu()" class="block px-4 py-3 rounded-md text-base font-medium text-gray-700 hover:text-nstech-blue hover:bg-gray-50">Kontakt</a>
                 <div class="border-t border-gray-200 mt-2 pt-2">
                     <div class="flex space-x-2 px-4 py-2">
@@ -173,7 +175,7 @@
     ======================================== -->
     <section class="py-16 bg-white border-b border-gray-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-6 text-center">
                 <div class="stat-card">
                     <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
                         <i class="fa-solid fa-award text-3xl text-nstech-blue"></i>
@@ -187,6 +189,10 @@
                     </div>
                     <p class="font-bold text-3xl text-gray-800 mb-2">100%</p>
                     <p class="text-sm text-gray-600">DSGVO-konform</p>
+                </div>
+                <div class="stat-card flex flex-col items-center justify-center">
+                    <img src="https://www.scnsoft.com/partners/testing/istqb-certified-logo.svg" alt="ISTQB Certified" class="h-16 mb-2">
+                    <p class="text-sm text-gray-600">ISTQB-Zertifiziert</p>
                 </div>
                 <div class="stat-card">
                     <div class="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
@@ -704,7 +710,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-4 gap-8 mb-8">
                 <div>
-                    <img src="assets/white.png" alt="NSTech Logo" class="h-14 mb-4">
+                    <img src="assets/white.png" alt="NSTech Logo" class="h-14 mb-4 rounded-xl">
                     <p class="text-gray-400 text-sm">
                         Ihr Partner für Software-Qualität und ISO-Compliance in Deutschland.
                     </p>
@@ -745,12 +751,12 @@
                 </div>
             </div>
             <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
-                <p class="text-gray-400 text-sm">© 2025 NSTech Software & Consultancy. Alle Rechte vorbehalten.</p>
-                <div class="flex space-x-6 mt-4 md:mt-0 text-sm text-gray-400">
-                    <a href="#" class="hover:text-white transition">Datenschutz</a>
-                    <a href="#" class="hover:text-white transition">Impressum</a>
-                    <a href="#" class="hover:text-white transition">AGB</a>
-                </div>
+                <p class="text-gray-400 text-sm">
+                    Copyright © 2025 NSTech GmbH | 
+                    <a href="datenschutz.html" class="hover:text-white transition">Datenschutz</a> | 
+                    <a href="impressum.html" class="hover:text-white transition">Impressum</a>
+                </p>
+            </div>
             </div>
         </div>
     </footer>
@@ -808,6 +814,13 @@
             }
         });
     </script>
+
+    <!-- NSTech AI Chat Widget -->
+    <style>
+        #nstech-chat-widget{position:fixed;z-index:99999}#nstech-chat-button{position:fixed;bottom:20px;right:20px;width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,#0056b3 0%,#003d82 100%);border:none;color:#fff;font-size:28px;cursor:pointer;box-shadow:0 4px 20px rgba(0,86,179,.4);transition:all .3s ease;display:flex;align-items:center;justify-content:center;z-index:99999}#nstech-chat-button:hover{transform:scale(1.1);box-shadow:0 6px 25px rgba(0,86,179,.6)}#nstech-chat-button.active{background:linear-gradient(135deg,#dc2626 0%,#991b1b 100%)}#nstech-chat-iframe-container{position:fixed;bottom:90px;right:20px;width:400px;height:600px;border-radius:20px;box-shadow:0 10px 40px rgba(0,0,0,.3);overflow:hidden;display:none;z-index:99998}#nstech-chat-iframe-container.active{display:block}@media (max-width:500px){#nstech-chat-iframe-container{bottom:0;right:0;left:0;top:0;width:100%;height:100%;border-radius:0}#nstech-chat-button{bottom:15px;right:15px;width:55px;height:55px;font-size:24px}}
+    </style>
+    <div id="nstech-chat-widget"><button id="nstech-chat-button" onclick="toggleNSTechChat()" aria-label="Chat öffnen">💬</button><div id="nstech-chat-iframe-container"><iframe src="chatbot.html" style="width:100%;height:100%;border:none;border-radius:20px"></iframe></div></div>
+    <script>function toggleNSTechChat(){const btn=document.getElementById('nstech-chat-button'),container=document.getElementById('nstech-chat-iframe-container');container.classList.contains('active')?(container.classList.remove('active'),btn.classList.remove('active'),btn.innerHTML='💬'):(container.classList.add('active'),btn.classList.add('active'),btn.innerHTML='✕')}document.addEventListener('keydown',e=>{if('Escape'===e.key){const container=document.getElementById('nstech-chat-iframe-container'),btn=document.getElementById('nstech-chat-button');container.classList.contains('active')&&(container.classList.remove('active'),btn.classList.remove('active'),btn.innerHTML='💬')}})</script>
 
 </body>
 </html>

@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career - Join the NSTech Team</title>
+    <meta name="description" content="Exciting career opportunities at NSTech. QA Engineering, ISO Consulting, Test Automation. Remote, Flexible, Modern.">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        nstech: {
+                            blue: '#0056b3',
+                            dark: '#1a1a1a',
+                            light: '#f4f7f6',
+                            accent: '#00d2d3',
+                            green: '#22c55e'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body class="text-gray-800 bg-white">
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 sm:h-20 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index-en.html" class="flex items-center">
+                        <img src="assets/black.png" alt="NSTech Logo" class="h-12 sm:h-16 md:h-20 rounded-xl">
+                    </a>
+                </div>
+
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="index-en.html" class="text-gray-600 hover:text-nstech-blue font-medium transition">Home</a>
+                    <a href="leistungen.html" class="text-gray-600 hover:text-nstech-blue font-medium transition">QA Testing</a>
+                    <a href="iso-zertifizierung.html" class="text-gray-600 hover:text-nstech-blue font-medium transition">ISO Certification</a>
+                    <a href="uber-uns.html" class="text-gray-600 hover:text-nstech-blue font-medium transition">About Us</a>
+                    <a href="career.html" class="text-nstech-blue font-semibold border-b-2 border-nstech-blue pb-1">Career</a>
+                    <a href="contact.html" class="text-gray-600 hover:text-nstech-blue font-medium transition">Contact</a>
+                    <div class="flex items-center space-x-2 ml-4 border-l border-gray-300 pl-4">
+                        <a href="karriere.html" class="px-3 py-1.5 text-gray-600 hover:bg-gray-100 rounded-md font-semibold text-sm transition">DE</a>
+                        <a href="career.html" class="px-3 py-1.5 bg-nstech-blue text-white rounded-md font-semibold text-sm">EN</a>
+                    </div>
+                </div>
+
+                <div class="md:hidden flex items-center">
+                    <button onclick="toggleMobileMenu()" class="text-gray-600 hover:text-nstech-blue focus:outline-none">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 shadow-lg">
+            <div class="px-4 pt-2 pb-4 space-y-1">
+                <a href="index-en.html" onclick="toggleMobileMenu()" class="block px-4 py-3 rounded-md text-base font-medium text-gray-700 hover:text-nstech-blue hover:bg-gray-50">Home</a>
+                <a href="leistungen.html" onclick="toggleMobileMenu()" class="block px-4 py-3 rounded-md text-base font-medium text-gray-700 hover:text-nstech-blue hover:bg-gray-50">QA Testing</a>
+                <a href="iso-zertifizierung.html" onclick="toggleMobileMenu()" class="block px-4 py-3 rounded-md text-base font-medium text-gray-700 hover:text-nstech-blue hover:bg-gray-50">ISO Certification</a>
+                <a href="uber-uns.html" onclick="toggleMobileMenu()" class="block px-4 py-3 rounded-md text-base font-medium text-gray-700 hover:text-nstech-blue hover:bg-gray-50">About Us</a>
+                <a href="career.html" onclick="toggleMobileMenu()" class="block px-4 py-3 rounded-md text-base font-medium text-nstech-blue bg-blue-50">Career</a>
+                <a href="contact.html" onclick="toggleMobileMenu()" class="block px-4 py-3 rounded-md text-base font-medium text-gray-700 hover:text-nstech-blue hover:bg-gray-50">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-16 bg-gradient-to-br from-nstech-blue to-blue-800 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Get to know us: Who we are & what we stand for</h1>
+                <p class="text-base sm:text-lg md:text-xl text-blue-100 max-w-4xl mx-auto mb-8">
+                    Join an innovative team that's redefining software quality and ISO compliance in Germany.
+                </p>
+            </div>
+
+            <!-- Stats -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+                <div class="bg-white/10 backdrop-blur-sm p-6 rounded-xl text-center">
+                    <div class="text-4xl font-bold mb-2">15+</div>
+                    <div class="text-sm text-blue-100">Team Members</div>
+                </div>
+                <div class="bg-white/10 backdrop-blur-sm p-6 rounded-xl text-center">
+                    <div class="text-4xl font-bold mb-2">13+</div>
+                    <div class="text-sm text-blue-100">Years Successful</div>
+                </div>
+                <div class="bg-white/10 backdrop-blur-sm p-6 rounded-xl text-center">
+                    <div class="text-4xl font-bold mb-2">100%</div>
+                    <div class="text-sm text-blue-100">Remote-Capable</div>
+                </div>
+                <div class="bg-white/10 backdrop-blur-sm p-6 rounded-xl text-center">
+                    <div class="text-4xl font-bold mb-2">40+</div>
+                    <div class="text-sm text-blue-100">Pizzas per Year</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who is NSTech -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl sm:text-4xl font-bold text-nstech-dark mb-8 text-center">Who is NSTech?</h2>
+                <div class="text-lg text-gray-600 space-y-4 leading-relaxed">
+                    <p>
+                        At NSTech, we're all about helping companies build world-class software while meeting the highest quality and compliance standards. With our expertise in software testing and ISO certification, we ensure that products not only work but are also secure, scalable, and audit-ready.
+                    </p>
+                    <p>
+                        But we offer much more than testing and consulting: Our team actively supports clients from the first line of code to successful certification, provides technical support, and delivers valuable insights into current QA trends and ISO standards. This is how we make companies future-ready – with cutting-edge technology and personal service.
+                    </p>
+                    <p class="font-semibold text-nstech-blue">
+                        Our biggest success factor? Our team.
+                    </p>
+                    <p>
+                        We live an open, family-friendly company culture with flexible working hours, home office options, and flat hierarchies. Here you get space for your own ideas, individual development opportunities, and exciting projects in a future-proof market.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits -->
+    <section class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl font-bold text-nstech-dark mb-6">Why work at NSTech?</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    Benefits that truly make a difference
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-home text-3xl text-nstech-blue"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-900">Remote & Hybrid</h3>
+                    <p class="text-gray-600">
+                        Work from anywhere. Home office, in the office, or hybrid – you decide where you're most productive.
+                    </p>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-clock text-3xl text-green-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-900">Flexible Hours</h3>
+                    <p class="text-gray-600">
+                        Flextime and trust-based working hours allow you to optimally balance work and personal life.
+                    </p>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="w-14 h-14 bg-purple-100 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-graduation-cap text-3xl text-purple-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-900">Training & Education</h3>
+                    <p class="text-gray-600">
+                        Budget for conferences, certifications (ISTQB, ISO), and online courses. We invest in your development.
+                    </p>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="w-14 h-14 bg-orange-100 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-laptop-code text-3xl text-orange-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-900">Modern Tools</h3>
+                    <p class="text-gray-600">
+                        Latest testing tools, CI/CD pipelines, cloud infrastructure. Work with the best tech stack.
+                    </p>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="w-14 h-14 bg-red-100 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-users text-3xl text-red-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-900">Team Events</h3>
+                    <p class="text-gray-600">
+                        Joint team building events, after-work gatherings, and team lunches strengthen our bond.
+                    </p>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="w-14 h-14 bg-indigo-100 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-chart-line text-3xl text-indigo-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-900">Career Prospects</h3>
+                    <p class="text-gray-600">
+                        Clear development paths, mentoring programs, and opportunities to grow into new roles.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Job Openings -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl font-bold text-nstech-dark mb-6">Join Our Team: Current Job Openings</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-12">
+                <!-- Job 1 -->
+                <a href="mailto:jobs@nstech.de?subject=Application: Senior QA Engineer" class="bg-gradient-to-br from-blue-50 to-white p-8 rounded-2xl border border-blue-100 shadow-lg hover:shadow-xl transition group">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-2xl font-bold text-gray-900 group-hover:text-nstech-blue transition">Senior QA Engineer / Test Automation Specialist (m/f/d)</h3>
+                        <i class="fa-solid fa-arrow-right text-2xl text-nstech-blue opacity-0 group-hover:opacity-100 transition"></i>
+                    </div>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold">Full-time</span>
+                        <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm font-semibold">Remote</span>
+                        <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm font-semibold">Senior Level</span>
+                    </div>
+                    <p class="text-gray-600">
+                        Design automated testing strategies for enterprise clients. Selenium, Cypress, CI/CD expertise required.
+                    </p>
+                </a>
+
+                <!-- Job 2 -->
+                <a href="mailto:jobs@nstech.de?subject=Application: ISO Consultant" class="bg-gradient-to-br from-purple-50 to-white p-8 rounded-2xl border border-purple-100 shadow-lg hover:shadow-xl transition group">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-2xl font-bold text-gray-900 group-hover:text-nstech-blue transition">ISO 9001/27001 Consultant (m/f/d)</h3>
+                        <i class="fa-solid fa-arrow-right text-2xl text-nstech-blue opacity-0 group-hover:opacity-100 transition"></i>
+                    </div>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold">Full-time</span>
+                        <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm font-semibold">Hybrid</span>
+                        <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm font-semibold">Senior Level</span>
+                    </div>
+                    <p class="text-gray-600">
+                        Guide companies to successful ISO certification. Audit experience and QM expertise advantageous.
+                    </p>
+                </a>
+
+                <!-- Job 3 -->
+                <a href="mailto:jobs@nstech.de?subject=Application: Junior Software Tester" class="bg-gradient-to-br from-green-50 to-white p-8 rounded-2xl border border-green-100 shadow-lg hover:shadow-xl transition group">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-2xl font-bold text-gray-900 group-hover:text-nstech-blue transition">Junior Software Tester (m/f/d)</h3>
+                        <i class="fa-solid fa-arrow-right text-2xl text-nstech-blue opacity-0 group-hover:opacity-100 transition"></i>
+                    </div>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold">Full-time</span>
+                        <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm font-semibold">Remote</span>
+                        <span class="px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-sm font-semibold">Junior Level</span>
+                    </div>
+                    <p class="text-gray-600">
+                        Start your career in software testing. We offer intensive mentoring and ISTQB certification.
+                    </p>
+                </a>
+
+                <!-- Job 4 -->
+                <a href="mailto:jobs@nstech.de?subject=Application: DevOps Engineer" class="bg-gradient-to-br from-orange-50 to-white p-8 rounded-2xl border border-orange-100 shadow-lg hover:shadow-xl transition group">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-2xl font-bold text-gray-900 group-hover:text-nstech-blue transition">DevOps / CI/CD Engineer (m/f/d)</h3>
+                        <i class="fa-solid fa-arrow-right text-2xl text-nstech-blue opacity-0 group-hover:opacity-100 transition"></i>
+                    </div>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold">Full-time</span>
+                        <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm font-semibold">Remote</span>
+                        <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm font-semibold">Mid Level</span>
+                    </div>
+                    <p class="text-gray-600">
+                        Build and optimize test pipelines. Docker, Kubernetes, Jenkins/GitLab CI experience desired.
+                    </p>
+                </a>
+            </div>
+
+            <!-- Initiativbewerbung -->
+            <div class="bg-gradient-to-r from-nstech-blue to-blue-700 text-white p-10 rounded-2xl shadow-xl text-center max-w-3xl mx-auto">
+                <h3 class="text-2xl font-bold mb-4">No suitable position found?</h3>
+                <p class="text-lg text-blue-100 mb-6">
+                    Send us a speculative application! We're always looking for talented people.
+                </p>
+                <a href="mailto:jobs@nstech.de?subject=Speculative Application" class="inline-block px-8 py-4 bg-white text-nstech-blue rounded-full font-bold hover:bg-gray-100 transition shadow-xl">
+                    Send Speculative Application
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Application Process -->
+    <section class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl font-bold text-nstech-dark mb-6">How to Join Us: Your Path to NSTech</h2>
+            </div>
+
+            <!-- Contact Person -->
+            <div class="bg-white p-8 rounded-2xl shadow-lg max-w-2xl mx-auto mb-16">
+                <div class="flex items-center gap-6">
+                    <div class="w-20 h-20 bg-gradient-to-br from-nstech-blue to-blue-700 rounded-full flex items-center justify-center text-white text-3xl font-bold">
+                        EI
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Your Contact Person: Erol Işıldak</h3>
+                        <p class="text-gray-600 mb-3">Founder & Lead QA Engineer</p>
+                        <div class="flex flex-col gap-2">
+                            <a href="mailto:jobs@nstech.de" class="text-nstech-blue hover:underline flex items-center gap-2">
+                                <i class="fa-solid fa-envelope"></i>
+                                jobs@nstech.de
+                            </a>
+                            <a href="https://www.linkedin.com/in/erol-isildak-softwaretester/" target="_blank" class="text-nstech-blue hover:underline flex items-center gap-2">
+                                <i class="fa-brands fa-linkedin"></i>
+                                LinkedIn Profile
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Process Steps -->
+            <div class="grid md:grid-cols-4 gap-8 max-w-6xl mx-auto">
+                <!-- Step 1 -->
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center text-white text-3xl font-bold mx-auto mb-6">
+                        1
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-900">Submit Application 📩</h3>
+                    <p class="text-gray-600">
+                        Send us your documents via email. We'll get back to you as soon as possible.
+                    </p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center text-white text-3xl font-bold mx-auto mb-6">
+                        2
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-900">Initial Meeting</h3>
+                    <p class="text-gray-600">
+                        Video call to get to know each other. Casual and on equal footing.
+                    </p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center text-white text-3xl font-bold mx-auto mb-6">
+                        3
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-900">Technical Interview</h3>
+                    <p class="text-gray-600">
+                        Technical interview or practical assignment – depending on the position.
+                    </p>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-gradient-to-br from-nstech-green to-green-600 rounded-full flex items-center justify-center text-white text-3xl font-bold mx-auto mb-6">
+                        4
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-900">Welcome to NSTech! 🎉</h3>
+                    <p class="text-gray-600">
+                        Onboarding, team intro, and off you go with exciting projects!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-nstech-blue to-blue-700 text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-6">Ready for the Next Step?</h2>
+            <p class="text-lg md:text-xl mb-8 text-blue-100">
+                Join our amazing team and help shape the future of software quality!
+            </p>
+            <a href="mailto:jobs@nstech.de" class="inline-block px-10 py-4 bg-white text-nstech-blue rounded-full font-bold hover:bg-gray-100 transition shadow-xl text-lg">
+                Apply Now
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <img src="assets/white.png" alt="NSTech Logo" class="h-14 mb-4 rounded-xl">
+                    <p class="text-gray-400 text-sm">Your partner for software quality and ISO compliance in Germany.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Services</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="leistungen.html" class="hover:text-white transition">QA Testing</a></li>
+                        <li><a href="iso-zertifizierung.html" class="hover:text-white transition">ISO Certification</a></li>
+                        <li><a href="leistungen.html#automation" class="hover:text-white transition">Test Automation</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Company</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="uber-uns.html" class="hover:text-white transition">About Us</a></li>
+                        <li><a href="career.html" class="hover:text-white transition">Career</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><i class="fa-solid fa-envelope mr-2"></i>info@nstech.de</li>
+                        <li><i class="fa-solid fa-briefcase mr-2"></i>jobs@nstech.de</li>
+                        <li><i class="fa-solid fa-location-dot mr-2"></i>Germany</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center">
+                <p class="text-gray-400 text-sm">
+                    Copyright © 2025 NSTech GmbH | 
+                    <a href="datenschutz.html" class="hover:text-white transition">Privacy Policy</a> | 
+                    <a href="impressum.html" class="hover:text-white transition">Legal Notice</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+    </script>
+
+</body>
+</html>

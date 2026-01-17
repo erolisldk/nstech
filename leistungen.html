@@ -3,15 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QA Testing - NSTech Software Qualitätssicherung</title>
-    <meta name="description" content="Umfassende Software-Testing Services für deutsche Unternehmen. Managed Testing, Automatisierung, Performance Testing. DSGVO-konform.">
+    <title>QA Consulting & Software Testing - NSTech</title>
+    <meta name="description" content="Professionelle Software QA Consulting Services. Prozessverbesserung, Test-Automatisierung, QA-Audit, ISO-Vorbereitung. 13+ Jahre Erfahrung.">
     
-    <!-- External Resources -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     
-    <!-- Tailwind Configuration -->
     <script>
         tailwind.config = {
             theme: {
@@ -38,15 +36,6 @@
             font-family: 'Inter', sans-serif;
             scroll-behavior: smooth;
         }
-        
-        .service-card {
-            transition: all 0.3s ease;
-        }
-        
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-        }
     </style>
 </head>
 
@@ -67,10 +56,11 @@
                     <a href="leistungen.html" class="text-nstech-blue font-semibold border-b-2 border-nstech-blue pb-1">QA Testing</a>
                     <a href="iso-zertifizierung.html" class="text-gray-600 hover:text-nstech-blue font-medium transition">ISO-Zertifizierung</a>
                     <a href="uber-uns.html" class="text-gray-600 hover:text-nstech-blue font-medium transition">Über Uns</a>
+                    <a href="karriere.html" class="text-gray-600 hover:text-nstech-blue font-medium transition">Karriere</a>
                     <a href="kontakt.html" class="text-gray-600 hover:text-nstech-blue font-medium transition">Kontakt</a>
                     <div class="flex items-center space-x-2 ml-4 border-l border-gray-300 pl-4">
                         <a href="leistungen.html" class="px-3 py-1.5 bg-nstech-blue text-white rounded-md font-semibold text-sm">DE</a>
-                        <a href="services.html" class="px-3 py-1.5 text-gray-600 hover:bg-gray-100 rounded-md font-semibold text-sm transition">EN</a>
+                        <a href="services-en.html" class="px-3 py-1.5 text-gray-600 hover:bg-gray-100 rounded-md font-semibold text-sm transition">EN</a>
                     </div>
                 </div>
 
@@ -88,6 +78,7 @@
                 <a href="leistungen.html" onclick="toggleMobileMenu()" class="block px-4 py-3 rounded-md text-base font-medium text-nstech-blue bg-blue-50">QA Testing</a>
                 <a href="iso-zertifizierung.html" onclick="toggleMobileMenu()" class="block px-4 py-3 rounded-md text-base font-medium text-gray-700 hover:text-nstech-blue hover:bg-gray-50">ISO-Zertifizierung</a>
                 <a href="uber-uns.html" onclick="toggleMobileMenu()" class="block px-4 py-3 rounded-md text-base font-medium text-gray-700 hover:text-nstech-blue hover:bg-gray-50">Über Uns</a>
+                <a href="karriere.html" onclick="toggleMobileMenu()" class="block px-4 py-3 rounded-md text-base font-medium text-gray-700 hover:text-nstech-blue hover:bg-gray-50">Karriere</a>
                 <a href="kontakt.html" onclick="toggleMobileMenu()" class="block px-4 py-3 rounded-md text-base font-medium text-gray-700 hover:text-nstech-blue hover:bg-gray-50">Kontakt</a>
             </div>
         </div>
@@ -95,64 +86,115 @@
 
     <!-- Hero Section -->
     <section class="pt-32 pb-16 bg-gradient-to-br from-nstech-blue to-blue-800 text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 px-4">Umfassende Qualitätssicherungsdienste</h1>
-            <p class="text-base sm:text-lg md:text-xl text-blue-100 max-w-3xl mx-auto px-4">
-                End-to-End Software-Testing für erstklassige Softwarequalität
-            </p>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Software QA Consulting</h1>
+                <p class="text-xl text-blue-100 mb-8 leading-relaxed">
+                    NSTech bietet umfassende Beratungsleistungen, um einen effektiven, auf Ihre Projektspezifikationen zugeschnittenen Qualitätssicherungsprozess zu etablieren oder bestehende QA-Prozesse zu bewerten und zu verbessern.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#services" class="px-8 py-4 bg-white text-nstech-blue rounded-full font-bold hover:bg-gray-100 transition shadow-xl">
+                        Unsere Leistungen
+                    </a>
+                    <a href="kontakt.html" class="px-8 py-4 bg-transparent border-2 border-white text-white rounded-full font-bold hover:bg-white hover:text-nstech-blue transition">
+                        Beratung anfragen
+                    </a>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Strategic QA Consultancy -->
-    <section id="beratung" class="py-24 bg-white">
+    <!-- Stats Banner -->
+    <section class="bg-white py-12 border-b border-gray-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col lg:flex-row gap-12 items-center">
-                <div class="lg:w-1/2">
-                    <div class="inline-block px-4 py-2 bg-blue-100 text-nstech-blue rounded-full text-sm font-semibold mb-4">
-                        BERATUNG
-                    </div>
-                    <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-nstech-dark mb-6">Strategische QA-Beratung</h2>
-                    <p class="text-base sm:text-lg text-gray-600 mb-6 leading-relaxed">
-                        NSTech bietet marktführende Beratung als Teil seiner Qualitätssicherungsdienste. Wir helfen Kunden, ihre Test-, Geschäfts- und Validierungsprozesse zu optimieren, um maximale Effizienz und Leistung zu erreichen.
-                    </p>
-                    <ul class="space-y-4 mb-8">
-                        <li class="flex items-start">
-                            <i class="fa-solid fa-check-circle text-2xl text-nstech-green mr-4 mt-1"></i>
-                            <div>
-                                <h4 class="font-bold text-gray-900 mb-1">QA-Strategie & Roadmap</h4>
-                                <p class="text-gray-600">Entwicklung maßgeschneiderter Qualitätssicherungsstrategien für Ihr Unternehmen</p>
-                            </div>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fa-solid fa-check-circle text-2xl text-nstech-green mr-4 mt-1"></i>
-                            <div>
-                                <h4 class="font-bold text-gray-900 mb-1">Prozessoptimierung</h4>
-                                <p class="text-gray-600">Analyse und Verbesserung bestehender Test-Workflows</p>
-                            </div>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fa-solid fa-check-circle text-2xl text-nstech-green mr-4 mt-1"></i>
-                            <div>
-                                <h4 class="font-bold text-gray-900 mb-1">Tool-Auswahl & Integration</h4>
-                                <p class="text-gray-600">Beratung bei der Auswahl der richtigen Test-Tools für Ihre Anforderungen</p>
-                            </div>
-                        </li>
-                    </ul>
-                    <a href="kontakt.html" class="inline-block px-8 py-4 bg-nstech-blue text-white rounded-full font-bold hover:bg-blue-700 transition shadow-lg">
-                        Beratungsgespräch vereinbaren
-                    </a>
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-6">
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-nstech-blue mb-2">13+</div>
+                    <div class="text-sm text-gray-600">Jahre QA Beratung</div>
                 </div>
-                <div class="lg:w-1/2">
-                    <div class="bg-gradient-to-br from-blue-50 to-white p-8 rounded-2xl border border-blue-100 shadow-lg">
-                        <i class="fa-solid fa-lightbulb text-8xl text-nstech-blue mb-6 opacity-20"></i>
-                        <h3 class="text-2xl font-bold mb-4 text-gray-900">Unsere Beratungsleistungen</h3>
-                        <div class="space-y-3 text-gray-600">
-                            <p>✓ Test-Automatisierungsstrategie</p>
-                            <p>✓ DevOps & CI/CD Integration</p>
-                            <p>✓ Qualitätsmetriken & KPIs</p>
-                            <p>✓ Team-Training & Coaching</p>
-                            <p>✓ DSGVO-Compliance-Beratung</p>
-                            <p>✓ ISO-Audit-Vorbereitung</p>
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-nstech-blue mb-2">150+</div>
+                    <div class="text-sm text-gray-600">Erfolgreiche Projekte</div>
+                </div>
+                <div class="text-center flex flex-col items-center justify-center">
+                    <img src="https://www.scnsoft.com/partners/testing/istqb-certified-logo.svg" alt="ISTQB Certified" class="h-16 mb-2">
+                    <div class="text-sm text-gray-600">ISTQB-Zertifiziert</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-nstech-blue mb-2">100%</div>
+                    <div class="text-sm text-gray-600">Erfolgsrate</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-nstech-blue mb-2">30+</div>
+                    <div class="text-sm text-gray-600">Branchen</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- When You Need QA Consultant -->
+    <section class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-nstech-dark mb-6">Wann Sie einen QA-Berater brauchen</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    Erkennen Sie sich in einem dieser Szenarien wieder?
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-8 rounded-2xl shadow-lg border-l-4 border-red-500">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i class="fa-solid fa-triangle-exclamation text-2xl text-red-600"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-3 text-gray-900">Nicht-optimierter QA-Prozess</h3>
+                            <p class="text-gray-600">
+                                Ihr QA-Prozess erfüllt nur die Basis-KPIs. Schwere Defekte gelangen in die Produktion, während QA und Testing unter Budgetüberschreitungen und Verzögerungen leiden.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-lg border-l-4 border-orange-500">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i class="fa-solid fa-users-slash text-2xl text-orange-600"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-3 text-gray-900">Fehlende In-House QA-Expertise</h3>
+                            <p class="text-gray-600">
+                                Wenn es um das Testen unbekannter Software-Architekturen (Event-driven, SOA, Microservices), spezieller Technologien (Big Data, IoT, AI) oder die Implementierung von DevOps und Test-Automatisierung geht.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-lg border-l-4 border-purple-500">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i class="fa-solid fa-certificate text-2xl text-purple-600"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-3 text-gray-900">Zertifizierungs-Audits bestehen</h3>
+                            <p class="text-gray-600">
+                                Vorbereitung auf Software-Sicherheits-Compliance-Zertifizierungen (DSGVO, ISO 27001), Prozess-Zertifizierungen (ISO 9001, ISO 13485) oder QA-Reifezertifizierungen (TMMi).
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-lg border-l-4 border-green-500">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i class="fa-solid fa-chart-line text-2xl text-nstech-green"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-3 text-gray-900">QA-Prozess von Grund auf aufbauen</h3>
+                            <p class="text-gray-600">
+                                Sie starten ein neues Projekt oder skalieren Ihr Team und benötigen eine fundierte QA-Strategie, Test-Pläne und Best Practices von Anfang an.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -160,201 +202,608 @@
         </div>
     </section>
 
-    <!-- Managed Testing Services -->
-    <section id="services" class="py-24 bg-gray-50">
+    <!-- How QA Consultancy Helps -->
+    <section id="services" class="py-24 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <div class="inline-block px-4 py-2 bg-green-100 text-green-700 rounded-full text-sm font-semibold mb-4">
-                    DIENSTLEISTUNGEN
-                </div>
-                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-nstech-dark mb-6">Managed Testing Services</h2>
-                <p class="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-                    NSTech übernimmt die vollständige Verantwortung für Ihren Test-Lebenszyklus – von der Team-Einrichtung und Schulung bis zur Ausführung und Berichterstattung.
+                <h2 class="text-3xl md:text-4xl font-bold text-nstech-dark mb-6">Wie QA-Beratung von NSTech hilft</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    Maßgeschneiderte Lösungen für Ihre spezifischen Herausforderungen
                 </p>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="service-card bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
-                    <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center text-nstech-blue text-2xl mb-6">
-                        <i class="fa-solid fa-bug-slash"></i>
+            <div class="grid lg:grid-cols-2 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-gradient-to-br from-blue-50 to-white p-8 rounded-2xl shadow-xl border border-blue-100">
+                    <div class="flex items-start gap-4 mb-6">
+                        <div class="w-14 h-14 bg-nstech-blue rounded-xl flex items-center justify-center flex-shrink-0">
+                            <i class="fa-solid fa-chart-line text-2xl text-white"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-900">QA-Prozessverbesserung</h3>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold mb-4 text-gray-900">Funktionale Tests</h3>
-                    <p class="text-gray-600 mb-4">
-                        Manuelle und automatisierte funktionale Tests für Web-, Mobile- und Desktop-Anwendungen.
+                    <p class="text-gray-700 mb-6">
+                        Unsere QA-Berater identifizieren Probleme in Ihrem QA-Prozess, entwickeln Strategien zur Behebung, analysieren Implementierungsrisiken und setzen Verbesserungen um.
                     </p>
-                    <ul class="text-sm text-gray-600 space-y-2">
-                        <li>• Test Case-Erstellung</li>
-                        <li>• Ausführung & Dokumentation</li>
-                        <li>• Defect Management</li>
-                        <li>• Regression Testing</li>
-                    </ul>
+                    <div class="space-y-3 mb-6">
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-nstech-green mt-1"></i>
+                            <p class="text-gray-600">QA-Bewertungsbericht inkl. Reifegradanalyse</p>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-nstech-green mt-1"></i>
+                            <p class="text-gray-600">Maßgeschneiderte KPI-Listen</p>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-nstech-green mt-1"></i>
+                            <p class="text-gray-600">Risikomanagement-Plan</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between pt-4 border-t border-gray-200">
+                        <div>
+                            <span class="text-sm text-gray-600">Dauer:</span>
+                            <span class="font-semibold text-gray-900 ml-2">2–4 Wochen</span>
+                        </div>
+                        <a href="kontakt.html" class="text-nstech-blue font-semibold hover:underline">
+                            Mehr erfahren →
+                        </a>
+                    </div>
                 </div>
 
-                <div class="service-card bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
-                    <div class="w-14 h-14 bg-purple-100 rounded-xl flex items-center justify-center text-purple-600 text-2xl mb-6">
-                        <i class="fa-solid fa-mobile-screen"></i>
+                <!-- Service 2 -->
+                <div class="bg-gradient-to-br from-green-50 to-white p-8 rounded-2xl shadow-xl border border-green-100">
+                    <div class="flex items-start gap-4 mb-6">
+                        <div class="w-14 h-14 bg-nstech-green rounded-xl flex items-center justify-center flex-shrink-0">
+                            <i class="fa-solid fa-rocket text-2xl text-white"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-900">QA-Prozess-Setup</h3>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold mb-4 text-gray-900">Mobile App Testing</h3>
-                    <p class="text-gray-600 mb-4">
-                        Umfassende Tests für iOS und Android auf echten Geräten und Emulatoren.
+                    <p class="text-gray-700 mb-6">
+                        Aufbau eines vollständigen QA-Prozesses von Grund auf, zugeschnitten auf Ihre Software-Spezifikationen, Entwicklungsmethodik und Team-Konstellation.
                     </p>
-                    <ul class="text-sm text-gray-600 space-y-2">
-                        <li>• Native & Hybrid Apps</li>
-                        <li>• Cross-Platform Testing</li>
-                        <li>• Appium, Espresso, XCUITest</li>
-                        <li>• Real Device Testing</li>
-                    </ul>
+                    <div class="space-y-3 mb-6">
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-nstech-green mt-1"></i>
+                            <p class="text-gray-600">Test-Strategie und Testplan</p>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-nstech-green mt-1"></i>
+                            <p class="text-gray-600">Test-Team-Zusammenstellung</p>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-nstech-green mt-1"></i>
+                            <p class="text-gray-600">Machbarkeitsstudie Test-Automatisierung</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between pt-4 border-t border-gray-200">
+                        <div>
+                            <span class="text-sm text-gray-600">Dauer:</span>
+                            <span class="font-semibold text-gray-900 ml-2">2–6 Wochen</span>
+                        </div>
+                        <a href="kontakt.html" class="text-nstech-blue font-semibold hover:underline">
+                            Mehr erfahren →
+                        </a>
+                    </div>
                 </div>
 
-                <div class="service-card bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
-                    <div class="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center text-nstech-green text-2xl mb-6">
-                        <i class="fa-solid fa-gauge-high"></i>
+                <!-- Service 3 -->
+                <div class="bg-gradient-to-br from-purple-50 to-white p-8 rounded-2xl shadow-xl border border-purple-100">
+                    <div class="flex items-start gap-4 mb-6">
+                        <div class="w-14 h-14 bg-purple-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                            <i class="fa-solid fa-magnifying-glass-chart text-2xl text-white"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-900">QA-Prozess-Audit</h3>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold mb-4 text-gray-900">Performance Testing</h3>
-                    <p class="text-gray-600 mb-4">
-                        Lasttests und Performance-Optimierung für skalierbare Anwendungen.
+                    <p class="text-gray-700 mb-6">
+                        Umfassende Prüfung Ihres aktuellen QA-Prozesses, Identifikation von Engpässen und Entwicklung eines Aktionsplans zur Optimierung.
                     </p>
-                    <ul class="text-sm text-gray-600 space-y-2">
-                        <li>• Load & Stress Testing</li>
-                        <li>• Endurance Testing</li>
-                        <li>• JMeter, K6, Gatling</li>
-                        <li>• Performance-Optimierung</li>
-                    </ul>
+                    <div class="space-y-3 mb-6">
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-nstech-green mt-1"></i>
+                            <p class="text-gray-600">Bewertung nach TMMi/TPI-Reifemodell</p>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-nstech-green mt-1"></i>
+                            <p class="text-gray-600">Detaillierte Schwachstellenanalyse</p>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-nstech-green mt-1"></i>
+                            <p class="text-gray-600">Aktionsplan zur Optimierung</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between pt-4 border-t border-gray-200">
+                        <div>
+                            <span class="text-sm text-gray-600">Dauer:</span>
+                            <span class="font-semibold text-gray-900 ml-2">1–2 Wochen</span>
+                        </div>
+                        <a href="kontakt.html" class="text-nstech-blue font-semibold hover:underline">
+                            Mehr erfahren →
+                        </a>
+                    </div>
                 </div>
 
-                <div class="service-card bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
-                    <div class="w-14 h-14 bg-red-100 rounded-xl flex items-center justify-center text-red-600 text-2xl mb-6">
-                        <i class="fa-solid fa-shield-halved"></i>
+                <!-- Service 4 -->
+                <div class="bg-gradient-to-br from-orange-50 to-white p-8 rounded-2xl shadow-xl border border-orange-100">
+                    <div class="flex items-start gap-4 mb-6">
+                        <div class="w-14 h-14 bg-orange-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                            <i class="fa-solid fa-certificate text-2xl text-white"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-900">Zertifizierungs-Vorbereitung</h3>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold mb-4 text-gray-900">Security Testing</h3>
-                    <p class="text-gray-600 mb-4">
-                        Penetrationstests und Sicherheitsanalysen für DSGVO-Compliance.
+                    <p class="text-gray-700 mb-6">
+                        Unterstützung bei der Vorbereitung auf ISO 9001, ISO 27001, DSGVO-Compliance und andere Zertifizierungs-Audits.
                     </p>
-                    <ul class="text-sm text-gray-600 space-y-2">
-                        <li>• Vulnerability Scanning</li>
-                        <li>• OWASP Top 10 Testing</li>
-                        <li>• DSGVO-Compliance-Prüfung</li>
-                        <li>• Security Audits</li>
-                    </ul>
+                    <div class="space-y-3 mb-6">
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-nstech-green mt-1"></i>
+                            <p class="text-gray-600">Compliance-Gap-Analyse</p>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-nstech-green mt-1"></i>
+                            <p class="text-gray-600">Detaillierte Roadmap zur Compliance</p>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-nstech-green mt-1"></i>
+                            <p class="text-gray-600">Neubewertung nach Verbesserungen</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between pt-4 border-t border-gray-200">
+                        <div>
+                            <span class="text-sm text-gray-600">Dauer:</span>
+                            <span class="font-semibold text-gray-900 ml-2">2–4 Wochen</span>
+                        </div>
+                        <a href="kontakt.html" class="text-nstech-blue font-semibold hover:underline">
+                            Mehr erfahren →
+                        </a>
+                    </div>
                 </div>
 
-                <div class="service-card bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
-                    <div class="w-14 h-14 bg-indigo-100 rounded-xl flex items-center justify-center text-indigo-600 text-2xl mb-6">
-                        <i class="fa-solid fa-code"></i>
+                <!-- Service 5 -->
+                <div class="bg-gradient-to-br from-indigo-50 to-white p-8 rounded-2xl shadow-xl border border-indigo-100">
+                    <div class="flex items-start gap-4 mb-6">
+                        <div class="w-14 h-14 bg-indigo-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                            <i class="fa-solid fa-robot text-2xl text-white"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-900">Test-Automatisierung</h3>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold mb-4 text-gray-900">API Testing</h3>
-                    <p class="text-gray-600 mb-4">
-                        Automatisierte API-Tests für REST, SOAP und GraphQL-Services.
+                    <p class="text-gray-700 mb-6">
+                        Einführung und Optimierung von Test-Automatisierung mit CI/CD-Integration für schnellere Releases und höhere Testabdeckung.
                     </p>
-                    <ul class="text-sm text-gray-600 space-y-2">
-                        <li>• REST API Testing</li>
-                        <li>• Postman, REST Assured</li>
-                        <li>• Contract Testing</li>
-                        <li>• Integration Testing</li>
-                    </ul>
+                    <div class="space-y-3 mb-6">
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-nstech-green mt-1"></i>
+                            <p class="text-gray-600">Automatisierungsstrategie & Architektur</p>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-nstech-green mt-1"></i>
+                            <p class="text-gray-600">Framework- & Tool-Empfehlungen</p>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-nstech-green mt-1"></i>
+                            <p class="text-gray-600">CI/CD-Pipeline-Integration</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between pt-4 border-t border-gray-200">
+                        <div>
+                            <span class="text-sm text-gray-600">Dauer:</span>
+                            <span class="font-semibold text-gray-900 ml-2">2–4 Wochen</span>
+                        </div>
+                        <a href="kontakt.html" class="text-nstech-blue font-semibold hover:underline">
+                            Mehr erfahren →
+                        </a>
+                    </div>
                 </div>
 
-                <div class="service-card bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
-                    <div class="w-14 h-14 bg-yellow-100 rounded-xl flex items-center justify-center text-yellow-600 text-2xl mb-6">
-                        <i class="fa-solid fa-users"></i>
+                <!-- Service 6 -->
+                <div class="bg-gradient-to-br from-teal-50 to-white p-8 rounded-2xl shadow-xl border border-teal-100">
+                    <div class="flex items-start gap-4 mb-6">
+                        <div class="w-14 h-14 bg-teal-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                            <i class="fa-solid fa-graduation-cap text-2xl text-white"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-900">QA-Training & Coaching</h3>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold mb-4 text-gray-900">UAT Support</h3>
-                    <p class="text-gray-600 mb-4">
-                        Unterstützung bei User Acceptance Tests mit echten Anwendern.
+                    <p class="text-gray-700 mb-6">
+                        Schulung Ihrer In-House-Teams in QA-Best Practices, modernen Test-Methoden und Automatisierungs-Techniken.
                     </p>
-                    <ul class="text-sm text-gray-600 space-y-2">
-                        <li>• Test-Szenario-Entwicklung</li>
-                        <li>• Benutzer-Koordination</li>
-                        <li>• Feedback-Management</li>
-                        <li>• Go-Live-Support</li>
-                    </ul>
+                    <div class="space-y-3 mb-6">
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-nstech-green mt-1"></i>
+                            <p class="text-gray-600">Maßgeschneiderte Schulungssessions</p>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-nstech-green mt-1"></i>
+                            <p class="text-gray-600">Wissenstransfer & Dokumentation</p>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-nstech-green mt-1"></i>
+                            <p class="text-gray-600">ISTQB-Zertifizierungsvorbereitung</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between pt-4 border-t border-gray-200">
+                        <div>
+                            <span class="text-sm text-gray-600">Dauer:</span>
+                            <span class="font-semibold text-gray-900 ml-2">1–2 Wochen</span>
+                        </div>
+                        <a href="kontakt.html" class="text-nstech-blue font-semibold hover:underline">
+                            Mehr erfahren →
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Test Automation -->
-    <section id="automation" class="py-24 bg-gray-50">
+    <!-- Consulting Process -->
+    <section class="py-24 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <div class="inline-block px-4 py-2 bg-orange-100 text-orange-700 rounded-full text-sm font-semibold mb-4">
-                    AUTOMATISIERUNG
-                </div>
-                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-nstech-dark mb-6">Test-Automatisierung</h2>
-                <p class="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-                    Reduzieren Sie Testzeiten um bis zu 70% mit unseren maßgeschneiderten Automatisierungslösungen
+                <h2 class="text-3xl md:text-4xl font-bold text-nstech-dark mb-6">Software Testing Consulting Schritt für Schritt</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    Unser bewährter 4-Phasen-Ansatz für nachhaltige QA-Verbesserungen
                 </p>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-8 mb-12">
-                <div class="bg-white p-8 rounded-2xl shadow-lg">
-                    <h3 class="text-2xl font-bold mb-4 text-gray-900">Web-Automatisierung</h3>
-                    <ul class="space-y-3 text-gray-600">
-                        <li><i class="fa-brands fa-chrome text-nstech-blue mr-2"></i> Selenium WebDriver</li>
-                        <li><i class="fa-solid fa-play text-nstech-blue mr-2"></i> Playwright</li>
-                        <li><i class="fa-solid fa-leaf text-nstech-blue mr-2"></i> Cypress</li>
-                        <li><i class="fa-solid fa-cube text-nstech-blue mr-2"></i> TestCafe</li>
-                    </ul>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white p-8 rounded-2xl shadow-lg relative">
+                    <div class="absolute -top-4 left-8 w-12 h-12 bg-nstech-blue rounded-full flex items-center justify-center text-white text-xl font-bold">
+                        1
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 mt-4 text-gray-900">Projekt-Einstieg</h3>
+                    <p class="text-gray-600 mb-4">
+                        Studium relevanter Dokumente, Stakeholder-Interviews und Prüfung bestehender QA-Verfahren.
+                    </p>
+                    <div class="bg-blue-50 p-4 rounded-lg">
+                        <p class="text-sm font-semibold text-gray-700 mb-2">Deliverables:</p>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• QA-Bewertungsbericht</li>
+                            <li>• Reifegradanalyse</li>
+                        </ul>
+                    </div>
                 </div>
 
-                <div class="bg-white p-8 rounded-2xl shadow-lg">
-                    <h3 class="text-2xl font-bold mb-4 text-gray-900">Mobile-Automatisierung</h3>
-                    <ul class="space-y-3 text-gray-600">
-                        <li><i class="fa-solid fa-mobile text-purple-600 mr-2"></i> Appium</li>
-                        <li><i class="fa-brands fa-android text-green-600 mr-2"></i> Espresso (Android)</li>
-                        <li><i class="fa-brands fa-apple text-gray-700 mr-2"></i> XCUITest (iOS)</li>
-                        <li><i class="fa-solid fa-flask text-orange-600 mr-2"></i> Detox</li>
-                    </ul>
+                <div class="bg-white p-8 rounded-2xl shadow-lg relative">
+                    <div class="absolute -top-4 left-8 w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center text-white text-xl font-bold">
+                        2
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 mt-4 text-gray-900">Analyse & Planung</h3>
+                    <p class="text-gray-600 mb-4">
+                        Identifikation von Problemen, Entwicklung von Lösungsstrategien und Erstellung eines Aktionsplans mit Zeitlinien.
+                    </p>
+                    <div class="bg-purple-50 p-4 rounded-lg">
+                        <p class="text-sm font-semibold text-gray-700 mb-2">Deliverables:</p>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• QA-Strategie</li>
+                            <li>• Roadmap & KPIs</li>
+                            <li>• Risikomanagement-Plan</li>
+                        </ul>
+                    </div>
                 </div>
 
-                <div class="bg-white p-8 rounded-2xl shadow-lg">
-                    <h3 class="text-2xl font-bold mb-4 text-gray-900">CI/CD Integration</h3>
-                    <ul class="space-y-3 text-gray-600">
-                        <li><i class="fa-brands fa-jenkins text-red-600 mr-2"></i> Jenkins</li>
-                        <li><i class="fa-brands fa-gitlab text-orange-600 mr-2"></i> GitLab CI</li>
-                        <li><i class="fa-brands fa-github text-gray-800 mr-2"></i> GitHub Actions</li>
-                        <li><i class="fa-solid fa-infinity text-nstech-blue mr-2"></i> Azure DevOps</li>
-                    </ul>
+                <div class="bg-white p-8 rounded-2xl shadow-lg relative">
+                    <div class="absolute -top-4 left-8 w-12 h-12 bg-green-600 rounded-full flex items-center justify-center text-white text-xl font-bold">
+                        3
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 mt-4 text-gray-900">Implementierung</h3>
+                    <p class="text-gray-600 mb-4">
+                        Umsetzung der vorgeschlagenen Lösungen mit Supervision, Wissenstransfer und kontinuierlicher Unterstützung.
+                    </p>
+                    <div class="bg-green-50 p-4 rounded-lg">
+                        <p class="text-sm font-semibold text-gray-700 mb-2">Deliverables:</p>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• QA-Prozessverbesserungen</li>
+                            <li>• Schulungsmaterialien</li>
+                            <li>• QA-Wissensdatenbank</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-lg relative">
+                    <div class="absolute -top-4 left-8 w-12 h-12 bg-orange-600 rounded-full flex items-center justify-center text-white text-xl font-bold">
+                        4
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 mt-4 text-gray-900">Support</h3>
+                    <p class="text-gray-600 mb-4">
+                        Nachbetreuung Ihres Teams, bereit einzugreifen und mögliche Probleme zu adressieren.
+                    </p>
+                    <div class="bg-orange-50 p-4 rounded-lg">
+                        <p class="text-sm font-semibold text-gray-700 mb-2">Deliverables:</p>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• FAQs für In-House-Team</li>
+                            <li>• Kontinuierliche Beratung</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- QA Consulting Gains -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-nstech-dark mb-6">Software Testing Consulting mit NSTech: Erfolge</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center p-8 bg-gradient-to-br from-blue-50 to-white rounded-2xl shadow-lg">
+                    <div class="w-16 h-16 bg-nstech-blue rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fa-solid fa-rocket text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-900">Kürzere Time-to-Market</h3>
+                    <p class="text-gray-600">
+                        Optimierte QA-Prozesse beschleunigen Software-Releases
+                    </p>
+                </div>
+
+                <div class="text-center p-8 bg-gradient-to-br from-green-50 to-white rounded-2xl shadow-lg">
+                    <div class="w-16 h-16 bg-nstech-green rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fa-solid fa-piggy-bank text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-900">Reduzierte QA-Kosten</h3>
+                    <p class="text-gray-600">
+                        -20–40% durch KPI-basierte Kontrolle und Best Practices
+                    </p>
+                </div>
+
+                <div class="text-center p-8 bg-gradient-to-br from-purple-50 to-white rounded-2xl shadow-lg">
+                    <div class="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fa-solid fa-bug-slash text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-900">Minimierte Defekte</h3>
+                    <p class="text-gray-600">
+                        Null schwere Defekte in Produktion durch frühe Erkennung
+                    </p>
+                </div>
+
+                <div class="text-center p-8 bg-gradient-to-br from-orange-50 to-white rounded-2xl shadow-lg">
+                    <div class="w-16 h-16 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fa-solid fa-chart-line text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-900">QA-Reife Level 3-4</h3>
+                    <p class="text-gray-600">
+                        Erreichen Sie TMMi Level 3-4 Reife mit unserer Beratung
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- QA KPIs -->
+    <section class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-nstech-dark mb-6">QA-KPIs die wir tracken</h2>
+                    <p class="text-lg text-gray-600">
+                        Maßgeschneiderte Metriken für messbare Qualitätsverbesserungen
+                    </p>
+                </div>
+
+                <div class="bg-white p-8 md:p-12 rounded-2xl shadow-xl">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-chart-pie text-2xl text-nstech-blue mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-2">Test Coverage</h4>
+                                <p class="text-sm text-gray-600">Prozentsatz der durch Test Cases abgedeckten Software-Anforderungen</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-list-check text-2xl text-nstech-blue mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-2">Test Case Execution</h4>
+                                <p class="text-sm text-gray-600">Anzahl erstellter, aktualisierter und ausgeführter Test Cases pro Iteration</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-bug text-2xl text-red-600 mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-2">Defect Metrics</h4>
+                                <p class="text-sm text-gray-600">Durchschnittliche und Gesamtanzahl gefundener Defekte nach Schweregrad</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-clock text-2xl text-purple-600 mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-2">Testing Time Variance</h4>
+                                <p class="text-sm text-gray-600">Verhältnis zwischen tatsächlicher und geschätzter Testzeit</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-euro-sign text-2xl text-green-600 mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-2">Cost Variance</h4>
+                                <p class="text-sm text-gray-600">Abweichung zwischen Budget und tatsächlichen Testkosten</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-triangle-exclamation text-2xl text-orange-600 mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-2">Defect Leakage</h4>
+                                <p class="text-sm text-gray-600">Prozentsatz der Probleme, die von Endbenutzern gefunden wurden</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 p-6 bg-blue-50 rounded-xl border-l-4 border-nstech-blue">
+                        <p class="text-gray-700">
+                            <strong>Hinweis:</strong> QA-KPIs hängen stark von Ihrer QA-Reife, Software- und Projektspezifikationen sowie den QA-Herausforderungen ab. NSTech liefert ein maßgeschneidertes KPI-Set für Ihre Self-Assessments.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tools & Technologies -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-nstech-dark mb-6">Tools mit denen unser QA-Team arbeitet</h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gradient-to-br from-blue-50 to-white p-8 rounded-2xl shadow-lg">
+                    <h3 class="text-xl font-bold mb-6 text-gray-900 flex items-center gap-3">
+                        <i class="fa-solid fa-code text-2xl text-nstech-blue"></i>
+                        UI Testing Tools
+                    </h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-4 py-2 bg-white rounded-full text-sm font-semibold text-gray-700 shadow">Selenium</span>
+                        <span class="px-4 py-2 bg-white rounded-full text-sm font-semibold text-gray-700 shadow">Cypress</span>
+                        <span class="px-4 py-2 bg-white rounded-full text-sm font-semibold text-gray-700 shadow">Playwright</span>
+                        <span class="px-4 py-2 bg-white rounded-full text-sm font-semibold text-gray-700 shadow">TestCafe</span>
+                        <span class="px-4 py-2 bg-white rounded-full text-sm font-semibold text-gray-700 shadow">Ranorex</span>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-purple-50 to-white p-8 rounded-2xl shadow-lg">
+                    <h3 class="text-xl font-bold mb-6 text-gray-900 flex items-center gap-3">
+                        <i class="fa-solid fa-mobile-screen text-2xl text-purple-600"></i>
+                        Mobile Testing Tools
+                    </h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-4 py-2 bg-white rounded-full text-sm font-semibold text-gray-700 shadow">Appium</span>
+                        <span class="px-4 py-2 bg-white rounded-full text-sm font-semibold text-gray-700 shadow">Espresso</span>
+                        <span class="px-4 py-2 bg-white rounded-full text-sm font-semibold text-gray-700 shadow">XCUITest</span>
+                        <span class="px-4 py-2 bg-white rounded-full text-sm font-semibold text-gray-700 shadow">Detox</span>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-green-50 to-white p-8 rounded-2xl shadow-lg">
+                    <h3 class="text-xl font-bold mb-6 text-gray-900 flex items-center gap-3">
+                        <i class="fa-solid fa-gauge-high text-2xl text-nstech-green"></i>
+                        Performance Testing
+                    </h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-4 py-2 bg-white rounded-full text-sm font-semibold text-gray-700 shadow">JMeter</span>
+                        <span class="px-4 py-2 bg-white rounded-full text-sm font-semibold text-gray-700 shadow">K6</span>
+                        <span class="px-4 py-2 bg-white rounded-full text-sm font-semibold text-gray-700 shadow">Gatling</span>
+                        <span class="px-4 py-2 bg-white rounded-full text-sm font-semibold text-gray-700 shadow">LoadRunner</span>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-red-50 to-white p-8 rounded-2xl shadow-lg">
+                    <h3 class="text-xl font-bold mb-6 text-gray-900 flex items-center gap-3">
+                        <i class="fa-solid fa-shield-halved text-2xl text-red-600"></i>
+                        Security Testing
+                    </h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-4 py-2 bg-white rounded-full text-sm font-semibold text-gray-700 shadow">OWASP ZAP</span>
+                        <span class="px-4 py-2 bg-white rounded-full text-sm font-semibold text-gray-700 shadow">Burp Suite</span>
+                        <span class="px-4 py-2 bg-white rounded-full text-sm font-semibold text-gray-700 shadow">Nessus</span>
+                        <span class="px-4 py-2 bg-white rounded-full text-sm font-semibold text-gray-700 shadow">Metasploit</span>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-orange-50 to-white p-8 rounded-2xl shadow-lg">
+                    <h3 class="text-xl font-bold mb-6 text-gray-900 flex items-center gap-3">
+                        <i class="fa-solid fa-infinity text-2xl text-orange-600"></i>
+                        CI/CD Integration
+                    </h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-4 py-2 bg-white rounded-full text-sm font-semibold text-gray-700 shadow">Jenkins</span>
+                        <span class="px-4 py-2 bg-white rounded-full text-sm font-semibold text-gray-700 shadow">GitLab CI</span>
+                        <span class="px-4 py-2 bg-white rounded-full text-sm font-semibold text-gray-700 shadow">GitHub Actions</span>
+                        <span class="px-4 py-2 bg-white rounded-full text-sm font-semibold text-gray-700 shadow">Azure DevOps</span>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-indigo-50 to-white p-8 rounded-2xl shadow-lg">
+                    <h3 class="text-xl font-bold mb-6 text-gray-900 flex items-center gap-3">
+                        <i class="fa-solid fa-list-check text-2xl text-indigo-600"></i>
+                        Test Management
+                    </h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-4 py-2 bg-white rounded-full text-sm font-semibold text-gray-700 shadow">Jira</span>
+                        <span class="px-4 py-2 bg-white rounded-full text-sm font-semibold text-gray-700 shadow">TestRail</span>
+                        <span class="px-4 py-2 bg-white rounded-full text-sm font-semibold text-gray-700 shadow">Zephyr</span>
+                        <span class="px-4 py-2 bg-white rounded-full text-sm font-semibold text-gray-700 shadow">qTest</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits -->
+    <section class="py-24 bg-gradient-to-br from-nstech-blue to-blue-800 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Nutzen Sie die Vorteile unserer QA-Beratung</h2>
+                <p class="text-xl text-blue-100 max-w-3xl mx-auto">
+                    Messbare Verbesserungen in Qualität, Kosten und Time-to-Market
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white/10 backdrop-blur-sm p-8 rounded-2xl">
+                    <div class="text-5xl font-bold mb-3">0</div>
+                    <div class="text-lg font-semibold mb-2">Schwere Defekte</div>
+                    <p class="text-sm text-blue-100">
+                        In Produktion durch Defekt-Erkennung früh im SDLC und optimierte Testabdeckung
+                    </p>
+                </div>
+
+                <div class="bg-white/10 backdrop-blur-sm p-8 rounded-2xl">
+                    <div class="text-5xl font-bold mb-3">-20–40%</div>
+                    <div class="text-lg font-semibold mb-2">Testkosten</div>
+                    <p class="text-sm text-blue-100">
+                        Durch KPI-basierte Kontrolle, QA Best Practices und wiederverwendbare Test-Dokumentation
+                    </p>
+                </div>
+
+                <div class="bg-white/10 backdrop-blur-sm p-8 rounded-2xl">
+                    <div class="text-5xl font-bold mb-3">-18%</div>
+                    <div class="text-lg font-semibold mb-2">Testzeit</div>
+                    <p class="text-sm text-blue-100">
+                        Durch Shift-Left-Ansatz, Test-Automatisierung und auf Ihr Projekt abgestimmte QA-Aktivitäten
+                    </p>
+                </div>
+
+                <div class="bg-white/10 backdrop-blur-sm p-8 rounded-2xl">
+                    <div class="text-5xl font-bold mb-3">-15–20%</div>
+                    <div class="text-lg font-semibold mb-2">Wartungskosten</div>
+                    <p class="text-sm text-blue-100">
+                        Durch minimierte Defekte, proaktive QA und regelmäßige Regressions- und Performance-Tests
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="py-20 bg-gradient-to-r from-nstech-blue to-blue-700 text-white">
+    <section class="py-20 bg-white">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-6">Bereit für erstklassige Software-Qualität?</h2>
-            <p class="text-base sm:text-lg md:text-xl mb-8 text-blue-100">
+            <h2 class="text-3xl md:text-4xl font-bold text-nstech-dark mb-6">Bereit für QA-Excellence?</h2>
+            <p class="text-xl text-gray-600 mb-8">
                 Vereinbaren Sie ein kostenloses Beratungsgespräch und erfahren Sie, wie wir Ihre QA-Prozesse transformieren können.
             </p>
-            <a href="kontakt.html" class="inline-block px-10 py-4 bg-white text-nstech-blue rounded-full font-bold hover:bg-gray-100 transition shadow-xl text-lg">
-                Jetzt Gespräch vereinbaren
-            </a>
-        </div>
-    </section>
-
-    <!-- Newsletter Section -->
-    <section class="py-16 bg-gradient-to-r from-nstech-blue to-blue-700">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-8">
-                <h3 class="text-2xl sm:text-3xl font-bold text-white mb-3">Bleiben Sie auf dem Laufenden</h3>
-                <p class="text-base sm:text-lg text-blue-100">QA-Best Practices, Testing-Tipps und Automation-Trends direkt in Ihr Postfach</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="kontakt.html" class="px-10 py-4 bg-nstech-blue text-white rounded-full font-bold hover:bg-blue-700 transition shadow-xl text-lg">
+                    <i class="fa-solid fa-calendar-days mr-2"></i>
+                    Beratung anfragen
+                </a>
+                <a href="mailto:info@nstech.de" class="px-10 py-4 bg-transparent border-2 border-nstech-blue text-nstech-blue rounded-full font-bold hover:bg-nstech-blue hover:text-white transition text-lg">
+                    <i class="fa-solid fa-envelope mr-2"></i>
+                    E-Mail senden
+                </a>
             </div>
-            <form class="flex flex-col sm:flex-row gap-4 justify-center" onsubmit="event.preventDefault(); alert('Vielen Dank! Wir haben Ihre E-Mail erhalten.');">
-                <input 
-                    type="email" 
-                    placeholder="Ihre E-Mail-Adresse" 
-                    required
-                    class="flex-1 max-w-md px-6 py-4 rounded-full text-gray-800 focus:outline-none focus:ring-4 focus:ring-blue-300 text-base sm:text-lg"
-                >
-                <button 
-                    type="submit" 
-                    class="px-8 py-4 bg-white text-nstech-blue rounded-full font-bold hover:bg-gray-100 transition shadow-xl text-base sm:text-lg whitespace-nowrap"
-                >
-                    <i class="fa-solid fa-paper-plane mr-2"></i>Abonnieren
-                </button>
-            </form>
-            <p class="text-sm text-blue-100 text-center mt-4">100% DSGVO-konform. Keine Weitergabe an Dritte.</p>
         </div>
     </section>
 
@@ -363,37 +812,40 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-4 gap-8 mb-8">
                 <div>
-                    <img src="assets/white.png" alt="NSTech Logo" class="h-14 mb-4">
+                    <img src="assets/white.png" alt="NSTech Logo" class="h-14 mb-4 rounded-xl">
                     <p class="text-gray-400 text-sm">Ihr Partner für Software-Qualität und ISO-Compliance in Deutschland.</p>
                 </div>
                 <div>
                     <h4 class="text-lg font-bold mb-4">Leistungen</h4>
                     <ul class="space-y-2 text-gray-400 text-sm">
-                        <li><a href="#beratung" class="hover:text-white transition">QA-Beratung</a></li>
-                        <li><a href="#services" class="hover:text-white transition">Managed Testing</a></li>
-                        <li><a href="#iso" class="hover:text-white transition">ISO-Zertifizierung</a></li>
-                        <li><a href="#automation" class="hover:text-white transition">Test-Automatisierung</a></li>
+                        <li><a href="leistungen.html" class="hover:text-white transition">QA Testing</a></li>
+                        <li><a href="iso-zertifizierung.html" class="hover:text-white transition">ISO-Zertifizierung</a></li>
+                        <li><a href="leistungen.html#automation" class="hover:text-white transition">Test-Automatisierung</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4 class="text-lg font-bold mb-4">Unternehmen</h4>
                     <ul class="space-y-2 text-gray-400 text-sm">
                         <li><a href="uber-uns.html" class="hover:text-white transition">Über Uns</a></li>
+                        <li><a href="karriere.html" class="hover:text-white transition">Karriere</a></li>
                         <li><a href="kontakt.html" class="hover:text-white transition">Kontakt</a></li>
-                        <li><a href="#" class="hover:text-white transition">Karriere</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4 class="text-lg font-bold mb-4">Kontakt</h4>
                     <ul class="space-y-2 text-gray-400 text-sm">
                         <li><i class="fa-solid fa-envelope mr-2"></i>info@nstech.de</li>
-                        <li><i class="fa-solid fa-phone mr-2"></i>+49 (0) XXX XXXX</li>
+                        <li><i class="fa-solid fa-briefcase mr-2"></i>jobs@nstech.de</li>
                         <li><i class="fa-solid fa-location-dot mr-2"></i>Deutschland</li>
                     </ul>
                 </div>
             </div>
             <div class="border-t border-gray-800 pt-8 text-center">
-                <p class="text-gray-400 text-sm">© 2025 NSTech Software & Consultancy. Alle Rechte vorbehalten.</p>
+                <p class="text-gray-400 text-sm">
+                    Copyright © 2025 NSTech GmbH | 
+                    <a href="datenschutz.html" class="hover:text-white transition">Datenschutz</a> | 
+                    <a href="impressum.html" class="hover:text-white transition">Impressum</a>
+                </p>
             </div>
         </div>
     </footer>
@@ -404,6 +856,8 @@
             menu.classList.toggle('hidden');
         }
     </script>
+
+    <style>#nstech-chat-btn{position:fixed;bottom:20px;right:20px;width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,#0056b3,#003d82);border:none;color:#fff;font-size:24px;cursor:pointer;box-shadow:0 4px 12px rgba(0,86,179,.4);z-index:9999;transition:all .3s}#nstech-chat-btn:hover{transform:scale(1.1);box-shadow:0 6px 16px rgba(0,86,179,.6)}#nstech-chat-modal{display:none;position:fixed;bottom:90px;right:20px;width:400px;height:600px;border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.3);z-index:9998;overflow:hidden}#nstech-chat-modal iframe{width:100%;height:100%;border:none;border-radius:12px}@media (max-width:500px){#nstech-chat-modal{width:100%;height:100%;bottom:0;right:0;border-radius:0}}</style><button id="nstech-chat-btn" onclick="toggleNSTechChat()" aria-label="Chat öffnen">💬</button><div id="nstech-chat-modal"><iframe src="chatbot.html"></iframe></div><script>function toggleNSTechChat(){const modal=document.getElementById('nstech-chat-modal');const btn=document.getElementById('nstech-chat-btn');if(modal.style.display==='none'||modal.style.display===''){modal.style.display='block';btn.textContent='✕'}else{modal.style.display='none';btn.textContent='💬'}}document.addEventListener('keydown',e=>{if(e.key==='Escape'){const modal=document.getElementById('nstech-chat-modal');if(modal.style.display==='block'){toggleNSTechChat()}}})</script>
 
 </body>
 </html>

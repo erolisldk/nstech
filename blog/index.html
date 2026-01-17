@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog & Artikel - NSTech QA & ISO Zertifizierung</title>
+    <meta name="description" content="Expertenwissen zu Softwaretest, QA-Automatisierung und ISO-Zertifizierung in Deutschland. Aktuelle Artikel und Best Practices.">
+    <meta name="keywords" content="Software Testing Deutschland, QA Automatisierung, ISO Zertifizierung, ISTQB, Test Automation, DevOps Testing">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        nstech: {
+                            blue: '#0056b3',
+                            dark: '#1a1a1a',
+                            light: '#f4f7f6',
+                            accent: '#00d2d3',
+                            green: '#22c55e'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .article-card {
+            transition: all 0.3s ease;
+        }
+        .article-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+    </style>
+</head>
+
+<body class="text-gray-800 bg-white">
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 sm:h-20 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="../index.html" class="flex items-center">
+                        <img src="../assets/black.png" alt="NSTech Logo" class="h-12 sm:h-16 md:h-20 rounded-xl">
+                    </a>
+                </div>
+
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="../index.html" class="text-gray-600 hover:text-nstech-blue font-medium transition">Startseite</a>
+                    <a href="../leistungen.html" class="text-gray-600 hover:text-nstech-blue font-medium transition">QA Testing</a>
+                    <a href="../iso-zertifizierung.html" class="text-gray-600 hover:text-nstech-blue font-medium transition">ISO-Zertifizierung</a>
+                    <a href="../uber-uns.html" class="text-gray-600 hover:text-nstech-blue font-medium transition">Über Uns</a>
+                    <a href="index.html" class="text-nstech-blue font-semibold border-b-2 border-nstech-blue pb-1">Blog</a>
+                    <a href="../kontakt.html" class="text-gray-600 hover:text-nstech-blue font-medium transition">Kontakt</a>
+                </div>
+
+                <div class="md:hidden flex items-center">
+                    <button onclick="toggleMobileMenu()" class="text-gray-600 hover:text-nstech-blue focus:outline-none">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-16 bg-gradient-to-br from-nstech-blue to-blue-800 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">Blog & Fachwissen</h1>
+                <p class="text-xl text-blue-100 mb-8">
+                    Aktuelle Artikel, Best Practices und Expertenwissen zu Software Testing, QA-Automatisierung und ISO-Zertifizierung in Deutschland.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Articles -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-12">
+                <h2 class="text-3xl font-bold text-nstech-dark mb-4">Aktuelle Artikel</h2>
+                <div class="flex flex-wrap gap-4">
+                    <button class="px-4 py-2 bg-nstech-blue text-white rounded-full font-semibold">Alle</button>
+                    <button class="px-4 py-2 bg-gray-100 text-gray-700 rounded-full font-semibold hover:bg-gray-200">QA Testing</button>
+                    <button class="px-4 py-2 bg-gray-100 text-gray-700 rounded-full font-semibold hover:bg-gray-200">Automatisierung</button>
+                    <button class="px-4 py-2 bg-gray-100 text-gray-700 rounded-full font-semibold hover:bg-gray-200">ISO-Zertifizierung</button>
+                    <button class="px-4 py-2 bg-gray-100 text-gray-700 rounded-full font-semibold hover:bg-gray-200">ISTQB</button>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Article 1: Software Testing in Deutschland -->
+                <article class="article-card bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100">
+                    <div class="h-48 bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center">
+                        <i class="fa-solid fa-vial text-6xl text-white opacity-80"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 text-sm text-gray-500 mb-3">
+                            <i class="fa-solid fa-calendar"></i>
+                            <span>15. Januar 2025</span>
+                            <span class="mx-2">•</span>
+                            <span class="text-nstech-blue font-semibold">QA Testing</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-gray-900">Software Testing Best Practices in Deutschland 2025</h3>
+                        <p class="text-gray-600 mb-4">
+                            Deutsche Qualitätsstandards erfordern eine systematische Herangehensweise an Software-Testing. Erfahren Sie, wie ISTQB-zertifizierte QA-Prozesse Ihre Softwarequalität verbessern.
+                        </p>
+                        <a href="software-testing-deutschland-2025.html" class="text-nstech-blue font-semibold hover:underline inline-flex items-center">
+                            Weiterlesen <i class="fa-solid fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Article 2: Test Automation ROI -->
+                <article class="article-card bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100">
+                    <div class="h-48 bg-gradient-to-br from-green-500 to-green-700 flex items-center justify-center">
+                        <i class="fa-solid fa-robot text-6xl text-white opacity-80"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 text-sm text-gray-500 mb-3">
+                            <i class="fa-solid fa-calendar"></i>
+                            <span>12. Januar 2025</span>
+                            <span class="mx-2">•</span>
+                            <span class="text-nstech-green font-semibold">Automatisierung</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-gray-900">Test-Automatisierung: ROI-Berechnung und Implementierung</h3>
+                        <p class="text-gray-600 mb-4">
+                            Investitionen in Test-Automatisierung können QA-Kosten um 20-40% senken. Erfahren Sie, wie Sie den ROI berechnen und eine erfolgreiche Automatisierungsstrategie entwickeln.
+                        </p>
+                        <a href="test-automation-roi.html" class="text-nstech-blue font-semibold hover:underline inline-flex items-center">
+                            Weiterlesen <i class="fa-solid fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Article 3: ISO 9001 für Softwareunternehmen -->
+                <article class="article-card bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100">
+                    <div class="h-48 bg-gradient-to-br from-purple-500 to-purple-700 flex items-center justify-center">
+                        <i class="fa-solid fa-certificate text-6xl text-white opacity-80"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 text-sm text-gray-500 mb-3">
+                            <i class="fa-solid fa-calendar"></i>
+                            <span>10. Januar 2025</span>
+                            <span class="mx-2">•</span>
+                            <span class="text-purple-600 font-semibold">ISO-Zertifizierung</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-gray-900">ISO 9001:2015 - Der ultimative Leitfaden für Softwareunternehmen</h3>
+                        <p class="text-gray-600 mb-4">
+                            ISO 9001 Zertifizierung ist ein Wettbewerbsvorteil auf dem deutschen Markt. Schritt-für-Schritt-Anleitung zur erfolgreichen Implementierung für Softwareunternehmen.
+                        </p>
+                        <a href="iso-9001-software-guide.html" class="text-nstech-blue font-semibold hover:underline inline-flex items-center">
+                            Weiterlesen <i class="fa-solid fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Article 4: DSGVO & QA Testing -->
+                <article class="article-card bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100">
+                    <div class="h-48 bg-gradient-to-br from-red-500 to-red-700 flex items-center justify-center">
+                        <i class="fa-solid fa-shield-halved text-6xl text-white opacity-80"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 text-sm text-gray-500 mb-3">
+                            <i class="fa-solid fa-calendar"></i>
+                            <span>8. Januar 2025</span>
+                            <span class="mx-2">•</span>
+                            <span class="text-red-600 font-semibold">Compliance</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-gray-900">DSGVO-konforme Software-Testing in Deutschland</h3>
+                        <p class="text-gray-600 mb-4">
+                            Datenschutz ist bei QA-Prozessen kritisch. Erfahren Sie, wie Sie DSGVO-konforme Testdaten verwalten und Compliance-Risiken minimieren.
+                        </p>
+                        <a href="dsgvo-qa-testing.html" class="text-nstech-blue font-semibold hover:underline inline-flex items-center">
+                            Weiterlesen <i class="fa-solid fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Article 5: DevOps & CI/CD Testing -->
+                <article class="article-card bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100">
+                    <div class="h-48 bg-gradient-to-br from-orange-500 to-orange-700 flex items-center justify-center">
+                        <i class="fa-solid fa-code-branch text-6xl text-white opacity-80"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 text-sm text-gray-500 mb-3">
+                            <i class="fa-solid fa-calendar"></i>
+                            <span>5. Januar 2025</span>
+                            <span class="mx-2">•</span>
+                            <span class="text-orange-600 font-semibold">DevOps</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-gray-900">CI/CD Testing: Integration von QA in DevOps-Pipelines</h3>
+                        <p class="text-gray-600 mb-4">
+                            Continuous Testing ist der Schlüssel zu schnellen Releases ohne Qualitätsverlust. Best Practices für Jenkins, GitLab CI und GitHub Actions Integration.
+                        </p>
+                        <a href="cicd-qa-integration.html" class="text-nstech-blue font-semibold hover:underline inline-flex items-center">
+                            Weiterlesen <i class="fa-solid fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Article 6: ISTQB Zertifizierung -->
+                <article class="article-card bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100">
+                    <div class="h-48 bg-gradient-to-br from-indigo-500 to-indigo-700 flex items-center justify-center">
+                        <i class="fa-solid fa-graduation-cap text-6xl text-white opacity-80"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 text-sm text-gray-500 mb-3">
+                            <i class="fa-solid fa-calendar"></i>
+                            <span>3. Januar 2025</span>
+                            <span class="mx-2">•</span>
+                            <span class="text-indigo-600 font-semibold">ISTQB</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-gray-900">ISTQB Certified Tester: Ihr Weg zur Zertifizierung</h3>
+                        <p class="text-gray-600 mb-4">
+                            ISTQB ist der globale Standard für Software-Testing. Alles über Foundation, Advanced und Expert Level Zertifizierungen in Deutschland.
+                        </p>
+                        <a href="istqb-zertifizierung-guide.html" class="text-nstech-blue font-semibold hover:underline inline-flex items-center">
+                            Weiterlesen <i class="fa-solid fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-br from-nstech-blue to-blue-800 text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Benötigen Sie professionelle QA-Beratung?</h2>
+            <p class="text-xl text-blue-100 mb-8">
+                Lassen Sie uns gemeinsam Ihre Softwarequalität auf das nächste Level heben.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="../kontakt.html" class="px-8 py-4 bg-white text-nstech-blue rounded-full font-bold hover:bg-gray-100 transition shadow-xl">
+                    Kostenloses Beratungsgespräch
+                </a>
+                <a href="../leistungen.html" class="px-8 py-4 bg-transparent border-2 border-white text-white rounded-full font-bold hover:bg-white hover:text-nstech-blue transition">
+                    Unsere Leistungen
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-nstech-dark text-gray-300 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <p class="text-sm">
+                    Copyright © 2025 NSTech GmbH | 
+                    <a href="../datenschutz.html" class="hover:text-white transition">Datenschutz</a> | 
+                    <a href="../impressum.html" class="hover:text-white transition">Impressum</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+    </script>
+
+</body>
+</html>
